@@ -117,7 +117,7 @@
             margin-bottom: 1rem;
         }
         .card-title {
-            font-size: 1.55rem;
+            font-size: 1.4rem;
             font-weight: 700;
             margin-bottom: 0.6rem;
             color: #ffffff;
@@ -125,6 +125,7 @@
             align-items: center;
             gap: 8px;
             flex-wrap: wrap;
+            line-height: 1.3;
         }
         .card-desc {
             font-size: 0.95rem;
@@ -258,18 +259,20 @@
         .new-badge {
             background: #00f5a0;
             color: #03070c;
-            font-size: 0.6rem;
-            padding: 0.15rem 0.5rem;
+            font-size: 0.65rem;
+            padding: 0.2rem 0.6rem;
             border-radius: 20px;
-            font-weight: 700;
+            font-weight: 800;
+            text-transform: uppercase;
         }
-        .hearing-badge {
-            background: #f0b27a;
-            color: #1a1a2e;
+        .special-badge {
+            background: rgba(96, 165, 250, 0.15);
+            color: #60a5fa;
+            border: 1px solid rgba(96, 165, 250, 0.3);
             font-size: 0.7rem;
             padding: 0.2rem 0.6rem;
             border-radius: 30px;
-            font-weight: 700;
+            font-weight: 600;
         }
         .error-toast {
             position: fixed;
@@ -301,7 +304,7 @@
         </div>
     </div>
     <div class="hero-sub">
-        <div class="sub">Цифровая крепость · приватность без облаков</div>
+        <div class="sub">Цифровая крепость · приватность без облаков · профессии будущего</div>
     </div>
 </div>
 
@@ -310,10 +313,11 @@
 
     <div class="support-hub">
         <h2>💙 Поддержать проекты</h2>
-        <p style="max-width: 500px; margin: 0 auto 0.8rem;">Все приложения бесплатны и без рекламы. Ваша помощь помогает развитию офлайн‑безопасности.</p>
+        <p style="max-width: 500px; margin: 0 auto 0.8rem;">Все приложения бесплатны и без рекламы. Ваша помощь помогает развитию офлайн‑безопасности и образования.</p>
         <div class="phone-number">8-920-227-56-76</div>
         <div class="support-note">📱 Перевод по номеру телефона (СБП, любой банк)</div>
-        <div style="margin-top: 1rem; font-size: 0.8rem;">✨ Спасибо, что с нами — защищаем мир без слежки ✨</div>
+        <div style="margin-top: 1rem; font-size: 0.8rem; color: #9ca3af;">✉️ По вопросам сотрудничества: an.cf@yandex.ru</div>
+        <div style="margin-top: 0.5rem; font-size: 0.8rem;">✨ Спасибо, что с нами — защищаем мир без слежки ✨</div>
     </div>
 
     <a href="https://vercel.app" target="_blank" class="usa-card-link">
@@ -373,32 +377,123 @@
     }
     
     const projectsData = [
-        // === 🆕 НОВЫЕ ПРОЕКТЫ: ВАШИ 8 ПРОЕКТОВ (в начало списка) ===
+        // ==========================================
+        // 🆕 НОВЫЕ ПРОЕКТЫ (В САМОМ ВЕРХУ)
+        // ==========================================
         { 
-            title: "🏛️ Anti-AI Qwen Academy — Deepfake Detection Specialist", 
-            icon: "🎬🔍", 
-            desc: "Офлайн-обучение детекции синтетического медиа (видео, аудио, фото) с использованием TensorFlow Lite и визуального анализа.", 
-            url: "https://anti-ai-qwen-academy-deepfake-detec-kohl.vercel.app/", 
-            isRutube: false, 
+            title: "🐾 Анти-ИИ Следопыт", 
+            icon: "🐾🔍", 
+            desc: "Бесплатная офлайн-игра для детей и взрослых: учись распознавать следы животных, развивай наблюдательность без интернета.", 
+            url: "https://anti-ai-tracker.vercel.app/", 
+            isNew: true, 
+            specialBadge: "🎮 игра" 
+        },
+        { 
+            title: "🎲 Анти ИИ — Удача", 
+            icon: "🎲🍀", 
+            desc: "Образовательная программа по развитию навыков принятия решений, распознаванию манипуляций с вероятностями и формированию устойчивого мышления.", 
+            url: "https://anti-ai-udacha.vercel.app/", 
+            isNew: true, 
+            specialBadge: "🧠 мышление" 
+        },
+        { 
+            title: "🏛️ Киборг-Атлет: Mobile", 
+            icon: "🏛️🏃‍♂️", 
+            desc: "Бесплатный социальный проект по трансформации мобильных геймеров в киборг-спортсменов с усиленными реакциями, эргономикой и цифровой гигиеной.", 
+            url: "https://anti-ai-qwen-academy-cyborg-athlete.vercel.app/", 
             isNew: true, 
             specialBadge: "🎓 курс" 
         },
         { 
-            title: "🏛️ Anti-AI Qwen Academy — Prompt Engineer", 
-            icon: "⌨️🤖", 
-            desc: "Научитесь эффективно работать с ИИ: создание промптов, оптимизация запросов, управление контекстом.", 
-            url: "https://anti-ai-qwen-academy-prompt-enginee.vercel.app/", 
-            isRutube: false, 
+            title: "🏛️ Глубокая техническая разработка для ML-инженеров", 
+            icon: "🏛️💻", 
+            desc: "25 уроков по глубокой технической разработке для инженеров машинного обучения. Практика без облачных зависимостей.", 
+            url: "https://anti-ai-qwen-academy-deep-technical.vercel.app/", 
+            isNew: true, 
+            specialBadge: "🎓 25 уроков" 
+        },
+        { 
+            title: "🏛️ Бизнес-интегратор ИИ", 
+            icon: "🏛️💼", 
+            desc: "Образовательная программа по внедрению готовых нейросетей в бизнес-процессы для сокращения расходов и автоматизации.", 
+            url: "https://anti-ai-business-integrator.vercel.app/", 
+            isNew: true, 
+            specialBadge: "💼 бизнес" 
+        },
+        { 
+            title: "🏛️ Менеджер ИИ-продуктов (AI Product Manager)", 
+            icon: "🏛️🚀", 
+            desc: "Комплексная офлайн-платформа для подготовки специалистов по управлению продуктами на базе искусственного интеллекта.", 
+            url: "https://anti-ai-qwen-academy-ai-product-man.vercel.app/", 
             isNew: true, 
             specialBadge: "🎓 курс" 
         },
+        { 
+            title: "🏛️ Менеджер ИИ-продуктов (Phi версия)", 
+            icon: "🏛️📱", 
+            desc: "Подготовка AI Product Manager с фокусом на эффективные и легкие модели (Phi) для локального развертывания.", 
+            url: "https://anti-ai-qwen-academy-ai-product-man-phi.vercel.app/", 
+            isNew: true, 
+            specialBadge: "🎓 Phi-модели" 
+        },
+        { 
+            title: "🏛️ Специалист по безопасности ИИ-моделей", 
+            icon: "🏛️🛡️", 
+            desc: "Ищет уязвимости в коде нейросетей, защищая их от взлома. Офлайн-тренажёр по AI Model Security.", 
+            url: "https://anti-ai-qwen-academy-ai-model-secur.vercel.app/#support", 
+            isNew: true, 
+            specialBadge: "🔒 безопасность" 
+        },
+        { 
+            title: "🏛️ Юрист в сфере ИИ (AI Legal Specialist)", 
+            icon: "🏛️⚖️", 
+            desc: "Изучение правового регулирования искусственного интеллекта, авторского права и защиты данных в цифровую эпоху.", 
+            url: "https://anti-ai-qwen-academy-ai-legal-speci.vercel.app/", 
+            isNew: true, 
+            specialBadge: "⚖️ право" 
+        },
+        { 
+            title: "🏛️ AI Ethics Officer (Специалист по этике ИИ)", 
+            icon: "🏛️🤝", 
+            desc: "Офлайн-платформа для подготовки специалистов по этике искусственного интеллекта и предотвращению bias в алгоритмах.", 
+            url: "https://anti-ai-qwen-academy-ai-ethics-offi.vercel.app/", 
+            isNew: true, 
+            specialBadge: "🎓 этика" 
+        },
+        { 
+            title: "🏛️ Куратор данных (Data Curator)", 
+            icon: "🏛️🗂️", 
+            desc: "Обучение профессиям будущего: подготовка, очистка и верификация датасетов для обучения нейросетей офлайн.", 
+            url: "https://anti-ai-qwen-academy-data-curator.vercel.app/", 
+            isNew: true, 
+            specialBadge: "📊 данные" 
+        },
+        { 
+            title: "🏛️ Промпт-дизайнер (Нейроиллюстратор)", 
+            icon: "🏛️🎨", 
+            desc: "Искусство создания точных запросов для генерации изображений и текстов. Офлайн-справочник и тренажёр.", 
+            url: "https://anti-ai-qwen-academy-prompt-designe.vercel.app/", 
+            isNew: true, 
+            specialBadge: "🎨 дизайн" 
+        },
+        { 
+            title: "🏛️ AI-редактор / Нейрокопирайтер", 
+            icon: "🏛️✍️", 
+            desc: "Детекция дипфейков и создание качественного контента. Навыки верификации и редактирования ИИ-текстов и видео.", 
+            url: "https://anti-ai-qwen-academy-deepfake-detec-virid.vercel.app/", 
+            isNew: true, 
+            specialBadge: "✍️ контент" 
+        },
+
+        // ==========================================
+        // 📦 РАНЕЕ ДОБАВЛЕННЫЕ ПРОЕКТЫ
+        // ==========================================
         { 
             title: "💰 Заработок с Qwen AI", 
             icon: "💰🤖", 
             desc: "Практические стратегии монетизации навыков работы с ИИ. Офлайн-гид по заработку.", 
             url: "https://anti-ai-qwen-earn-money.vercel.app/", 
-            isRutube: false, 
-            isNew: true, 
+            isNew: false, 
             specialBadge: "💡 доход" 
         },
         { 
@@ -406,8 +501,7 @@
             icon: "🤖🤝", 
             desc: "Персональный офлайн-помощник для безопасного взаимодействия с ИИ-системами.", 
             url: "https://anti-ai-qwen-companion.vercel.app/", 
-            isRutube: false, 
-            isNew: true, 
+            isNew: false, 
             specialBadge: "🔒 приватность" 
         },
         { 
@@ -415,8 +509,7 @@
             icon: "👁️📊", 
             desc: "Проверка остроты зрения и обучение распознаванию визуальных дипфейков через тест «выбери реальное изображение».", 
             url: "https://anti-ai-visometer.vercel.app/", 
-            isRutube: false, 
-            isNew: true, 
+            isNew: false, 
             specialBadge: "👁️ зрение" 
         },
         { 
@@ -424,8 +517,7 @@
             icon: "🔐⚡", 
             desc: "Обучение этичному хакингу и защите от цифровых угроз. Офлайн-симулятор кибербезопасности.", 
             url: "https://anti-ai-cyber-hack.vercel.app/", 
-            isRutube: false, 
-            isNew: true, 
+            isNew: false, 
             specialBadge: "🛡️ защита" 
         },
         { 
@@ -433,8 +525,7 @@
             icon: "🔋⚡", 
             desc: "Оптимизация заряда батареи и защита от энергопотребляющих ИИ-процессов. Работает офлайн.", 
             url: "https://anti-ai-battery-shield.vercel.app/", 
-            isRutube: false, 
-            isNew: true, 
+            isNew: false, 
             specialBadge: "🔋 энергия" 
         },
         { 
@@ -442,93 +533,79 @@
             icon: "📱🔐", 
             desc: "Шифрование SMS-сообщений и защита переписки от ИИ-анализа. Полностью офлайн-режим.", 
             url: "https://anti-ai-sms-shield.vercel.app/", 
-            isRutube: false, 
-            isNew: true, 
+            isNew: false, 
             specialBadge: "🔒 шифр" 
         },
-
-        // === 🆕 Манифест и Циклы ===
         { 
             title: "🛡️ Анти-ИИ: Манифест Суверенной Личности", 
             icon: "🛡️👤", 
-            desc: "Философско-технический манифест о цифровой автономии и суверенитете личности в эпоху ИИ. Принципы защиты приватности.", 
+            desc: "Философско-технический манифест о цифровой автономии и суверенитете личности в эпоху ИИ.", 
             url: "https://ai-core-autonomy.vercel.app/", 
-            isRutube: false, 
-            isNew: true, 
+            isNew: false, 
             specialBadge: "манифест" 
         },
         { 
             title: "🎋 Анти ИИ · Цикл осознания", 
             icon: "🎋🧘", 
-            desc: "Восточная практика осознанности для распознавания нарциссических манипуляций в цифровом общении и контенте.", 
+            desc: "Восточная практика осознанности для распознавания нарциссических манипуляций в цифровом общении.", 
             url: "https://anti-ai-narc-cycle-oriental.vercel.app/", 
-            isRutube: false, 
-            isNew: true, 
+            isNew: false, 
             specialBadge: "🎋 восточный" 
         },
         { 
             title: "🔄 Анти ИИ Нарциссический цикл", 
             icon: "🔄🧠", 
-            desc: "Распознавание и защита от манипуляций, основанных на нарциссических паттернах поведения в цифровом общении.", 
+            desc: "Распознавание и защита от манипуляций, основанных на нарциссических паттернах поведения.", 
             url: "https://anti-ai-narc-cycle.vercel.app/", 
-            isRutube: false, 
-            isNew: true, 
+            isNew: false, 
             specialBadge: "психология" 
         },
         { 
             title: "🧩 Анти-ИИ: Мозаика", 
             icon: "🧩🎨", 
-            desc: "Игра-головоломка для тренировки внимания и распознавания визуальных паттернов, дипфейков и манипуляций.", 
+            desc: "Игра-головоломка для тренировки внимания и распознавания визуальных паттернов и дипфейков.", 
             url: "https://anti-ai-mosaic.vercel.app/", 
-            isRutube: false, 
-            isNew: true, 
+            isNew: false, 
             specialBadge: "головоломка" 
         },
         { 
             title: "🧩 Анти-ИИ: Мозаика (Визуал)", 
             icon: "🧩👁️", 
-            desc: "Тренировка человеческого зрения через пазлы и визуальные задачи. Развитие критического восприятия изображений.", 
+            desc: "Тренировка человеческого зрения через пазлы и визуальные задачи.", 
             url: "https://human-vision-puzzle.vercel.app/", 
-            isRutube: false, 
-            isNew: true, 
+            isNew: false, 
             specialBadge: "зрение" 
         },
-
-        // === НОВЫЕ ПРОЕКТЫ (Механик + Тетрис) ===
         { 
-            title: "🏎️ Анти ИИ Механик", 
+            title: "🏎️ Анти ИИ Механик: Коленвал", 
             icon: "🏎️⚙️", 
             desc: "Коленвал, Шатун и Поршень — разбор двигателя.", 
             url: "https://anti-ai-mechanic-lesson-2-timing-me.vercel.app/", 
-            isRutube: false, 
-            isNew: true, 
+            isNew: false, 
             specialBadge: "механика" 
         },
         { 
-            title: "🏎️ Анти ИИ Механик", 
+            title: "🏎️ Анти ИИ Механик: ГРМ", 
             icon: "🏎️🔧", 
             desc: "Газораспределительный механизм (ГРМ) — принципы работы.", 
             url: "https://anti-ai-mechanic-lesson-3-transmiss.vercel.app/", 
-            isRutube: false, 
-            isNew: true, 
+            isNew: false, 
             specialBadge: "ГРМ" 
         },
         { 
-            title: "🏎️ Анти ИИ Механик", 
+            title: "🏎️ Анти ИИ Механик: Трансмиссия", 
             icon: "🏎️🚗", 
             desc: "Трансмиссия и Сцепление — основы трансмиссии.", 
             url: "https://anti-ai-mechanic-lesson-4-turbochar.vercel.app/", 
-            isRutube: false, 
-            isNew: true, 
+            isNew: false, 
             specialBadge: "трансмиссия" 
         },
         { 
-            title: "🏎️ Анти ИИ Механик", 
+            title: "🏎️ Анти ИИ Механик: Турбонаддув", 
             icon: "🏎️💨", 
             desc: "ТУРБОНАДДУВ — как работает турбина.", 
             url: "https://anti-ai-mechanic-lesson-4-turbochar.vercel.app/", 
-            isRutube: false, 
-            isNew: true, 
+            isNew: false, 
             specialBadge: "турбо" 
         },
         { 
@@ -536,60 +613,52 @@
             icon: "🧩🎮", 
             desc: "Классический тетрис с механикой блоков. Тренировка реакции и внимания.", 
             url: "https://anti-ai-tetris.vercel.app/", 
-            isRutube: false, 
-            isNew: true, 
+            isNew: false, 
             specialBadge: "игра" 
         },
-
-        // === НОВЫЕ ПРОЕКТЫ (ранее добавленные) ===
         { 
             title: "👁️ Анти ИИ Взгляд", 
             icon: "👁️🛡️", 
-            desc: "Система безопасности для незрячих. Предупреждает о ямах, лужах, ветках, деревьях, ступеньках. Работает офлайн.", 
+            desc: "Система безопасности для незрячих. Предупреждает о ямах, лужах, ветках. Работает офлайн.", 
             url: "https://anti-ai-glance.vercel.app/", 
-            isRutube: false, 
-            isNew: true, 
+            isNew: false, 
             specialBadge: "👁️ для незрячих" 
         },
         { 
             title: "👁️ Анти-ИИ Визометр (Детский)", 
             icon: "👁️🧒", 
-            desc: "Проверка остроты зрения и обучение распознаванию визуальных дипфейков для детей через тест «выбери реальное».", 
+            desc: "Проверка остроты зрения и обучение распознаванию визуальных дипфейков для детей.", 
             url: "https://anti-ai-visometer-kids.vercel.app/", 
-            isRutube: false, 
-            isNew: true, 
+            isNew: false, 
             specialBadge: "🧒 детский" 
         },
         { 
             title: "🧭 Анти ИИ Навигатор (Прямо)", 
             icon: "🧭🚶", 
-            desc: "Голосовой навигатор помогает идти прямо. Он помогает человеку идти в заданном направлении и не сбиться с пути.", 
+            desc: "Голосовой навигатор помогает идти прямо и не сбиться с пути.", 
             url: "https://anti-ai-navigator-straight.vercel.app/", 
-            isRutube: false, 
-            isNew: true, 
+            isNew: false, 
             specialBadge: "🧭 навигация" 
         },
-        
-        // === СУЩЕСТВУЮЩИЕ ПРОЕКТЫ ===
-        { title: "🧠 Анти ИИ Проверка слуха (память)", icon: "👂🧠", desc: "Тренировка памяти и слухового внимания.", url: "https://anti-ai-hearing-test-memory-trainin.vercel.app/", isRutube: false, isNew: false, specialBadge: "🎧 память" },
-        { title: "⚡ Анти ИИ Проверка слуха (быстрая)", icon: "👂⚡", desc: "Экспресс-тренировка памяти и скорости реакции.", url: "https://anti-ai-hearing-test-fast.vercel.app/", isRutube: false, isNew: false, specialBadge: "🚀 быстрая" },
-        { title: "🐢 Анти ИИ Проверка слуха (медленная)", icon: "👂🐢", desc: "Размеренная тренировка памяти и слуха.", url: "https://anti-ai-hearing-test-slow-memory-tr.vercel.app/", isRutube: false, isNew: false, specialBadge: "🎵 медленная" },
-        { title: "📊 Анти-ИИ Аудиометр", icon: "👂📊", desc: "Профессиональный аудиометр для оценки чувствительности слуха.", url: "https://anti-ai-audiometer.vercel.app/", isRutube: false, isNew: false, specialBadge: "🔊 точный" },
-        { title: "📝 Анти ИИ Считаем до 10", icon: "📝🔢", desc: "Интерактивное обучение счёту для детей.", url: "https://anti-ai-count-to-10.vercel.app/", isRutube: false, isNew: false },
-        { title: "🪞 Анти ИИ Электронное зеркало", icon: "🪞✨", desc: "Цифровое зеркало для самодиагностики.", url: "https://anti-ai-electronic-mirror.vercel.app/", isRutube: false, isNew: false },
-        { title: "📏 Анти-ИИ Расстояние", icon: "📏📐", desc: "Измерение расстояния от камеры до лица.", url: "https://anti-ai-distance.vercel.app/", isRutube: false, isNew: false },
-        { title: "🛡️ Защита от телефонных мошенников", icon: "📞🛡️", desc: "Блокировка телефонных атак.", url: "https://anti-ai-shield.vercel.app/", isRutube: false, isNew: false },
-        { title: "🏫 Защита от Школьного буллинга", icon: "🏫", desc: "Предотвращение травли.", url: "https://anti-bullying-app-one.vercel.app/", isRutube: false, isNew: false },
-        { title: "🐾 Анти ИИ: Животные поют", icon: "🐾🎵", desc: "Весёлые песни животных.", url: "https://anti-ai-animals.vercel.app/", isRutube: false, isNew: false },
-        { title: "🧘 Анти-ИИ Стресс", icon: "🧘🌿", desc: "Медитации и техники расслабления.", url: "https://anti-ai-stress.vercel.app/", isRutube: false, isNew: false },
-        { title: "📱 Анти ИИ Штрих-код", icon: "📱🔍", desc: "Сканирование товаров.", url: "https://anti-ai-barcode.vercel.app/", isRutube: false, isNew: false },
-        { title: "✨ Анти ИИ Космос", icon: "✨🌌", desc: "3D-атлас звёзд.", url: "https://anti-ai-cosmos.vercel.app/", isRutube: false, isNew: false },
-        { title: "🚗 Анти ИИ Автомобиль", icon: "🚗⚡", desc: "Помощник водителя.", url: "https://anti-ai-auto.vercel.app/", isRutube: false, isNew: false },
-        { title: "🧠 Анти ИИ Память", icon: "🧠📚", desc: "Тренировка мозга.", url: "https://anti-ai-memory.vercel.app/", isRutube: false, isNew: false },
-        { title: "🔐 Анти ИИ Пароли", icon: "🔐🔑", desc: "Генератор паролей.", url: "https://anti-ai-passwords.vercel.app/", isRutube: false, isNew: false },
-        { title: "📐 Анти ИИ Уровень", icon: "📐📏", desc: "Цифровой уровень.", url: "https://anti-ai-level.vercel.app/", isRutube: false, isNew: false },
-        { title: "🥁 Анти ИИ Барабан (Метроном)", icon: "🥁🎛️", desc: "Профессиональный метроном.", url: "https://anti-ai-drum-metronome.vercel.app/", isRutube: false, isNew: false },
-        { title: "✨ ВолшебствО | Rutube", icon: "🎬✨", desc: "Видео-уроки цифровой гигиены.", url: "https://rutube.ru/channel/24404224/", isRutube: true, isNew: false }
+        { title: "🧠 Анти ИИ Проверка слуха (память)", icon: "👂🧠", desc: "Тренировка памяти и слухового внимания.", url: "https://anti-ai-hearing-test-memory-trainin.vercel.app/", isNew: false, specialBadge: "🎧 память" },
+        { title: "⚡ Анти ИИ Проверка слуха (быстрая)", icon: "👂⚡", desc: "Экспресс-тренировка памяти и скорости реакции.", url: "https://anti-ai-hearing-test-fast.vercel.app/", isNew: false, specialBadge: "🚀 быстрая" },
+        { title: "🐢 Анти ИИ Проверка слуха (медленная)", icon: "👂🐢", desc: "Размеренная тренировка памяти и слуха.", url: "https://anti-ai-hearing-test-slow-memory-tr.vercel.app/", isNew: false, specialBadge: "🎵 медленная" },
+        { title: "📊 Анти-ИИ Аудиометр", icon: "👂📊", desc: "Профессиональный аудиометр для оценки чувствительности слуха.", url: "https://anti-ai-audiometer.vercel.app/", isNew: false, specialBadge: "🔊 точный" },
+        { title: "📝 Анти ИИ Считаем до 10", icon: "📝🔢", desc: "Интерактивное обучение счёту для детей.", url: "https://anti-ai-count-to-10.vercel.app/", isNew: false, specialBadge: "дети" },
+        { title: "🪞 Анти ИИ Электронное зеркало", icon: "🪞✨", desc: "Цифровое зеркало для самодиагностики.", url: "https://anti-ai-electronic-mirror.vercel.app/", isNew: false, specialBadge: "здоровье" },
+        { title: "📏 Анти-ИИ Расстояние", icon: "📏📐", desc: "Измерение расстояния от камеры до лица.", url: "https://anti-ai-distance.vercel.app/", isNew: false, specialBadge: "инструмент" },
+        { title: "🛡️ Защита от телефонных мошенников", icon: "📞🛡️", desc: "Блокировка телефонных атак.", url: "https://anti-ai-shield.vercel.app/", isNew: false, specialBadge: "защита" },
+        { title: "🏫 Защита от Школьного буллинга", icon: "🏫", desc: "Предотвращение травли.", url: "https://anti-bullying-app-one.vercel.app/", isNew: false, specialBadge: "безопасность" },
+        { title: "🐾 Анти ИИ: Животные поют", icon: "🐾🎵", desc: "Весёлые песни животных.", url: "https://anti-ai-animals.vercel.app/", isNew: false, specialBadge: "дети" },
+        { title: "🧘 Анти-ИИ Стресс", icon: "🧘🌿", desc: "Медитации и техники расслабления.", url: "https://anti-ai-stress.vercel.app/", isNew: false, specialBadge: "здоровье" },
+        { title: "📱 Анти ИИ Штрих-код", icon: "📱🔍", desc: "Сканирование товаров.", url: "https://anti-ai-barcode.vercel.app/", isNew: false, specialBadge: "инструмент" },
+        { title: "✨ Анти ИИ Космос", icon: "✨🌌", desc: "3D-атлас звёзд.", url: "https://anti-ai-cosmos.vercel.app/", isNew: false, specialBadge: "образование" },
+        { title: "🚗 Анти ИИ Автомобиль", icon: "🚗⚡", desc: "Помощник водителя.", url: "https://anti-ai-auto.vercel.app/", isNew: false, specialBadge: "авто" },
+        { title: "🧠 Анти ИИ Память", icon: "🧠📚", desc: "Тренировка мозга.", url: "https://anti-ai-memory.vercel.app/", isNew: false, specialBadge: "мозг" },
+        { title: "🔐 Анти ИИ Пароли", icon: "🔐🔑", desc: "Генератор паролей.", url: "https://anti-ai-passwords.vercel.app/", isNew: false, specialBadge: "безопасность" },
+        { title: "📐 Анти ИИ Уровень", icon: "📐📏", desc: "Цифровой уровень.", url: "https://anti-ai-level.vercel.app/", isNew: false, specialBadge: "инструмент" },
+        { title: "🥁 Анти ИИ Барабан (Метроном)", icon: "🥁🎛️", desc: "Профессиональный метроном.", url: "https://anti-ai-drum-metronome.vercel.app/", isNew: false, specialBadge: "музыка" },
+        { title: "✨ ВолшебствО | Rutube", icon: "🎬✨", desc: "Авторский музыкальный канал: детские песни-сказки, лирика, юмор.", url: "https://rutube.ru/channel/24404224/", isRutube: true, isNew: false, specialBadge: "музыка" }
     ];
 
     function renderProjects() {
@@ -603,7 +672,7 @@
             if (proj.isRutube) card.classList.add('rutube-card');
             
             let badgeHtml = '<span class="badge-offline">⚡ оффлайн</span>';
-            if (proj.specialBadge) badgeHtml += ` <span class="hearing-badge">${proj.specialBadge}</span>`;
+            if (proj.specialBadge) badgeHtml += ` <span class="special-badge">${proj.specialBadge}</span>`;
             if (proj.isNew) badgeHtml += ' <span class="new-badge">НОВОЕ</span>';
             
             card.innerHTML = `
