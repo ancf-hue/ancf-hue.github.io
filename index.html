@@ -378,7 +378,163 @@
     
     const projectsData = [
         // ==========================================
-        // 🆕 НОВЫЕ ПРОЕКТЫ (В САМОМ ВЕРХУ)
+        // 🆕 НОВЫЕ ПРОЕКТЫ (ДОБАВЛЕНЫ ИЗ GITHUB)
+        // ==========================================
+        { 
+            title: "🏋️ Анти-ИИ Гимнастика для глаз", 
+            icon: "👁️🏋️", 
+            desc: "Упражнения для снятия усталости и тренировки глазных мышц. Офлайн-тренажёр без интернета.", 
+            url: "https://ancf-hue.github.io/anti-ai-eyes-gym", 
+            isNew: true, 
+            specialBadge: "👁️ здоровье" 
+        },
+        { 
+            title: "🕶️ Анти-ИИ Слепая зона", 
+            icon: "🕶️🚗", 
+            desc: "Обучение контролю слепых зон автомобиля. Безопасное вождение и парковка офлайн.", 
+            url: "https://ancf-hue.github.io/anti-ai-blind-zone", 
+            isNew: true, 
+            specialBadge: "🚗 авто" 
+        },
+        { 
+            title: "💡 Анти-ИИ Свет", 
+            icon: "💡🪄", 
+            desc: "Управление освещением и цветотерапия для улучшения настроения и концентрации.", 
+            url: "https://ancf-hue.github.io/Anti-AI-Light", 
+            isNew: true, 
+            specialBadge: "💡 инструмент" 
+        },
+        { 
+            title: "🔤 Анти-ИИ Алфавит", 
+            icon: "🔤🧒", 
+            desc: "Обучающая игра для детей: алфавит, буквы и слова без интернета. Тактильное обучение.", 
+            url: "https://ancf-hue.github.io/anti-ai-abc", 
+            isNew: true, 
+            specialBadge: "🧒 дети" 
+        },
+        { 
+            title: "✅ Qwen Fact Checker", 
+            icon: "✅🔍", 
+            desc: "Локальный инструмент для проверки фактов и верификации информации. Офлайн-фактчекер.", 
+            url: "https://ancf-hue.github.io/anti-ai-qwen-academy-Qwen-Fact-Checker", 
+            isNew: true, 
+            specialBadge: "✅ верификация" 
+        },
+        { 
+            title: "🎬 Анти-ИИ Кадр", 
+            icon: "🎬🖼️", 
+            desc: "Захват и извлечение кадров из видеофайлов. Работает полностью офлайн без потери качества.", 
+            url: "https://ancf-hue.github.io/anti-ai-video-frame-capturer", 
+            isNew: true, 
+            specialBadge: "🎬 видео" 
+        },
+        { 
+            title: "👁️ Анти-ИИ Осмотр", 
+            icon: "👁️🩺", 
+            desc: "Расширенная проверка остроты зрения, цветовосприятия и диагностика глаз.", 
+            url: "https://ancf-hue.github.io/anti-ai-vision-check", 
+            isNew: true, 
+            specialBadge: "👁️ зрение" 
+        },
+        { 
+            title: "✂️ Анти-ИИ Видео-ножницы", 
+            icon: "✂️🎥", 
+            desc: "Простой обрезчик видео без потери качества. Никакой облачной обработки, всё локально.", 
+            url: "https://ancf-hue.github.io/anti-ai-video-cutter", 
+            isNew: true, 
+            specialBadge: "✂️ видео" 
+        },
+        { 
+            title: "🖼️ Photo Converter Pro", 
+            icon: "🖼️🔄", 
+            desc: "Конвертация изображений в JPEG, PNG, WEBP. Офлайн, быстро и без потери качества.", 
+            url: "https://ancf-hue.github.io/photo-converter-pro", 
+            isNew: true, 
+            specialBadge: "🖼️ фото" 
+        },
+        { 
+            title: "🎭 DF Generator RU", 
+            icon: "🎭🤖", 
+            desc: "Генератор дипфейков для образовательных целей. Изучай технологии и защищайся от них.", 
+            url: "https://ancf-hue.github.io/df-generator-ru", 
+            isNew: true, 
+            specialBadge: "🎓 образование" 
+        },
+        { 
+            title: "📝 Редактор фото с текстом", 
+            icon: "📝🖌️", 
+            desc: "Добавляй подписи, стикеры и текст на фото. Простой графический редактор офлайн.", 
+            url: "https://ancf-hue.github.io/photo-editor-text", 
+            isNew: true, 
+            specialBadge: "🖌️ фото" 
+        },
+        { 
+            title: "🥁 Анти-ИИ Барабан-Шары", 
+            icon: "🥁🔴", 
+            desc: "Ритмическая игра для развития чувства такта, реакции и музыкального слуха.", 
+            url: "https://ancf-hue.github.io/Anti-AI-Drum-Balls", 
+            isNew: true, 
+            specialBadge: "🎵 музыка" 
+        },
+        { 
+            title: "🎓 Промпт-инженер (полный курс)", 
+            icon: "🎓💬", 
+            desc: "Полный курс по созданию эффективных промптов для нейросетей. От новичка до профи.", 
+            url: "https://ancf-hue.github.io/anti-ai-qwen-academy-prompt-engineer-", 
+            isNew: true, 
+            specialBadge: "🎓 курс" 
+        },
+        { 
+            title: "🧊 CubeCraft Pro", 
+            icon: "🧊🎮", 
+            desc: "3D-головоломка на развитие пространственного мышления и логики. Офлайн-игра.", 
+            url: "https://ancf-hue.github.io/cubecraft-pro-antiai", 
+            isNew: true, 
+            specialBadge: "🎮 игра" 
+        },
+        { 
+            title: "🔷 Собери кубики", 
+            icon: "🔷🧩", 
+            desc: "Игра на память и внимание: найди пары одинаковых кубиков. Тренировка мозга.", 
+            url: "https://ancf-hue.github.io/match-cubes-collection", 
+            isNew: true, 
+            specialBadge: "🧩 игра" 
+        },
+        { 
+            title: "🎵 20 ритмов", 
+            icon: "🎵🥁", 
+            desc: "Тренировка музыкального слуха и чувства ритма. 20 разнообразных упражнений.", 
+            url: "https://ancf-hue.github.io/anti-ai-20-ritmov", 
+            isNew: true, 
+            specialBadge: "🎵 музыка" 
+        },
+        { 
+            title: "🚁 Симулятор дрона (Урок 1: Цель)", 
+            icon: "🚁🎯", 
+            desc: "Обучение пилотированию БПЛА: выбор цели и основы управления квадрокоптером.", 
+            url: "https://ancf-hue.github.io/-Anti-AI-Qwen-UAV-Simulator-Lesson-1-Target-", 
+            isNew: true, 
+            specialBadge: "🚁 дрон" 
+        },
+        { 
+            title: "🚁 Симулятор дрона (Урок 2: Маршрут)", 
+            icon: "🚁🗺️", 
+            desc: "Навигация и полёт по маршруту. Продвинутые техники пилотирования БПЛА.", 
+            url: "https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-2", 
+            isNew: true, 
+            specialBadge: "🚁 дрон" 
+        },
+        { 
+            title: "🎓 Специалист по дипфейкам", 
+            icon: "🎓🕵️", 
+            desc: "Профессиональная программа по детекции deepfake-контента. TensorFlow Lite и визуальный анализ.", 
+            url: "https://ancf-hue.github.io/-anti-ai-qwen-academy--Deepfake-Detection-Specialist-", 
+            isNew: true, 
+            specialBadge: "🎓 безопасность" 
+        },
+
+        // ==========================================
+        // 🆕 ПРЕДЫДУЩИЕ НОВЫЕ ПРОЕКТЫ
         // ==========================================
         { 
             title: "🐾 Анти-ИИ Следопыт", 
