@@ -74,19 +74,21 @@
         .error-toast { position: fixed; bottom: 20px; left: 20px; right: 20px; background: #dc2626; color: white; padding: 12px 20px; border-radius: 12px; font-size: 14px; text-align: center; z-index: 1000; display: none; }
 
         /* ==========================================
-           СТИЛИ ЧАТ-БОТА (ОФФЛАЙН, ПОЛНЫЙ ДОСТУП К ДАННЫМ)
+           СТИЛИ ЧАТ-БОТА (УВЕЛИЧЕННЫЙ РАЗМЕР + КРУПНЫЙ ШРИФТ)
            ========================================== */
         .chatbot-toggle {
-            position: fixed; bottom: 25px; right: 25px; width: 60px; height: 60px;
+            position: fixed; bottom: 25px; right: 25px; width: 64px; height: 64px;
             border-radius: 50%; background: var(--card-bg); border: 2px solid var(--neon);
-            color: var(--neon); font-size: 26px; cursor: pointer; z-index: 2000;
+            color: var(--neon); font-size: 28px; cursor: pointer; z-index: 2000;
             display: flex; align-items: center; justify-content: center;
             box-shadow: 0 0 15px var(--neon-glow); transition: all 0.3s ease;
         }
         .chatbot-toggle:hover { transform: scale(1.1); background: var(--neon); color: #03070c; }
         
         .chatbot-window {
-            position: fixed; bottom: 100px; right: 25px; width: 360px; max-height: 520px;
+            position: fixed; bottom: 100px; right: 25px; 
+            width: min(720px, 95vw); 
+            max-height: min(900px, 85vh); 
             background: var(--card-bg); border: 1px solid var(--neon); border-radius: 16px;
             z-index: 2000; display: none; flex-direction: column;
             box-shadow: 0 10px 40px rgba(0,0,0,0.6); overflow: hidden;
@@ -95,23 +97,28 @@
         @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         
         .chat-header {
-            background: rgba(0, 245, 160, 0.08); padding: 14px 16px;
+            background: rgba(0, 245, 160, 0.08); padding: 18px 20px;
             border-bottom: 1px solid var(--border-dim); display: flex;
             justify-content: space-between; align-items: center;
         }
-        .chat-header h3 { font-size: 14px; color: var(--neon); margin: 0; display: flex; align-items: center; gap: 8px; }
-        .chat-status { width: 8px; height: 8px; background: var(--neon); border-radius: 50%; display: inline-block; box-shadow: 0 0 8px var(--neon); }
-        .chat-close { background: none; border: none; color: #9ca3af; font-size: 24px; cursor: pointer; line-height: 1; transition: 0.2s; }
+        .chat-header h3 { 
+            font-size: 20px; /* УВЕЛИЧЕНО */
+            color: var(--neon); margin: 0; display: flex; align-items: center; gap: 10px; font-weight: 700; 
+        }
+        .chat-status { width: 10px; height: 10px; background: var(--neon); border-radius: 50%; display: inline-block; box-shadow: 0 0 8px var(--neon); }
+        .chat-close { background: none; border: none; color: #9ca3af; font-size: 32px; cursor: pointer; line-height: 1; transition: 0.2s; }
         .chat-close:hover { color: #fff; }
         
         .chat-messages {
-            flex: 1; padding: 16px; overflow-y: auto; display: flex;
-            flex-direction: column; gap: 12px; max-height: 360px;
+            flex: 1; padding: 20px; overflow-y: auto; display: flex;
+            flex-direction: column; gap: 16px; 
+            max-height: 650px; 
             scrollbar-width: thin; scrollbar-color: var(--border-dim) transparent;
         }
         .message {
-            max-width: 90%; padding: 12px 16px; border-radius: 14px;
-            font-size: 13px; line-height: 1.5; word-wrap: break-word;
+            max-width: 90%; padding: 16px 20px; border-radius: 16px;
+            font-size: 18px; /* УВЕЛИЧЕНО */
+            line-height: 1.5; word-wrap: break-word;
         }
         .message.bot {
             background: #1f2a36; color: #eef2ff; align-self: flex-start;
@@ -119,38 +126,50 @@
         }
         .message.user {
             background: var(--neon); color: #03070c; align-self: flex-end;
-            border-bottom-right-radius: 4px; font-weight: 600;
+            border-bottom-right-radius: 4px; font-weight: 700;
         }
-        /* Стили для форматирования внутри сообщений бота */
-        .message.bot b { color: var(--neon); font-size: 14px; display: block; margin-bottom: 6px; }
+        .message.bot b { 
+            color: var(--neon); font-size: 20px; /* УВЕЛИЧЕНО */
+            display: block; margin-bottom: 8px; 
+        }
         .message.bot .proj-link { 
-            display: inline-block; margin-top: 8px; color: #03070c; background: var(--neon); 
-            padding: 6px 12px; border-radius: 20px; text-decoration: none; font-weight: 700; font-size: 12px;
+            display: inline-block; margin-top: 10px; color: #03070c; background: var(--neon); 
+            padding: 10px 18px; border-radius: 24px; text-decoration: none; font-weight: 800; font-size: 16px; /* УВЕЛИЧЕНО */
         }
-        .message.bot .proj-link:hover { box-shadow: 0 0 10px var(--neon-glow); }
-        .message.bot ul { margin: 8px 0 0 16px; padding: 0; }
-        .message.bot li { margin-bottom: 6px; }
-        .message.bot a.inline-link { color: var(--neon); text-decoration: underline; word-break: break-all; }
+        .message.bot .proj-link:hover { box-shadow: 0 0 15px var(--neon-glow); }
+        .message.bot ul { margin: 10px 0 0 20px; padding: 0; }
+        .message.bot li { margin-bottom: 8px; font-size: 17px; }
+        .message.bot a.inline-link { color: var(--neon); text-decoration: underline; word-break: break-all; font-size: 17px; }
         
         .chat-input-area {
-            padding: 12px; border-top: 1px solid var(--border-dim); display: flex; gap: 8px;
+            padding: 16px; border-top: 1px solid var(--border-dim); display: flex; gap: 12px;
             background: rgba(10, 12, 15, 0.5);
         }
         .chat-input {
             flex: 1; background: #0a0c0f; border: 1px solid var(--border-dim);
-            color: #eef2ff; padding: 10px 14px; border-radius: 20px;
-            font-size: 13px; outline: none; transition: 0.2s;
+            color: #eef2ff; padding: 14px 18px; border-radius: 24px;
+            font-size: 18px; /* УВЕЛИЧЕНО */
+            outline: none; transition: 0.2s;
         }
         .chat-input:focus { border-color: var(--neon); }
         .chat-send {
-            background: var(--neon); color: #03070c; border: none; width: 38px; height: 38px;
+            background: var(--neon); color: #03070c; border: none; width: 48px; height: 48px; /* УВЕЛИЧЕНО */
             border-radius: 50%; cursor: pointer; display: flex; align-items: center;
-            justify-content: center; font-size: 16px; transition: 0.2s; flex-shrink: 0;
+            justify-content: center; font-size: 22px; /* УВЕЛИЧЕНО */
+            transition: 0.2s; flex-shrink: 0;
         }
-        .chat-send:hover { box-shadow: 0 0 12px var(--neon-glow); transform: scale(1.05); }
+        .chat-send:hover { box-shadow: 0 0 15px var(--neon-glow); transform: scale(1.05); }
         
-        @media (max-width: 400px) {
-            .chatbot-window { width: calc(100vw - 30px); right: 15px; bottom: 90px; }
+        @media (max-width: 768px) {
+            .chatbot-window { 
+                width: calc(100vw - 20px); 
+                right: 10px; 
+                bottom: 90px; 
+                max-height: 80vh; 
+            }
+            .message { font-size: 16px; padding: 14px 16px; }
+            .message.bot b { font-size: 18px; }
+            .chat-input { font-size: 16px; }
         }
     </style>
 </head>
@@ -289,7 +308,7 @@
         
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.getAttribute('data-i18n');
-            if (i18n[currentLang][key]) el.innerHTML = i18n[currentLang][key]; // innerHTML to support <i> tags in welcome
+            if (i18n[currentLang][key]) el.innerHTML = i18n[currentLang][key];
         });
         document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
             const key = el.getAttribute('data-i18n-placeholder');
@@ -298,7 +317,6 @@
         renderProjects();
     }
 
-    // МАССИВ ДАННЫХ ВСЕХ ПРОЕКТОВ (Источник знаний для бота)
     const rawProjects = [
         ["the-republic-of-cognitive-sovereignty", "🏛️🧠", "Республика когнитивного суверенитета", "Republic of Cognitive Sovereignty", "Философский и практический манифест цифровой автономии, защиты мышления и независимости от алгоритмов Big Tech.", "Philosophical and practical manifesto of digital autonomy, protection of thinking and independence from Big Tech algorithms.", "манифест", true],
         ["anti-ai-golf-kids", "🏌️⛳", "Анти-ИИ Гольф (Детский)", "Anti-AI Golf (Kids)", "Образовательная программа из 10 уроков: развитие точности мышления, цифровой гигиены и защиты от ИИ-манипуляций через метафору игры в гольф.", "10-lesson educational program: developing precision of thought, digital hygiene and protection from AI manipulation through the metaphor of golf.", "🧒 дети", true],
@@ -481,9 +499,6 @@
         }
     }
 
-    // ==========================================
-    // УМНЫЙ ОФФЛАЙН ЧАТ-БОТ (ПОИСК ПО ВСЕМ ПРОЕКТАМ)
-    // ==========================================
     const chatbotToggle = document.getElementById('chatbotToggle');
     const chatbotWindow = document.getElementById('chatbotWindow');
     const chatbotClose = document.getElementById('chatbotClose');
@@ -518,7 +533,6 @@
         if (e.key === 'Enter') sendMessage();
     });
 
-    // Изменено на innerHTML для поддержки форматирования (жирный шрифт, переносы, ссылки)
     function addMessage(htmlContent, sender) {
         const div = document.createElement('div');
         div.className = `message ${sender}`;
@@ -530,7 +544,6 @@
     function getBotResponse(input) {
         const lang = currentLang;
 
-        // 1. Базовые команды
         if (input.includes('привет') || input.includes('здравствуй') || input.includes('hi') || input.includes('hello')) {
             return lang === 'ru' 
                 ? "Приветствую! Я знаю всё о 100+ проектах. Напишите часть названия (например: <i>\"тетрис\"</i>, <i>\"урок 5\"</i>, <i>\"механик\"</i>, <i>\"зрение\"</i>), и я выдам полную карточку проекта." 
@@ -542,17 +555,13 @@
                 : "Projects are free. You can support development by transferring to: <b>8-920-227-56-76</b> (SBP, any bank). Or write to an.cf@yandex.ru";
         }
 
-        // 2. ПОИСК ПО БАЗЕ ПРОЕКТОВ
-        // Ищем совпадения в slug, названии (RU/EN), описании (RU/EN) или бейдже
         const matches = rawProjects.filter(p => {
             const searchStr = `${p[0]} ${p[2]} ${p[3]} ${p[4]} ${p[5]} ${p[6] || ''}`.toLowerCase();
-            // Разбиваем запрос на слова для более гибкого поиска (например, "урок 5" найдёт и "урок", и "5")
             const words = input.split(/\s+/).filter(w => w.length > 1);
             return words.every(word => searchStr.includes(word));
         });
 
         if (matches.length === 1) {
-            // ТОЧНОЕ СОВПАДЕНИЕ: выдаём полную карточку
             const p = matches[0];
             const title = lang === 'ru' ? p[2] : p[3];
             const desc = lang === 'ru' ? p[4] : (p[5] || p[4]);
@@ -563,18 +572,16 @@
             return `<b>${p[1]} ${title} ${badge}${isNew}</b><br><br>${desc}<br><br><a href="${url}" target="_blank" class="proj-link">${lang === 'ru' ? '🔗 Открыть проект' : '🔗 Open Project'}</a>`;
         
         } else if (matches.length > 1 && matches.length <= 5) {
-            // НЕСКОЛЬКО СОВПАДЕНИЙ: выводим список с краткой инфой
             let response = lang === 'ru' ? `<b>Найдено проектов: ${matches.length}:</b><br><ul>` : `<b>Found ${matches.length} projects:</b><br><ul>`;
             matches.forEach(p => {
                 const title = lang === 'ru' ? p[2] : p[3];
                 const url = p[8] || `https://ancf-hue.github.io/${p[0]}`;
-                response += `<li>${p[1]} <a href="${url}" target="_blank" class="inline-link">${title}</a> <span style="color:#9ca3af; font-size:11px;">[${p[6] || 'info'}]</span></li>`;
+                response += `<li>${p[1]} <a href="${url}" target="_blank" class="inline-link">${title}</a> <span style="color:#9ca3af; font-size:15px;">[${p[6] || 'info'}]</span></li>`;
             });
             response += `</ul><br><i>${lang === 'ru' ? 'Уточните запрос (например, добавьте номер урока), чтобы получить полное описание.' : 'Refine your query (e.g., add lesson number) to get full details.'}</i>`;
             return response;
         
         } else if (matches.length > 5) {
-            // СЛИШКОМ МНОГО СОВПАДЕНИЙ (например, запрос "урок" дал 25 результатов)
             let response = lang === 'ru' ? `<b>Найдено много совпадений (${matches.length}). Вот первые 4:</b><br><ul>` : `<b>Many matches found (${matches.length}). Here are the first 4:</b><br><ul>`;
             matches.slice(0, 4).forEach(p => {
                 const title = lang === 'ru' ? p[2] : p[3];
@@ -585,7 +592,6 @@
             return response;
         }
 
-        // 3. НИЧЕГО НЕ НАЙДЕНО
         return lang === 'ru'
             ? "Проект не найден. 💡 <b>Совет:</b> Попробуйте ввести часть названия или ключевое слово, например: <i>\"тетрис\"</i>, <i>\"урок 1\"</i>, <i>\"механик\"</i>, <i>\"зрение\"</i>, <i>\"БПЛА\"</i> или <i>\"рутуб\"</i>."
             : "Project not found. 💡 <b>Tip:</b> Try typing part of the name or a keyword, e.g., <i>\"tetris\"</i>, <i>\"lesson 1\"</i>, <i>\"mechanic\"</i>, <i>\"vision\"</i>, <i>\"UAV\"</i>, or <i>\"rutube\"</i>.";
@@ -595,6 +601,11 @@
         handleRedirectFrom404();
         applyLanguage();
         setupQRClick();
+        
+        setTimeout(() => {
+            chatbotWindow.classList.add('active');
+            setTimeout(() => chatInput.focus(), 300);
+        }, 2000);
     });
 </script>
 </body>
