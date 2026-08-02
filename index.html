@@ -21,290 +21,162 @@
             --border-dim: #2a2f36;
             --red-rutube: #ff4c4c;
         }
-        .hero {
-            background: radial-gradient(circle at 20% 30%, #0b1117, #030507);
-            padding: 2rem 1.5rem;
-            border-bottom: 2px solid var(--neon);
-        }
-        .hero-center {
-            max-width: 1300px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .header-logo {
-            width: 48px;
-            height: 48px;
-        }
-        h1 {
-            font-size: 2rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #ffffff 0%, var(--neon) 80%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-        .qr-area {
-            text-align: center;
-            background: rgba(17, 22, 28, 0.8);
-            padding: 8px 15px;
-            border-radius: 20px;
-            border: 1px solid var(--neon);
-            backdrop-filter: blur(8px);
-            cursor: pointer;
-            transition: 0.2s;
-        }
-        .qr-area:hover {
-            transform: scale(1.02);
-            box-shadow: 0 0 15px var(--neon-glow);
-        }
-        .qr-area p {
-            font-size: 0.65rem;
-            color: #9ca3af;
-            margin-top: 5px;
-        }
-        #qr-image {
-            width: 90px;
-            height: 90px;
-            border-radius: 12px;
-            display: block;
-        }
-        .hero-sub {
-            max-width: 1300px;
-            margin: 1rem auto 0;
-            text-align: center;
-        }
-        .sub {
-            color: #9ca3af;
-            font-size: 1rem;
-        }
-        .container {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem 3rem;
-        }
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-            gap: 1.8rem;
-            margin-bottom: 3rem;
-        }
-        .project-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-dim);
-            border-radius: 28px;
-            padding: 1.6rem 1.5rem 1.8rem;
-            transition: all 0.25s ease-in-out;
-            display: flex;
-            flex-direction: column;
-        }
-        .project-card:hover {
-            transform: translateY(-6px);
-            border-color: var(--neon);
-            box-shadow: 0 20px 30px -12px rgba(0, 245, 160, 0.2);
-            background: #121a21;
-        }
-        .card-icon {
-            font-size: 3.2rem;
-            margin-bottom: 1rem;
-        }
-        .card-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 0.6rem;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            flex-wrap: wrap;
-            line-height: 1.3;
-        }
-        .card-desc {
-            font-size: 0.95rem;
-            color: #b9c3d0;
-            margin-bottom: 1.6rem;
-            flex-grow: 1;
-        }
-        .project-btn {
-            background: transparent;
-            border: 1.5px solid var(--neon);
-            color: var(--neon);
-            text-align: center;
-            padding: 0.8rem 0;
-            border-radius: 60px;
-            font-weight: 600;
-            text-decoration: none;
-            display: block;
-            transition: 0.2s;
-        }
-        .project-btn:hover {
-            background: var(--neon);
-            color: #03070c;
-            box-shadow: 0 0 12px var(--neon);
-        }
-        .rutube-card {
-            border-left: 4px solid var(--red-rutube);
-        }
-        .rutube-card .project-btn {
-            border-color: var(--red-rutube);
-            color: #ff9696;
-        }
-        .rutube-card .project-btn:hover {
-            background: var(--red-rutube);
-            color: #000;
-        }
-        .support-hub {
-            background: linear-gradient(135deg, #0c111b, #03070f);
-            border-radius: 42px;
-            border: 1px solid #2d3748;
-            padding: 2.5rem 2rem;
-            text-align: center;
-            margin-top: 2rem;
-        }
-        .support-hub h2 {
-            font-size: 2rem;
-            background: linear-gradient(120deg, #c084fc, #60a5fa);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            margin-bottom: 1rem;
-        }
-        .phone-number {
-            font-size: 2.2rem;
-            font-weight: 800;
-            font-family: monospace;
-            background: #0f172a;
-            display: inline-block;
-            padding: 0.4rem 1.6rem;
-            border-radius: 70px;
-            border: 1px solid #3b82f6;
-            margin: 1rem 0;
-            color: #b9e0ff;
-        }
-        .support-note {
-            color: #8c9bb0;
-            font-size: 0.9rem;
-        }
-        .usa-card-link {
-            text-decoration: none;
-            display: block;
-            margin-top: 2rem;
-        }
-        .usa-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-top: 3px solid #ff5500;
-            border-radius: 16px;
-            padding: 20px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        .usa-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(255, 85, 0, 0.4);
-            box-shadow: 0 10px 25px -5px rgba(255, 85, 0, 0.2);
-        }
-        .usa-card-content {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .usa-card h3 {
-            margin: 0;
-            font-size: 16px;
-            color: #ff5500;
-            text-transform: uppercase;
-            font-family: 'Courier New', monospace;
-            letter-spacing: 1px;
-        }
-        .usa-card p {
-            margin: 6px 0 0 0;
-            font-size: 13px;
-            color: #94a3b8;
-            font-family: system-ui, sans-serif;
-            line-height: 1.4;
-        }
-        footer {
-            text-align: center;
-            padding: 2.2rem;
-            font-size: 0.8rem;
-            color: #4b5563;
-            border-top: 1px solid #1e293b;
-            margin-top: 2rem;
-        }
+
+        .lang-toggle { position: fixed; top: 20px; right: 20px; z-index: 1000; }
+        .lang-btn { background: rgba(17, 22, 28, 0.9); border: 1px solid var(--neon); color: var(--neon); padding: 8px 16px; border-radius: 30px; font-weight: 700; font-size: 0.85rem; cursor: pointer; backdrop-filter: blur(8px); transition: all 0.2s ease; display: flex; align-items: center; gap: 6px; box-shadow: 0 0 10px rgba(0, 245, 160, 0.1); }
+        .lang-btn:hover { background: var(--neon); color: #03070c; box-shadow: 0 0 15px var(--neon-glow); transform: translateY(-2px); }
+        .lang-btn .active-lang { text-decoration: underline; text-underline-offset: 4px; }
+
+        .hero { background: radial-gradient(circle at 20% 30%, #0b1117, #030507); padding: 2rem 1.5rem; border-bottom: 2px solid var(--neon); }
+        .hero-center { max-width: 1300px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .logo-area { display: flex; align-items: center; gap: 12px; }
+        .header-logo { width: 48px; height: 48px; }
+        h1 { font-size: 2rem; font-weight: 800; background: linear-gradient(135deg, #ffffff 0%, var(--neon) 80%); background-clip: text; -webkit-background-clip: text; color: transparent; }
+        .qr-area { text-align: center; background: rgba(17, 22, 28, 0.8); padding: 8px 15px; border-radius: 20px; border: 1px solid var(--neon); backdrop-filter: blur(8px); cursor: pointer; transition: 0.2s; }
+        .qr-area:hover { transform: scale(1.02); box-shadow: 0 0 15px var(--neon-glow); }
+        .qr-area p { font-size: 0.65rem; color: #9ca3af; margin-top: 5px; }
+        #qr-image { width: 90px; height: 90px; border-radius: 12px; display: block; }
+        .hero-sub { max-width: 1300px; margin: 1rem auto 0; text-align: center; }
+        .sub { color: #9ca3af; font-size: 1rem; }
+        .container { max-width: 1300px; margin: 0 auto; padding: 2rem 1.5rem 3rem; }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 1.8rem; margin-bottom: 3rem; }
+        .project-card { background: var(--card-bg); border: 1px solid var(--border-dim); border-radius: 28px; padding: 1.6rem 1.5rem 1.8rem; transition: all 0.25s ease-in-out; display: flex; flex-direction: column; }
+        .project-card:hover { transform: translateY(-6px); border-color: var(--neon); box-shadow: 0 20px 30px -12px rgba(0, 245, 160, 0.2); background: #121a21; }
+        .card-icon { font-size: 3.2rem; margin-bottom: 1rem; }
+        .card-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.6rem; color: #ffffff; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; line-height: 1.3; }
+        .card-desc { font-size: 0.9rem; color: #b9c3d0; margin-bottom: 1.6rem; flex-grow: 1; }
+        .project-btn { background: transparent; border: 1.5px solid var(--neon); color: var(--neon); text-align: center; padding: 0.8rem 0; border-radius: 60px; font-weight: 600; text-decoration: none; display: block; transition: 0.2s; }
+        .project-btn:hover { background: var(--neon); color: #03070c; box-shadow: 0 0 12px var(--neon); }
+        .rutube-card { border-left: 4px solid var(--red-rutube); }
+        .rutube-card .project-btn { border-color: var(--red-rutube); color: #ff9696; }
+        .rutube-card .project-btn:hover { background: var(--red-rutube); color: #000; }
+        .support-hub { background: linear-gradient(135deg, #0c111b, #03070f); border-radius: 42px; border: 1px solid #2d3748; padding: 2.5rem 2rem; text-align: center; margin-top: 2rem; }
+        .support-hub h2 { font-size: 2rem; background: linear-gradient(120deg, #c084fc, #60a5fa); background-clip: text; -webkit-background-clip: text; color: transparent; margin-bottom: 1rem; }
+        .phone-number { font-size: 2.2rem; font-weight: 800; font-family: monospace; background: #0f172a; display: inline-block; padding: 0.4rem 1.6rem; border-radius: 70px; border: 1px solid #3b82f6; margin: 1rem 0; color: #b9e0ff; }
+        .support-note { color: #8c9bb0; font-size: 0.9rem; }
+        .usa-card-link { text-decoration: none; display: block; margin-top: 2rem; }
+        .usa-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.08); border-top: 3px solid #ff5500; border-radius: 16px; padding: 20px; transition: all 0.3s ease; cursor: pointer; }
+        .usa-card:hover { transform: translateY(-4px); border-color: rgba(255, 85, 0, 0.4); box-shadow: 0 10px 25px -5px rgba(255, 85, 0, 0.2); }
+        .usa-card-content { display: flex; align-items: center; gap: 15px; }
+        .usa-card h3 { margin: 0; font-size: 16px; color: #ff5500; text-transform: uppercase; font-family: 'Courier New', monospace; letter-spacing: 1px; }
+        .usa-card p { margin: 6px 0 0 0; font-size: 13px; color: #94a3b8; font-family: system-ui, sans-serif; line-height: 1.4; }
+        footer { text-align: center; padding: 2.2rem; font-size: 0.8rem; color: #4b5563; border-top: 1px solid #1e293b; margin-top: 2rem; }
         @media (max-width: 650px) {
             .hero-center { flex-direction: column; gap: 12px; }
             .projects-grid { grid-template-columns: 1fr; }
             .phone-number { font-size: 1.6rem; }
             .usa-card-content { flex-direction: column; text-align: center; }
+            .lang-toggle { top: 15px; right: 15px; }
         }
-        .badge-offline {
-            font-size: 0.7rem;
-            background: #1f2a36;
-            display: inline-block;
-            padding: 0.2rem 0.6rem;
-            border-radius: 30px;
-            color: #9bb9d9;
+        .badge-offline { font-size: 0.7rem; background: #1f2a36; display: inline-block; padding: 0.2rem 0.6rem; border-radius: 30px; color: #9bb9d9; }
+        .new-badge { background: #00f5a0; color: #03070c; font-size: 0.65rem; padding: 0.2rem 0.6rem; border-radius: 20px; font-weight: 800; text-transform: uppercase; }
+        .special-badge { background: rgba(96, 165, 250, 0.15); color: #60a5fa; border: 1px solid rgba(96, 165, 250, 0.3); font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 30px; font-weight: 600; }
+        .error-toast { position: fixed; bottom: 20px; left: 20px; right: 20px; background: #dc2626; color: white; padding: 12px 20px; border-radius: 12px; font-size: 14px; text-align: center; z-index: 1000; display: none; }
+
+        /* ==========================================
+           СТИЛИ ЧАТ-БОТА (ОФФЛАЙН, ПОЛНЫЙ ДОСТУП К ДАННЫМ)
+           ========================================== */
+        .chatbot-toggle {
+            position: fixed; bottom: 25px; right: 25px; width: 60px; height: 60px;
+            border-radius: 50%; background: var(--card-bg); border: 2px solid var(--neon);
+            color: var(--neon); font-size: 26px; cursor: pointer; z-index: 2000;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 0 15px var(--neon-glow); transition: all 0.3s ease;
         }
-        .new-badge {
-            background: #00f5a0;
-            color: #03070c;
-            font-size: 0.65rem;
-            padding: 0.2rem 0.6rem;
-            border-radius: 20px;
-            font-weight: 800;
-            text-transform: uppercase;
+        .chatbot-toggle:hover { transform: scale(1.1); background: var(--neon); color: #03070c; }
+        
+        .chatbot-window {
+            position: fixed; bottom: 100px; right: 25px; width: 360px; max-height: 520px;
+            background: var(--card-bg); border: 1px solid var(--neon); border-radius: 16px;
+            z-index: 2000; display: none; flex-direction: column;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.6); overflow: hidden;
         }
-        .special-badge {
-            background: rgba(96, 165, 250, 0.15);
-            color: #60a5fa;
-            border: 1px solid rgba(96, 165, 250, 0.3);
-            font-size: 0.7rem;
-            padding: 0.2rem 0.6rem;
-            border-radius: 30px;
-            font-weight: 600;
+        .chatbot-window.active { display: flex; animation: slideUp 0.3s ease; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .chat-header {
+            background: rgba(0, 245, 160, 0.08); padding: 14px 16px;
+            border-bottom: 1px solid var(--border-dim); display: flex;
+            justify-content: space-between; align-items: center;
         }
-        .error-toast {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            right: 20px;
-            background: #dc2626;
-            color: white;
-            padding: 12px 20px;
-            border-radius: 12px;
-            font-size: 14px;
-            text-align: center;
-            z-index: 1000;
-            display: none;
+        .chat-header h3 { font-size: 14px; color: var(--neon); margin: 0; display: flex; align-items: center; gap: 8px; }
+        .chat-status { width: 8px; height: 8px; background: var(--neon); border-radius: 50%; display: inline-block; box-shadow: 0 0 8px var(--neon); }
+        .chat-close { background: none; border: none; color: #9ca3af; font-size: 24px; cursor: pointer; line-height: 1; transition: 0.2s; }
+        .chat-close:hover { color: #fff; }
+        
+        .chat-messages {
+            flex: 1; padding: 16px; overflow-y: auto; display: flex;
+            flex-direction: column; gap: 12px; max-height: 360px;
+            scrollbar-width: thin; scrollbar-color: var(--border-dim) transparent;
+        }
+        .message {
+            max-width: 90%; padding: 12px 16px; border-radius: 14px;
+            font-size: 13px; line-height: 1.5; word-wrap: break-word;
+        }
+        .message.bot {
+            background: #1f2a36; color: #eef2ff; align-self: flex-start;
+            border-bottom-left-radius: 4px; border: 1px solid var(--border-dim);
+        }
+        .message.user {
+            background: var(--neon); color: #03070c; align-self: flex-end;
+            border-bottom-right-radius: 4px; font-weight: 600;
+        }
+        /* Стили для форматирования внутри сообщений бота */
+        .message.bot b { color: var(--neon); font-size: 14px; display: block; margin-bottom: 6px; }
+        .message.bot .proj-link { 
+            display: inline-block; margin-top: 8px; color: #03070c; background: var(--neon); 
+            padding: 6px 12px; border-radius: 20px; text-decoration: none; font-weight: 700; font-size: 12px;
+        }
+        .message.bot .proj-link:hover { box-shadow: 0 0 10px var(--neon-glow); }
+        .message.bot ul { margin: 8px 0 0 16px; padding: 0; }
+        .message.bot li { margin-bottom: 6px; }
+        .message.bot a.inline-link { color: var(--neon); text-decoration: underline; word-break: break-all; }
+        
+        .chat-input-area {
+            padding: 12px; border-top: 1px solid var(--border-dim); display: flex; gap: 8px;
+            background: rgba(10, 12, 15, 0.5);
+        }
+        .chat-input {
+            flex: 1; background: #0a0c0f; border: 1px solid var(--border-dim);
+            color: #eef2ff; padding: 10px 14px; border-radius: 20px;
+            font-size: 13px; outline: none; transition: 0.2s;
+        }
+        .chat-input:focus { border-color: var(--neon); }
+        .chat-send {
+            background: var(--neon); color: #03070c; border: none; width: 38px; height: 38px;
+            border-radius: 50%; cursor: pointer; display: flex; align-items: center;
+            justify-content: center; font-size: 16px; transition: 0.2s; flex-shrink: 0;
+        }
+        .chat-send:hover { box-shadow: 0 0 12px var(--neon-glow); transform: scale(1.05); }
+        
+        @media (max-width: 400px) {
+            .chatbot-window { width: calc(100vw - 30px); right: 15px; bottom: 90px; }
         }
     </style>
 </head>
 <body>
 
+<div class="lang-toggle">
+    <button class="lang-btn" id="langToggle" onclick="toggleLanguage()">
+        <span id="langRu" class="active-lang">RU</span>
+        <span style="opacity: 0.5;">/</span>
+        <span id="langEn">EN</span>
+    </button>
+</div>
+
 <div class="hero">
     <div class="hero-center">
         <div class="logo-area">
             <img src="favicon.ico" alt="Anti-AI Shield Logo" class="header-logo" onerror="this.style.display='none'">
-            <h1>ANTI‑AI SHIELD</h1>
+            <h1 data-i18n="hero_title">ANTI‑AI SHIELD</h1>
         </div>
         <div class="qr-area" id="qrClickArea" title="Нажмите для копирования ссылки">
             <img id="qr-image" src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://ancf-hue.github.io/" alt="QR-код">
-            <p>Сканируй ↑</p>
+            <p data-i18n="qr_text">Сканируй ↑</p>
         </div>
     </div>
     <div class="hero-sub">
-        <div class="sub">Цифровая крепость · приватность без облаков · профессии будущего</div>
+        <div class="sub" data-i18n="hero_sub">Цифровая крепость · приватность без облаков · профессии будущего</div>
     </div>
 </div>
 
@@ -312,23 +184,21 @@
     <div class="projects-grid" id="dynamicProjects"></div>
 
     <div class="support-hub">
-        <h2>💙 Поддержать проекты</h2>
-        <p style="max-width: 500px; margin: 0 auto 0.8rem;">Все приложения бесплатны и без рекламы. Ваша помощь помогает развитию офлайн‑безопасности и образования.</p>
+        <h2 data-i18n="support_title">💙 Поддержать проекты</h2>
+        <p style="max-width: 500px; margin: 0 auto 0.8rem;" data-i18n="support_desc">Все приложения бесплатны и без рекламы. Ваша помощь помогает развитию офлайн‑безопасности и образования.</p>
         <div class="phone-number">8-920-227-56-76</div>
-        <div class="support-note">📱 Перевод по номеру телефона (СБП, любой банк)</div>
-        <div style="margin-top: 1rem; font-size: 0.8rem; color: #9ca3af;">✉️ По вопросам сотрудничества: an.cf@yandex.ru</div>
-        <div style="margin-top: 0.5rem; font-size: 0.8rem;">✨ Спасибо, что с нами — защищаем мир без слежки ✨</div>
+        <div class="support-note" data-i18n="support_phone_label">📱 Перевод по номеру телефона (СБП, любой банк)</div>
+        <div style="margin-top: 1rem; font-size: 0.8rem; color: #9ca3af;" data-i18n="support_email">✉️ По вопросам сотрудничества: an.cf@yandex.ru</div>
+        <div style="margin-top: 0.5rem; font-size: 0.8rem;" data-i18n="support_thanks">✨ Спасибо, что с нами — защищаем мир без слежки ✨</div>
     </div>
 
     <a href="https://ancf-hue.github.io/ai-core-autonomy" target="_blank" class="usa-card-link">
         <div class="usa-card">
             <div class="usa-card-content">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ff5500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                </svg>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ff5500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                 <div>
-                    <h3>A.I. Core Autonomy // USA Edition</h3>
-                    <p>«Анти-ИИ: Манифест Суверенной Личности». Двуязычный офлайн-симулятор против психологического взлома и нарциссических качелей Big Tech.</p>
+                    <h3 data-i18n="usa_title">A.I. Core Autonomy // USA Edition</h3>
+                    <p data-i18n="usa_desc">«Анти-ИИ: Манифест Суверенной Личности». Двуязычный офлайн-симулятор против психологического взлома и нарциссических качелей Big Tech.</p>
                 </div>
             </div>
         </div>
@@ -336,12 +206,248 @@
 </div>
 
 <footer>
-    © 2026 Anti‑AI Shield • Технологии для людей • 100% оффлайн-философия
+    <span data-i18n="footer_text">© 2026 Anti‑AI Shield • Технологии для людей • 100% оффлайн-философия</span>
 </footer>
 
 <div id="errorToast" class="error-toast"></div>
 
+<!-- ИНТЕРФЕЙС ОФФЛАЙН ЧАТ-БОТА -->
+<button class="chatbot-toggle" id="chatbotToggle" aria-label="Открыть чат">🛡️</button>
+<div class="chatbot-window" id="chatbotWindow">
+    <div class="chat-header">
+        <h3><span class="chat-status"></span> <span data-i18n="chat_title">Офлайн-Ассистент</span></h3>
+        <button class="chat-close" id="chatbotClose">×</button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+        <div class="message bot" data-i18n="chat_welcome">Привет! Я знаю всё о 100+ проектах Anti-AI Shield. Напишите часть названия (например: <i>"тетрис"</i>, <i>"урок 5"</i>, <i>"механик"</i>, <i>"зрение"</i>), и я дам полную информацию и ссылку.</div>
+    </div>
+    <div class="chat-input-area">
+        <input type="text" class="chat-input" id="chatInput" data-i18n-placeholder="chat_placeholder" placeholder="Спросите о любом проекте..." autocomplete="off">
+        <button class="chat-send" id="chatSend">➤</button>
+    </div>
+</div>
+
 <script>
+    const i18n = {
+        ru: {
+            hero_title: "ANTI‑AI SHIELD",
+            hero_sub: "Цифровая крепость · приватность без облаков · профессии будущего",
+            qr_text: "Сканируй ↑",
+            support_title: "💙 Поддержать проекты",
+            support_desc: "Все приложения бесплатны и без рекламы. Ваша помощь помогает развитию офлайн‑безопасности и образования.",
+            support_phone_label: "📱 Перевод по номеру телефона (СБП, любой банк)",
+            support_email: "✉️ По вопросам сотрудничества: an.cf@yandex.ru",
+            support_thanks: "✨ Спасибо, что с нами — защищаем мир без слежки ✨",
+            usa_title: "A.I. Core Autonomy // USA Edition",
+            usa_desc: "«Анти-ИИ: Манифест Суверенной Личности». Двуязычный офлайн-симулятор против психологического взлома и нарциссических качелей Big Tech.",
+            footer_text: "© 2026 Anti‑AI Shield • Технологии для людей • 100% оффлайн-философия",
+            btn_open: "ОТКРЫТЬ ПРОЕКТ →",
+            badge_offline: "⚡ оффлайн",
+            badge_new: "НОВОЕ",
+            toast_copy_success: "✅ Ссылка скопирована: ",
+            toast_copy_error: "❌ Не удалось скопировать ссылку",
+            chat_title: "Офлайн-Ассистент",
+            chat_welcome: "Привет! Я знаю всё о 100+ проектах Anti-AI Shield. Напишите часть названия (например: <i>\"тетрис\"</i>, <i>\"урок 5\"</i>, <i>\"механик\"</i>, <i>\"зрение\"</i>), и я дам полную информацию и ссылку.",
+            chat_placeholder: "Спросите о любом проекте..."
+        },
+        en: {
+            hero_title: "ANTI‑AI SHIELD",
+            hero_sub: "Digital fortress · cloudless privacy · professions of the future",
+            qr_text: "Scan me ↑",
+            support_title: "💙 Support the projects",
+            support_desc: "All apps are free and ad-free. Your help supports offline security and education.",
+            support_phone_label: "📱 Transfer by phone number (SBP, any bank)",
+            support_email: "✉️ For cooperation: an.cf@yandex.ru",
+            support_thanks: "✨ Thank you for being with us — protecting the world without surveillance ✨",
+            usa_title: "A.I. Core Autonomy // USA Edition",
+            usa_desc: "\"Anti-AI: Manifesto of the Sovereign Individual\". Bilingual offline simulator against psychological hacking and Big Tech narcissistic swings.",
+            footer_text: "© 2026 Anti‑AI Shield • Technology for people • 100% offline philosophy",
+            btn_open: "OPEN PROJECT →",
+            badge_offline: "⚡ offline",
+            badge_new: "NEW",
+            toast_copy_success: "✅ Link copied: ",
+            toast_copy_error: "❌ Failed to copy link",
+            chat_title: "Offline Assistant",
+            chat_welcome: "Hello! I know everything about 100+ Anti-AI Shield projects. Type part of a name (e.g., <i>\"tetris\"</i>, <i>\"lesson 5\"</i>, <i>\"mechanic\"</i>, <i>\"vision\"</i>), and I will provide full details and a link.",
+            chat_placeholder: "Ask about any project..."
+        }
+    };
+
+    let currentLang = localStorage.getItem('anti_ai_lang') || 'ru';
+
+    function toggleLanguage() {
+        currentLang = currentLang === 'ru' ? 'en' : 'ru';
+        localStorage.setItem('anti_ai_lang', currentLang);
+        applyLanguage();
+    }
+
+    function applyLanguage() {
+        document.getElementById('langRu').className = currentLang === 'ru' ? 'active-lang' : '';
+        document.getElementById('langEn').className = currentLang === 'en' ? 'active-lang' : '';
+        document.documentElement.lang = currentLang;
+        document.title = currentLang === 'ru' ? 'Anti-AI Shield | Витрина цифровой защиты' : 'Anti-AI Shield | Digital Protection Showcase';
+        
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (i18n[currentLang][key]) el.innerHTML = i18n[currentLang][key]; // innerHTML to support <i> tags in welcome
+        });
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+            const key = el.getAttribute('data-i18n-placeholder');
+            if (i18n[currentLang][key]) el.placeholder = i18n[currentLang][key];
+        });
+        renderProjects();
+    }
+
+    // МАССИВ ДАННЫХ ВСЕХ ПРОЕКТОВ (Источник знаний для бота)
+    const rawProjects = [
+        ["the-republic-of-cognitive-sovereignty", "🏛️🧠", "Республика когнитивного суверенитета", "Republic of Cognitive Sovereignty", "Философский и практический манифест цифровой автономии, защиты мышления и независимости от алгоритмов Big Tech.", "Philosophical and practical manifesto of digital autonomy, protection of thinking and independence from Big Tech algorithms.", "манифест", true],
+        ["anti-ai-golf-kids", "🏌️⛳", "Анти-ИИ Гольф (Детский)", "Anti-AI Golf (Kids)", "Образовательная программа из 10 уроков: развитие точности мышления, цифровой гигиены и защиты от ИИ-манипуляций через метафору игры в гольф.", "10-lesson educational program: developing precision of thought, digital hygiene and protection from AI manipulation through the metaphor of golf.", "🧒 дети", true],
+        ["ai-business-designer-republic-of-cognitive-sovereignty", "🏛️💼", "ИИ-Бизнес-дизайнер (РКС)", "AI Business Designer (RCS)", "Проектирование бизнес-процессов с внедрением ИИ в рамках парадигмы Республики когнитивного суверенитета.", "Designing business processes with AI integration within the paradigm of the Republic of Cognitive Sovereignty.", "💼 бизнес", true],
+        ["anti-ai-qwen-curling", "🥌🎯", "Анти-ИИ Кёрлинг", "Anti-AI Curling", "Стратегическая игра на точность и планирование, развивающая тактическое мышление и хладнокровие без цифровых подсказок.", "Strategic accuracy and planning game that develops tactical thinking and composure without digital hints.", "🎮 игра", true],
+        ["anti-ai-qwen-humor-academy-face-distortion-", "😂🎭", "Академия юмора: Искажение лиц", "Humor Academy: Face Distortion", "Интерактивный тренажёр по распознаванию ИИ-манипуляций с мимикой и эмоциональным контентом через призму юмора.", "Interactive simulator for recognizing AI manipulations of facial expressions and emotional content through the lens of humor.", "🎓 курс", true],
+        ["anti-ai-pool", "🎱🎯", "Анти-ИИ Бильярд", "Anti-AI Pool", "Физический тренажёр для развития глазомера, понимания углов и стратегического планирования в офлайн-режиме.", "Physical simulator for developing eye estimate, angle understanding and strategic planning in offline mode.", "🎮 игра", true],
+        ["anti-ai-tower-3d", "🏰🧊", "Анти-ИИ Башня 3D", "Anti-AI Tower 3D", "Трёхмерная стратегия защиты периметра устройства от цифровых угроз и визуализация уровней безопасности.", "3D perimeter defense strategy against digital threats and visualization of security levels.", "🛡️ защита", true],
+        ["ar-anatomy-ultimate", "🧬👾", "AR-Анатомия ULTIMATE", "AR-Anatomy ULTIMATE", "Бесплатная 3D-игра для детей на WebGL/Three.js: определяй геометрические фигуры в частях тела монстров, конструктор с экспортом в .OBJ.", "Free 3D game for kids on WebGL/Three.js: identify geometric shapes in monster body parts, constructor with .OBJ export.", "🎮 3D игра", true],
+        ["a-young-operator-of-an-unmanned-aerial-vehicle", "🚁👦", "Юный оператор БПЛА", "Young UAV Operator", "Базовый курс и симулятор для юных пилотов. Основы управления и безопасности дронов в игровой форме.", "Basic course and simulator for young pilots. Fundamentals of drone control and safety in game form.", "🚁 дрон", true],
+        ["lesson-1-for-a-professional-uav-operator", "🚁🎓", "Профессиональный оператор БПЛА: Урок 1", "Professional UAV Operator: Lesson 1", "Продвинутый курс пилотирования для профессиональных операторов дронов. Начало пути.", "Advanced piloting course for professional drone operators. The beginning of the path.", "🚁 дрон", true],
+        ["anti-ai-magic-oracle", "🔮🎱", "Анти-ИИ Магический Оракул", "Anti-AI Magic Oracle", "Инструмент для принятия решений и генерации предсказаний локально, без отправки данных в облако.", "Tool for decision making and prediction generation locally, without sending data to the cloud.", "🔮 инструмент", true],
+        ["anti-ai-shield-tower", "🏰🛡️", "Анти-ИИ Башня Защиты", "Anti-AI Shield Tower", "Стратегическая визуализация и проверка уровней цифровой защиты вашего устройства.", "Strategic visualization and verification of your device's digital protection levels.", "🛡️ защита", true],
+        ["anti-ai-challenge", "🏆⚡", "Анти-ИИ Челлендж", "Anti-AI Challenge", "Интерактивные задания и тесты на цифровую грамотность, внимательность и скорость реакции.", "Interactive tasks and tests on digital literacy, attentiveness and reaction speed.", "🏆 челлендж", true],
+        ["rock-paper-scissors", "✊✋✌️", "Камень, Ножницы, Бумага", "Rock, Paper, Scissors", "Классическая игра с продвинутой локальной логикой и тренировкой скорости реакции.", "Classic game with advanced local logic and reaction speed training.", "🎮 игра", true],
+        ["anti-ai-music-scroller", "🎵📜", "Анти-ИИ Музыкальный скроллер", "Anti-AI Music Scroller", "Удобный инструмент для прокрутки и чтения нот или музыкальных текстов с экрана без интернета.", "Convenient tool for scrolling and reading sheet music or musical texts from the screen without internet.", "🎵 музыка", true],
+        ["anti-bullying-app", "🏫🛡️", "Защита от буллинга (GitHub)", "Anti-Bullying App", "Приложение для предотвращения травли и обеспечения цифровой безопасности в школе.", "Application for preventing bullying and ensuring digital safety in school.", "безопасность", true],
+        ["-Anti-AI-Qwen-UAV-Simulator-Lesson-1-Target-", "🚁🎯", "Симулятор дрона (Урок 1: Цель)", "Drone Simulator (Lesson 1: Target)", "Обучение пилотированию БПЛА: выбор цели и основы управления квадрокоптером.", "UAV piloting training: target selection and quadcopter control basics.", "🚁 дрон"],
+        ["anti-ai-qwen-uav-simulator-lesson-2", "🚁🗺️", "Симулятор дрона (Урок 2: Маршрут)", "Drone Simulator (Lesson 2: Route)", "Навигация и полёт по маршруту. Продвинутые техники пилотирования БПЛА.", "Navigation and route flight. Advanced UAV piloting techniques.", "🚁 дрон"],
+        ["anti-ai-qwen-uav-simulator-lesson-3", "🚁🎓", "Симулятор дрона (Урок 3)", "Drone Simulator (Lesson 3)", "Продолжение обучения пилотированию БПЛА. Урок 3 из курса.", "Continuation of UAV piloting training. Lesson 3 of the course.", "🚁 дрон"],
+        ["anti-ai-qwen-uav-simulator-lesson-4", "🚁🎓", "Симулятор дрона (Урок 4)", "Drone Simulator (Lesson 4)", "Продолжение обучения пилотированию БПЛА. Урок 4 из курса.", "Continuation of UAV piloting training. Lesson 4 of the course.", "🚁 дрон"],
+        ["anti-ai-qwen-uav-simulator-lesson-5", "🚁🎓", "Симулятор дрона (Урок 5)", "Drone Simulator (Lesson 5)", "Продолжение обучения пилотированию БПЛА. Урок 5 из курса.", "Continuation of UAV piloting training. Lesson 5 of the course.", "🚁 дрон"],
+        ["anti-ai-qwen-uav-simulator-lesson-6", "🚁🕵️", "Симулятор дрона (Урок 6)", "Drone Simulator (Lesson 6)", "Скрытная разведка вражеской базы. Оператор ПРИЗРАК собирает разведданные.", "Covert reconnaissance of enemy base. Operator GHOST collects intelligence.", "🚁 дрон"],
+        ["anti-ai-qwen-uav-simulator-lesson-7", "🚁🎓", "Симулятор дрона (Урок 7)", "Drone Simulator (Lesson 7)", "Продолжение обучения пилотированию БПЛА. Урок 7 из курса.", "Continuation of UAV piloting training. Lesson 7 of the course.", "🚁 дрон"],
+        ["anti-ai-qwen-uav-simulator-lesson-8", "🚁🎓", "Симулятор дрона (Урок 8)", "Drone Simulator (Lesson 8)", "Продолжение обучения пилотированию БПЛА. Урок 8 из курса.", "Continuation of UAV piloting training. Lesson 8 of the course.", "🚁 дрон"],
+        ["anti-ai-qwen-uav-simulator-lesson-9", "🚁🎓", "Симулятор дрона (Урок 9)", "Drone Simulator (Lesson 9)", "Продолжение обучения пилотированию БПЛА. Урок 9 из курса.", "Continuation of UAV piloting training. Lesson 9 of the course.", "🚁 дрон"],
+        ["anti-ai-qwen-uav-simulator-lesson-10", "🚁🎓", "Симулятор дрона (Урок 10)", "Drone Simulator (Lesson 10)", "Продолжение обучения пилотированию БПЛА. Урок 10 из курса.", "Continuation of UAV piloting training. Lesson 10 of the course.", "🚁 дрон"],
+        ["anti-ai-qwen-uav-simulator-lesson-11", "🚁🎓", "Симулятор дрона (Урок 11)", "Drone Simulator (Lesson 11)", "Продолжение обучения пилотированию БПЛА. Урок 11 из курса.", "Continuation of UAV piloting training. Lesson 11 of the course.", "🚁 дрон"],
+        ["anti-ai-qwen-uav-simulator-lesson-12-", "🚁🎓", "Симулятор дрона (Урок 12)", "Drone Simulator (Lesson 12)", "Продолжение обучения пилотированию БПЛА. Урок 12 из курса.", "Continuation of UAV piloting training. Lesson 12 of the course.", "🚁 дрон"],
+        ["anti-ai-qwen-uav-simulator-lesson-13", "🚁🎓", "Симулятор дрона (Урок 13)", "Drone Simulator (Lesson 13)", "Продолжение обучения пилотированию БПЛА. Урок 13 из курса.", "Continuation of UAV piloting training. Lesson 13 of the course.", "🚁 дрон"],
+        ["anti-ai-qwen-uav-simulator-lesson--14-", "🚁🎓", "Симулятор дрона (Урок 14)", "Drone Simulator (Lesson 14)", "Продолжение обучения пилотированию БПЛА. Урок 14 из курса.", "Continuation of UAV piloting training. Lesson 14 of the course.", "🚁 дрон"],
+        ["anti-ai-qwen-uav-simulator-lesson-15", "🚁🎓", "Симулятор дрона (Урок 15)", "Drone Simulator (Lesson 15)", "Продолжение обучения пилотированию БПЛА. Урок 15 из курса.", "Continuation of UAV piloting training. Lesson 15 of the course.", "🚁 дрон"],
+        ["anti-ai-qwen-uav-simulator-lesson-16", "🚁🎓", "Симулятор дрона (Урок 16)", "Drone Simulator (Lesson 16)", "Продолжение обучения пилотированию БПЛА. Урок 16 из курса.", "Continuation of UAV piloting training. Lesson 16 of the course.", "🚁 дрон"],
+        ["anti-ai-qwen-uav-simulator-lesson-17", "🚁🎓", "Симулятор дрона (Урок 17)", "Drone Simulator (Lesson 17)", "Продолжение обучения пилотированию БПЛА. Урок 17 из курса.", "Continuation of UAV piloting training. Lesson 17 of the course.", "🚁 дрон"],
+        ["anti-ai-qwen-uav-simulator-lesson-18", "🚁🎓", "Симулятор дрона (Урок 18)", "Drone Simulator (Lesson 18)", "Продолжение обучения пилотированию БПЛА. Урок 18 из курса.", "Continuation of UAV piloting training. Lesson 18 of the course.", "🚁 дрон"],
+        ["anti-ai-qwen-uav-simulator-lesson-19", "🚁🎓", "Симулятор дрона (Урок 19)", "Drone Simulator (Lesson 19)", "Продолжение обучения пилотированию БПЛА. Урок 19 из курса.", "Continuation of UAV piloting training. Lesson 19 of the course.", "🚁 дрон"],
+        ["anti-ai-qwen-uav-simulator-lesson-20", "🚁🎓", "Симулятор дрона (Урок 20)", "Drone Simulator (Lesson 20)", "Продолжение обучения пилотированию БПЛА. Урок 20 из курса.", "Continuation of UAV piloting training. Lesson 20 of the course.", "🚁 дрон"],
+        ["anti-ai-qwen-uav-simulator-lesson-21", "🚁🎓", "Симулятор дрона (Урок 21)", "Drone Simulator (Lesson 21)", "Продолжение обучения пилотированию БПЛА. Урок 21 из курса.", "Continuation of UAV piloting training. Lesson 21 of the course.", "🚁 дрон"],
+        ["anti-ai-qwen-uav-simulator-lesson-22", "🚁🎓", "Симулятор дрона (Урок 22)", "Drone Simulator (Lesson 22)", "Продолжение обучения пилотированию БПЛА. Урок 22 из курса.", "Continuation of UAV piloting training. Lesson 22 of the course.", "🚁 дрон"],
+        ["anti-ai-qwen-uav-simulator-lesson-23", "🚁🎓", "Симулятор дрона (Урок 23)", "Drone Simulator (Lesson 23)", "Продолжение обучения пилотированию БПЛА. Урок 23 из курса.", "Continuation of UAV piloting training. Lesson 23 of the course.", "🚁 дрон"],
+        ["anti-ai-qwen-uav-simulator-lesson-24", "🚁🕵️", "Симулятор дрона (Урок 24: Шпион)", "Drone Simulator (Lesson 24: Spy)", "Стелс-разведка! Проникните на вражескую территорию, соберите секретные данные и избегайте обнаружения.", "Stealth reconnaissance! Infiltrate enemy territory, collect secret data and avoid detection.", "🚁 дрон"],
+        ["anti-ai-qwen-uav-simulator-lesson-25", "🚁🎓", "Симулятор дрона (Урок 25)", "Drone Simulator (Lesson 25)", "Продолжение обучения пилотированию БПЛА. Урок 25 из курса.", "Continuation of UAV piloting training. Lesson 25 of the course.", "🚁 дрон"],
+        ["-anti-ai-qwen-academy--Deepfake-Detection-Specialist-", "🎓🕵️", "Специалист по дипфейкам", "Deepfake Detection Specialist", "Профессиональная программа по детекции deepfake-контента. TensorFlow Lite и визуальный анализ.", "Professional program for deepfake content detection. TensorFlow Lite and visual analysis.", "🎓 безопасность"],
+        ["anti-ai-qwen-academy-qwen-fact-checker", "✅🔍", "Qwen Fact Checker", "Qwen Fact Checker", "Локальный инструмент для проверки фактов и верификации информации. Офлайн-фактчекер.", "Local tool for fact checking and information verification. Offline fact-checker.", "✅ верификация"],
+        ["anti-ai-qwen-academy-prompt-engineer-", "🎓💬", "Промпт-инженер (полный курс)", "Prompt Engineer (Full Course)", "Полный курс по созданию эффективных промптов для нейросетей. От новичка до профи.", "Complete course on creating effective prompts for neural networks. From beginner to pro.", "🎓 курс"],
+        ["anti-ai-qwen-academy-ai-product-manager-", "🏛️🚀", "Менеджер ИИ-продуктов", "AI Product Manager", "Комплексная офлайн-платформа для подготовки специалистов по управлению продуктами на базе ИИ.", "Comprehensive offline platform for training AI product management specialists.", "🎓 курс"],
+        ["anti-ai-qwen-academy-ai-product-man-phi", "🏛️📱", "Менеджер ИИ-продуктов (Phi версия)", "AI Product Manager (Phi version)", "Подготовка AI Product Manager с фокусом на эффективные и легкие модели (Phi) для локального развертывания.", "Training AI Product Manager with focus on efficient and lightweight Phi models for local deployment.", "🎓 Phi-модели", false, "https://anti-ai-qwen-academy-ai-product-man-phi.vercel.app/"],
+        ["Anti-AI-Qwen-Academy-AI-Model-Security-Specialist", "🏛️🛡️", "Специалист по безопасности ИИ-моделей", "AI Model Security Specialist", "Ищет уязвимости в коде нейросетей, защищая их от взлома. Офлайн-тренажёр по AI Model Security.", "Finds vulnerabilities in neural network code, protecting them from hacking. Offline AI Model Security simulator.", "🔒 безопасность"],
+        ["Anti-AI-Qwen-Academy-AI-Legal-Specialist", "🏛️⚖️", "Юрист в сфере ИИ (AI Legal Specialist)", "AI Legal Specialist", "Изучение правового регулирования ИИ, авторского права и защиты данных в цифровую эпоху.", "Study of AI legal regulation, copyright and data protection in the digital era.", "⚖️ право"],
+        ["-Anti-AI-Qwen-Academy-AI-Ethics-Officer", "🏛️🤝", "AI Ethics Officer (Специалист по этике ИИ)", "AI Ethics Officer", "Офлайн-платформа для подготовки специалистов по этике ИИ и предотвращению bias в алгоритмах.", "Offline platform for training AI ethics specialists and preventing bias in algorithms.", "🎓 этика"],
+        ["anti-ai-qwen-academy-data-curator", "🏛️🗂️", "Куратор данных (Data Curator)", "Data Curator", "Подготовка, очистка и верификация датасетов для обучения нейросетей офлайн.", "Preparation, cleaning and verification of datasets for training neural networks offline.", "📊 данные"],
+        ["anti-ai-qwen-academy-Prompt-Designer-Neuroillustrator", "🏛️🎨", "Промпт-дизайнер (Нейроиллюстратор)", "Prompt Designer (Neuroillustrator)", "Искусство создания точных запросов для генерации изображений и текстов. Офлайн-справочник.", "The art of creating precise prompts for image and text generation. Offline reference.", "🎨 дизайн"],
+        ["anti-ai-qwen-academy-deepfake-detection", "🏛️✍️", "AI-редактор / Нейрокопирайтер", "AI Editor / Neurocopywriter", "Детекция дипфейков и создание качественного контента. Навыки верификации и редактирования ИИ-текстов.", "Deepfake detection and quality content creation. Verification and AI text editing skills.", "✍️ контент"],
+        ["anti-ai-qwen-academy-cyborg-athlete-mobile", "🏛️🏃‍♂️", "Киборг-Атлет: Mobile", "Cyborg-Athlete: Mobile", "Трансформация мобильных геймеров в киборг-спортсменов с усиленными реакциями и цифровой гигиеной.", "Transformation of mobile gamers into cyborg-athletes with enhanced reactions and digital hygiene.", "🎓 курс"],
+        ["anti-ai-qwen-academy-deep-technical-development-for-ML-engineers", "🏛️💻", "Глубокая тех. разработка для ML-инженеров", "Deep Tech Development for ML Engineers", "Курс по глубокой технической разработке для инженеров машинного обучения без облачных зависимостей.", "Course on deep technical development for ML engineers without cloud dependencies.", "🎓 ML"],
+        ["anti-ai-business-integrator", "🏛️💼", "Бизнес-интегратор ИИ", "AI Business Integrator", "Образовательная программа по внедрению готовых нейросетей в бизнес-процессы для сокращения расходов.", "Educational program for integrating ready neural networks into business processes to reduce costs.", "💼 бизнес"],
+        ["anti-ai-qwen-earn-money", "💰🤖", "Заработок с Qwen AI", "Earning with Qwen AI", "Практические стратегии монетизации навыков работы с ИИ. Офлайн-гид по заработку.", "Practical strategies for monetizing AI skills. Offline earning guide.", "💡 доход"],
+        ["anti-ai-qwen-companion", "🤖🤝", "Анти-ИИ-Квен-Компаньон", "Anti-AI Qwen Companion", "Персональный офлайн-помощник для безопасного взаимодействия с ИИ-системами.", "Personal offline assistant for safe interaction with AI systems.", "🔒 приватность"],
+        ["anti-ai-shield", "📞🛡️", "Анти-ИИ Щит (Защита от мошенников)", "Anti-AI Shield (Scam Protection)", "Блокировка телефонных атак и защита от мошенников.", "Blocking phone attacks and protection from scammers.", "защита"],
+        ["anti-ai-shield-shooter", "🛡️🎯", "Анти-ИИ Щит: Стрелок", "Anti-AI Shield: Shooter", "Игровой тренажёр цифровой защиты.", "Game simulator of digital protection.", "игра"],
+        ["anti-ai-shield-eggs", "🥚🛡️", "Анти-ИИ Щит: Яйца", "Anti-AI Shield: Eggs", "Защита цифровых активов в игровой форме.", "Protection of digital assets in a game format.", "игра"],
+        ["anti-ai-sms-shield", "📱🔐", "Анти ИИ СМС Шифрование", "Anti-AI SMS Encryption", "Шифрование SMS-сообщений и защита переписки от ИИ-анализа. Полностью офлайн-режим.", "SMS encryption and protection of correspondence from AI analysis. Fully offline mode.", "🔒 шифр"],
+        ["anti-ai-battery-shield", "🔋⚡", "Анти ИИ Аккумуляторная зарядка", "Anti-AI Battery Shield", "Оптимизация заряда батареи и защита от энергопотребляющих ИИ-процессов.", "Battery charge optimization and protection from energy-consuming AI processes.", "🔋 энергия"],
+        ["anti-ai-cyber-hack", "🔐⚡", "Анти-ИИ Кибер-взломщик", "Anti-AI Cyber Hacker", "Обучение этичному хакингу и защите от цифровых угроз. Офлайн-симулятор кибербезопасности.", "Training in ethical hacking and protection from digital threats. Offline cybersecurity simulator.", "🛡️ защита"],
+        ["anti-ai-narc-cycle", "🔄🧠", "Анти ИИ Нарциссический цикл", "Anti-AI Narcissistic Cycle", "Распознавание и защита от манипуляций, основанных на нарциссических паттернах поведения.", "Recognition and protection from manipulations based on narcissistic behavioral patterns.", "психология"],
+        ["anti-ai-narc-cycle-oriental", "🎋🧘", "Анти ИИ · Цикл осознания", "Anti-AI · Cycle of Awareness", "Восточная практика осознанности для распознавания нарциссических манипуляций в цифровом общении.", "Eastern mindfulness practice for recognizing narcissistic manipulations in digital communication.", "🎋 восточный"],
+        ["ai-core-autonomy", "🛡️👤", "Анти-ИИ: Манифест Суверенной Личности", "Anti-AI: Sovereign Individual Manifesto", "Философско-технический манифест о цифровой автономии и суверенитете личности в эпоху ИИ.", "Philosophical-technical manifesto about digital autonomy and personal sovereignty in the AI era.", "манифест"],
+        ["-ANTI-AI-MECHANIC---Lesson-1-Engine-Assembly-Crankshaft-Connecting-Rod-and-Piston-For-", "🏎️⚙️", "Анти ИИ Механик: Коленвал (Двигатель)", "Anti-AI Mechanic: Crankshaft (Engine)", "Наглядный урок 1: Коленвал, шатун и поршень. Разбор сборки двигателя.", "Visual lesson 1: Crankshaft, connecting rod and piston. Engine assembly breakdown.", "механика"],
+        ["-ANTI-AI-MECHANIC---Lesson-2-Timing-Mechanism-Camshaft-Timing-Gear-and-Valve-For-Kids-", "🏎️🔧", "Анти ИИ Механик: ГРМ", "Anti-AI Mechanic: Timing", "Наглядный урок 2: Газораспределительный механизм, распредвал и клапаны.", "Visual lesson 2: Timing mechanism, camshaft and valves.", "ГРМ"],
+        ["-ANTI-AI-MECHANIC---Lesson-3-Transmission-Assembly-Flywheel-Clutch-Disc-and-Gearbox-Shaft-For-Kids-", "🏎️🚗", "Анти ИИ Механик: Трансмиссия", "Anti-AI Mechanic: Transmission", "Наглядный урок 3: Маховик, диск сцепления и вал коробки передач.", "Visual lesson 3: Flywheel, clutch disc and gearbox shaft.", "трансмиссия"],
+        ["-ANTI-AI-MECHANIC---Lesson-4-Turbocharger-Turbine-Housing-Impeller-and-Intercooler-For-Kids-", "🏎️💨", "Анти ИИ Механик: Турбонаддув", "Anti-AI Mechanic: Turbocharger", "Наглядный урок 4: Корпус турбины, рабочее колесо и интеркулер.", "Visual lesson 4: Turbine housing, impeller and intercooler.", "турбо"],
+        ["anti-ai-auto", "🚗⚡", "Анти ИИ Автомобиль", "Anti-AI Auto", "Помощник водителя.", "Driver assistant.", "авто"],
+        ["anti-ai-blind-zone", "🕶️🚗", "Анти-ИИ Слепая зона", "Anti-AI Blind Zone", "Обучение контролю слепых зон автомобиля. Безопасное вождение и парковка офлайн.", "Training to control car blind zones. Safe driving and parking offline.", "🚗 авто"],
+        ["anti-ai-tracker", "🐾🔍", "Анти-ИИ Следопыт", "Anti-AI Tracker", "Бесплатная офлайн-игра: учись распознавать следы животных, развивай наблюдательность.", "Free offline game: learn to recognize animal tracks, develop observation skills.", "🎮 игра"],
+        ["anti-ai-udacha", "🎲🍀", "Анти ИИ — Удача", "Anti-AI — Luck", "Развитие навыков принятия решений и распознаванию манипуляций с вероятностями.", "Developing decision-making skills and recognition of probability manipulations.", "🧠 мышление"],
+        ["anti-ai-abc", "🔤🧒", "Анти-ИИ Алфавит", "Anti-AI ABC", "Обучающая игра для детей: алфавит, буквы и слова без интернета. Тактильное обучение.", "Educational game for kids: alphabet, letters and words without internet. Tactile learning.", "🧒 дети"],
+        ["anti-ai-visometer", "👁️📊", "Анти-ИИ Визометр", "Anti-AI Visometer", "Проверка остроты зрения и обучение распознаванию визуальных дипфейков.", "Visual acuity test and training to recognize visual deepfakes.", "👁️ зрение"],
+        ["Anti-AI-Visometer-Kids", "👁️🧒", "Анти-ИИ Визометр (Детский)", "Anti-AI Visometer (Kids)", "Проверка остроты зрения и обучение распознаванию визуальных дипфейков для детей.", "Visual acuity test and training to recognize visual deepfakes for kids.", "🧒 детский"],
+        ["anti-ai-vision-check", "👁️🩺", "Анти-ИИ Осмотр", "Anti-AI Vision Check", "Расширенная проверка остроты зрения, цветовосприятия и диагностика глаз.", "Extended visual acuity, color perception test and eye diagnostics.", "👁️ зрение"],
+        ["anti-ai-eyes-gym", "👁️🏋️", "Анти-ИИ Гимнастика для глаз", "Anti-AI Eye Gym", "Упражнения для снятия усталости и тренировки глазных мышц. Офлайн-тренажёр.", "Exercises for relieving fatigue and training eye muscles. Offline simulator.", "👁️ здоровье"],
+        ["anti-ai-glance", "👁️🛡️", "Анти ИИ Взгляд", "Anti-AI Glance", "Система безопасности для незрячих. Предупреждает о ямах, лужах, ветках.", "Safety system for the blind. Warns about potholes, puddles, branches.", "👁️ для незрячих"],
+        ["Anti-AI-Navigator-Straight-", "🧭🚶", "Анти ИИ Навигатор (Прямо)", "Anti-AI Navigator (Straight)", "Голосовой навигатор помогает идти прямо и не сбиться с пути.", "Voice navigator helps to walk straight and not get lost.", "🧭 навигация"],
+        ["anti-ai-distance", "📏📐", "Анти-ИИ Расстояние", "Anti-AI Distance", "Измерение расстояния от камеры до лица.", "Measurement of distance from camera to face.", "инструмент"],
+        ["anti-ai-barcode", "📱🔍", "Анти ИИ Штрих-код", "Anti-AI Barcode", "Сканирование товаров.", "Product scanning.", "инструмент"],
+        ["anti-ai-level", "📐📏", "Анти ИИ Уровень", "Anti-AI Level", "Цифровой уровень.", "Digital level.", "инструмент"],
+        ["anti-ai-electronic-mirror", "🪞✨", "Анти ИИ Электронное зеркало", "Anti-AI Electronic Mirror", "Цифровое зеркало для самодиагностики.", "Digital mirror for self-diagnostics.", "здоровье"],
+        ["anti-ai-memory", "🧠📚", "Анти ИИ Память", "Anti-AI Memory", "Тренировка мозга.", "Brain training.", "мозг"],
+        ["anti-ai-passwords", "🔐🔑", "Анти ИИ Пароли", "Anti-AI Passwords", "Генератор паролей.", "Password generator.", "безопасность"],
+        ["anti-ai-mosaic", "🧩🎨", "Анти-ИИ: Мозаика", "Anti-AI: Mosaic", "Игра-головоломка для тренировки внимания и распознавания визуальных паттернов.", "Puzzle game for training attention and recognition of visual patterns.", "головоломка"],
+        ["-Human-Vision-Puzzle", "🧩👁️", "Анти-ИИ: Мозаика (Визуал)", "Anti-AI: Mosaic (Visual)", "Тренировка человеческого зрения через пазлы и визуальные задачи.", "Training of human vision through puzzles and visual tasks.", "зрение"],
+        ["cubecraft-pro-antiai", "🧊🎮", "CubeCraft Pro", "CubeCraft Pro", "3D-головоломка на развитие пространственного мышления и логики. Офлайн-игра.", "3D puzzle for developing spatial thinking and logic. Offline game.", "🎮 игра"],
+        ["match-cubes-collection", "🔷🧩", "Собери кубики", "Match Cubes Collection", "Игра на память и внимание: найди пары одинаковых кубиков.", "Memory and attention game: find pairs of identical cubes.", "🧩 игра"],
+        ["anti-ai-tetris", "🧩🎮", "Анти ИИ Тетрис", "Anti-AI Tetris", "Классический тетрис с механикой блоков. Тренировка реакции и внимания.", "Classic tetris with block mechanics. Reaction and attention training.", "игра"],
+        ["anti-ai-cloud-flight-3d", "☁️🎮", "Анти-ИИ Облачный полёт 3D", "Anti-AI Cloud Flight 3D", "Расслабляющий 3D-симулятор полёта в облаках.", "Relaxing 3D flight simulator in the clouds.", "🎮 игра"],
+        ["-Anti-AI-Drum-Balls-", "🥁🔴", "Анти-ИИ Барабан-Шары", "Anti-AI Drum Balls", "Ритмическая игра для развития чувства такта, реакции и музыкального слуха.", "Rhythmic game for developing sense of rhythm, reaction and musical ear.", "🎵 музыка"],
+        ["anti-ai-20-ritmov", "🎵🥁", "20 ритмов", "20 Rhythms", "Тренировка музыкального слуха и чувства ритма. 20 разнообразных упражнений.", "Training of musical ear and sense of rhythm. 20 varied exercises.", "🎵 музыка"],
+        ["anti-ai-drum-metronome", "🥁🎛️", "Анти ИИ Барабан (Метроном)", "Anti-AI Drum (Metronome)", "Профессиональный метроном.", "Professional metronome.", "музыка"],
+        ["anti-ai-animals", "🐾🎵", "Анти ИИ: Животные поют", "Anti-AI: Singing Animals", "Весёлые песни животных.", "Fun animal songs.", "дети"],
+        ["anti-ai-count-to-10", "📝🔢", "Анти ИИ Считаем до 10", "Anti-AI Count to 10", "Интерактивное обучение счёту для детей.", "Interactive counting training for kids.", "дети"],
+        ["anti-ai-hearing-test-memory-training-", "🧠👂", "Анти ИИ Проверка слуха (память)", "Anti-AI Hearing Test (Memory)", "Тренировка памяти и слухового внимания.", "Memory and auditory attention training.", "🎧 память"],
+        ["anti-ai-hearing-test-fast", "⚡👂", "Анти ИИ Проверка слуха (быстрая)", "Anti-AI Hearing Test (Fast)", "Экспресс-тренировка памяти и скорости реакции.", "Express training of memory and reaction speed.", "🚀 быстрая"],
+        ["Anti-AI-Hearing-Test-slow-memory-training-", "🐢👂", "Анти ИИ Проверка слуха (медленная)", "Anti-AI Hearing Test (Slow)", "Размеренная тренировка памяти и слуха.", "Measured training of memory and hearing.", "🎵 медленная"],
+        ["Anti-AI-Audiometer", "📊👂", "Анти-ИИ Аудиометр", "Anti-AI Audiometer", "Профессиональный аудиометр для оценки чувствительности слуха.", "Professional audiometer for hearing sensitivity assessment.", "🔊 точный"],
+        ["Anti-AI-Light", "💡🪄", "Анти-ИИ Свет", "Anti-AI Light", "Управление освещением и цветотерапия для улучшения настроения и концентрации.", "Lighting control and color therapy for improving mood and concentration.", "💡 инструмент"],
+        ["anti-ai-video-frame-capturer", "🎬🖼️", "Анти-ИИ Кадр", "Anti-AI Frame", "Захват и извлечение кадров из видеофайлов. Работает полностью офлайн.", "Capturing and extracting frames from video files. Works fully offline.", "🎬 видео"],
+        ["anti-ai-video-cutter", "✂️🎥", "Анти-ИИ Видео-ножницы", "Anti-AI Video Cutter", "Простой обрезчик видео без потери качества. Всё локально.", "Simple video trimmer without quality loss. All local.", "✂️ видео"],
+        ["photo-converter-pro", "🖼️🔄", "Photo Converter Pro", "Photo Converter Pro", "Конвертация изображений в JPEG, PNG, WEBP. Офлайн, быстро.", "Image conversion to JPEG, PNG, WEBP. Offline, fast.", "🖼️ фото"],
+        ["photo-editor-text", "📝🖌️", "Редактор фото с текстом", "Photo Editor with Text", "Добавляй подписи, стикеры и текст на фото. Простой графический редактор.", "Add captions, stickers and text to photos. Simple graphic editor.", "🖌️ фото"],
+        ["text-converter-pro", "📝🔄", "Text Converter Pro", "Text Converter Pro", "Конвертация текста между форматами: TXT, HTML, Markdown.", "Text conversion between formats: TXT, HTML, Markdown.", "📝 текст"],
+        ["df-generator-ru", "🎭🤖", "DF Generator RU", "DF Generator RU", "Генератор дипфейков для образовательных целей. Изучай технологии и защищайся.", "Deepfake generator for educational purposes. Study technologies and protect yourself.", "🎓 образование"],
+        ["anti-ai-cosmos", "✨🌌", "Анти ИИ Космос", "Anti-AI Cosmos", "3D-атлас звёзд.", "3D star atlas.", "образование"],
+        ["anti-ai-stress", "🧘🌿", "Анти-ИИ Стресс", "Anti-AI Stress", "Медитации и техники расслабления.", "Meditations and relaxation techniques.", "здоровье"],
+        ["rutube-channel", "🎬✨", "ВолшебствО | Rutube", "MagiO | Rutube", "Авторский музыкальный канал: детские песни-сказки, лирика, юмор.", "Author's music channel: children's fairy-tale songs, lyrics, humor.", "музыка", false, "https://rutube.ru/channel/24404224/", true]
+    ];
+
+    function renderProjects() {
+        const container = document.getElementById('dynamicProjects');
+        if (!container) return;
+        container.innerHTML = '';
+
+        rawProjects.forEach(p => {
+            const card = document.createElement('div');
+            card.className = 'project-card';
+            const isRutube = p[9] === true;
+            if (isRutube) card.classList.add('rutube-card');
+
+            const title = currentLang === 'en' ? p[3] : p[2];
+            const desc = currentLang === 'en' ? (p[5] || p[4]) : p[4];
+            const badge = p[6];
+            const isNew = p[7] === true;
+            const customUrl = p[8];
+
+            let badgeHtml = `<span class="badge-offline">${i18n[currentLang].badge_offline}</span>`;
+            if (badge) badgeHtml += ` <span class="special-badge">${badge}</span>`;
+            if (isNew) badgeHtml += ` <span class="new-badge">${i18n[currentLang].badge_new}</span>`;
+
+            const url = customUrl || `https://ancf-hue.github.io/${p[0]}`;
+            const btnText = i18n[currentLang].btn_open;
+
+            card.innerHTML = `
+                <span class="card-icon">${p[1]}</span>
+                <div class="card-title">${title} ${badgeHtml}</div>
+                <div class="card-desc">${desc}</div>
+                <a class="project-btn" href="${url}" target="_blank" rel="noopener noreferrer">${btnText}</a>
+            `;
+            container.appendChild(card);
+        });
+    }
+
     function showMessage(message, isError = true) {
         const toast = document.getElementById('errorToast');
         if (toast) {
@@ -351,313 +457,143 @@
             setTimeout(() => { toast.style.display = 'none'; }, 5000);
         }
     }
-    
+
     function handleRedirectFrom404() {
         try {
             var redirectPath = sessionStorage.getItem('redirectPath');
             if (redirectPath && redirectPath !== '/' && redirectPath !== '') {
                 sessionStorage.removeItem('redirectPath');
-                console.log('🔄 Перенаправление с 404 на главную:', redirectPath);
             }
-        } catch(e) { console.warn('Ошибка:', e); }
+        } catch(e) {}
     }
-    
+
     function setupQRClick() {
         const qrArea = document.getElementById('qrClickArea');
         if (qrArea) {
             qrArea.addEventListener('click', function() {
                 const url = 'https://ancf-hue.github.io/';
                 navigator.clipboard.writeText(url).then(() => {
-                    showMessage('✅ Ссылка скопирована: ' + url, false);
+                    showMessage(i18n[currentLang].toast_copy_success + url, false);
                 }).catch(() => {
-                    showMessage('❌ Не удалось скопировать ссылку');
+                    showMessage(i18n[currentLang].toast_copy_error);
                 });
             });
         }
     }
+
+    // ==========================================
+    // УМНЫЙ ОФФЛАЙН ЧАТ-БОТ (ПОИСК ПО ВСЕМ ПРОЕКТАМ)
+    // ==========================================
+    const chatbotToggle = document.getElementById('chatbotToggle');
+    const chatbotWindow = document.getElementById('chatbotWindow');
+    const chatbotClose = document.getElementById('chatbotClose');
+    const chatInput = document.getElementById('chatInput');
+    const chatSend = document.getElementById('chatSend');
+    const chatMessages = document.getElementById('chatMessages');
+
+    chatbotToggle.addEventListener('click', () => {
+        chatbotWindow.classList.toggle('active');
+        if (chatbotWindow.classList.contains('active')) {
+            setTimeout(() => chatInput.focus(), 300);
+        }
+    });
     
-    const projectsData = [
-        // ==========================================
-        // 🆕 АБСОЛЮТНО НОВЫЕ ПРОЕКТЫ (Добавлены из вашего списка)
-        // ==========================================
-        { 
-            title: "🏛️ Республика когнитивного суверенитета", 
-            icon: "🏛️🧠", 
-            desc: "Философский и практический манифест цифровой автономии, защиты мышления и независимости от алгоритмов Big Tech.", 
-            url: "https://ancf-hue.github.io/the-republic-of-cognitive-sovereignty", 
-            isNew: true, 
-            specialBadge: "манифест" 
-        },
-        { 
-            title: "🏌️ Анти-ИИ Гольф (Детский)", 
-            icon: "🏌️⛳", 
-            desc: "Образовательная программа из 10 уроков: развитие точности мышления, цифровой гигиены и защиты от ИИ-манипуляций через метафору игры в гольф.", 
-            url: "https://ancf-hue.github.io/anti-ai-golf-kids", 
-            isNew: true, 
-            specialBadge: "🧒 дети" 
-        },
-        { 
-            title: "🏛️ ИИ-Бизнес-дизайнер (РКС)", 
-            icon: "🏛️💼", 
-            desc: "Проектирование бизнес-процессов с внедрением ИИ в рамках парадигмы Республики когнитивного суверенитета.", 
-            url: "https://ancf-hue.github.io/ai-business-designer-republic-of-cognitive-sovereignty", 
-            isNew: true, 
-            specialBadge: "💼 бизнес" 
-        },
-        { 
-            title: "🥌 Анти-ИИ Кёрлинг", 
-            icon: "🥌🎯", 
-            desc: "Стратегическая игра на точность и планирование, развивающая тактическое мышление и хладнокровие без цифровых подсказок.", 
-            url: "https://ancf-hue.github.io/anti-ai-qwen-curling", 
-            isNew: true, 
-            specialBadge: "🎮 игра" 
-        },
-        { 
-            title: "😂 Академия юмора: Искажение лиц", 
-            icon: "😂🎭", 
-            desc: "Интерактивный тренажёр по распознаванию ИИ-манипуляций с мимикой и эмоциональным контентом через призму юмора.", 
-            url: "https://ancf-hue.github.io/anti-ai-qwen-humor-academy-face-distortion-", 
-            isNew: true, 
-            specialBadge: "🎓 курс" 
-        },
-        { 
-            title: "🎱 Анти-ИИ Бильярд", 
-            icon: "🎱🎯", 
-            desc: "Физический тренажёр для развития глазомера, понимания углов и стратегического планирования в офлайн-режиме.", 
-            url: "https://ancf-hue.github.io/anti-ai-pool", 
-            isNew: true, 
-            specialBadge: "🎮 игра" 
-        },
-        { 
-            title: "🏰 Анти-ИИ Башня 3D", 
-            icon: "🏰🧊", 
-            desc: "Трёхмерная стратегия защиты периметра устройства от цифровых угроз и визуализация уровней безопасности.", 
-            url: "https://ancf-hue.github.io/anti-ai-tower-3d", 
-            isNew: true, 
-            specialBadge: "🛡️ защита" 
-        },
-        { 
-            title: "🧬 AR-Анатомия ULTIMATE", 
-            icon: "🧬👾", 
-            desc: "Бесплатная 3D-игра для детей на WebGL/Three.js: определяй геометрические фигуры в частях тела монстров, конструктор с экспортом в .OBJ.", 
-            url: "https://ancf-hue.github.io/ar-anatomy-ultimate", 
-            isNew: true, 
-            specialBadge: "🎮 3D игра" 
-        },
-        { 
-            title: "🚁 Юный оператор БПЛА", 
-            icon: "🚁👦", 
-            desc: "Базовый курс и симулятор для юных пилотов. Основы управления и безопасности дронов в игровой форме.", 
-            url: "https://ancf-hue.github.io/a-young-operator-of-an-unmanned-aerial-vehicle", 
-            isNew: true, 
-            specialBadge: "🚁 дрон" 
-        },
-        { 
-            title: "🚁 Профессиональный оператор БПЛА: Урок 1", 
-            icon: "🚁🎓", 
-            desc: "Продвинутый курс пилотирования для профессиональных операторов дронов. Начало пути.", 
-            url: "https://ancf-hue.github.io/lesson-1-for-a-professional-uav-operator", 
-            isNew: true, 
-            specialBadge: "🚁 дрон" 
-        },
-        { 
-            title: "🔮 Анти-ИИ Магический Оракул", 
-            icon: "🔮🎱", 
-            desc: "Инструмент для принятия решений и генерации предсказаний локально, без отправки данных в облако.", 
-            url: "https://ancf-hue.github.io/anti-ai-magic-oracle", 
-            isNew: true, 
-            specialBadge: "🔮 инструмент" 
-        },
-        { 
-            title: "🏰 Анти-ИИ Башня Защиты", 
-            icon: "🏰🛡️", 
-            desc: "Стратегическая визуализация и проверка уровней цифровой защиты вашего устройства.", 
-            url: "https://ancf-hue.github.io/anti-ai-shield-tower", 
-            isNew: true, 
-            specialBadge: "🛡️ защита" 
-        },
-        { 
-            title: "🏆 Анти-ИИ Челлендж", 
-            icon: "🏆⚡", 
-            desc: "Интерактивные задания и тесты на цифровую грамотность, внимательность и скорость реакции.", 
-            url: "https://ancf-hue.github.io/anti-ai-challenge", 
-            isNew: true, 
-            specialBadge: "🏆 челлендж" 
-        },
-        { 
-            title: "✊✋✌️ Камень, Ножницы, Бумага", 
-            icon: "✊🎮", 
-            desc: "Классическая игра с продвинутой локальной логикой и тренировкой скорости реакции.", 
-            url: "https://ancf-hue.github.io/rock-paper-scissors", 
-            isNew: true, 
-            specialBadge: "🎮 игра" 
-        },
-        { 
-            title: "🎵 Анти-ИИ Музыкальный скроллер", 
-            icon: "🎵📜", 
-            desc: "Удобный инструмент для прокрутки и чтения нот или музыкальных текстов с экрана без интернета.", 
-            url: "https://ancf-hue.github.io/anti-ai-music-scroller", 
-            isNew: true, 
-            specialBadge: "🎵 музыка" 
-        },
-        { 
-            title: "🏫 Защита от буллинга (GitHub)", 
-            icon: "🏫🛡️", 
-            desc: "Приложение для предотвращения травли и обеспечения цифровой безопасности в школе.", 
-            url: "https://ancf-hue.github.io/anti-bullying-app", 
-            isNew: true, 
-            specialBadge: "безопасность" 
-        },
+    chatbotClose.addEventListener('click', () => chatbotWindow.classList.remove('active'));
 
-        // ==========================================
-        // 🚁 СИМУЛЯТОРЫ БПЛА (Все 25 уроков + новые)
-        // ==========================================
-        { title: "🚁 Симулятор дрона (Урок 1: Цель)", icon: "🚁🎯", desc: "Обучение пилотированию БПЛА: выбор цели и основы управления квадрокоптером.", url: "https://ancf-hue.github.io/-Anti-AI-Qwen-UAV-Simulator-Lesson-1-Target-", isNew: false, specialBadge: "🚁 дрон" },
-        { title: "🚁 Симулятор дрона (Урок 2: Маршрут)", icon: "🚁🗺️", desc: "Навигация и полёт по маршруту. Продвинутые техники пилотирования БПЛА.", url: "https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-2", isNew: false, specialBadge: "🚁 дрон" },
-        { title: "🚁 Симулятор дрона (Урок 3)", icon: "🚁🎓", desc: "Продолжение обучения пилотированию БПЛА. Урок 3 из курса.", url: "https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-3", isNew: false, specialBadge: "🚁 дрон" },
-        { title: "🚁 Симулятор дрона (Урок 4)", icon: "🚁🎓", desc: "Продолжение обучения пилотированию БПЛА. Урок 4 из курса.", url: "https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-4", isNew: false, specialBadge: "🚁 дрон" },
-        { title: "🚁 Симулятор дрона (Урок 5)", icon: "🚁🎓", desc: "Продолжение обучения пилотированию БПЛА. Урок 5 из курса.", url: "https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-5", isNew: false, specialBadge: "🚁 дрон" },
-        { title: "🚁 Симулятор дрона (Урок 6)", icon: "🚁🕵️", desc: "Скрытная разведка вражеской базы. Оператор ПРИЗРАК собирает разведданные.", url: "https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-6", isNew: false, specialBadge: "🚁 дрон" },
-        { title: "🚁 Симулятор дрона (Урок 7)", icon: "🚁🎓", desc: "Продолжение обучения пилотированию БПЛА. Урок 7 из курса.", url: "https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-7", isNew: false, specialBadge: "🚁 дрон" },
-        { title: "🚁 Симулятор дрона (Урок 8)", icon: "🚁🎓", desc: "Продолжение обучения пилотированию БПЛА. Урок 8 из курса.", url: "https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-8", isNew: false, specialBadge: "🚁 дрон" },
-        { title: "🚁 Симулятор дрона (Урок 9)", icon: "🚁🎓", desc: "Продолжение обучения пилотированию БПЛА. Урок 9 из курса.", url: "https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-9", isNew: false, specialBadge: "🚁 дрон" },
-        { title: "🚁 Симулятор дрона (Урок 10)", icon: "🚁🎓", desc: "Продолжение обучения пилотированию БПЛА. Урок 10 из курса.", url: "https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-10", isNew: false, specialBadge: "🚁 дрон" },
-        { title: "🚁 Симулятор дрона (Урок 11)", icon: "🚁🎓", desc: "Продолжение обучения пилотированию БПЛА. Урок 11 из курса.", url: "https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-11", isNew: false, specialBadge: "🚁 дрон" },
-        { title: "🚁 Симулятор дрона (Урок 12)", icon: "🚁🎓", desc: "Продолжение обучения пилотированию БПЛА. Урок 12 из курса.", url: "https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-12-", isNew: false, specialBadge: "🚁 дрон" },
-        { title: "🚁 Симулятор дрона (Урок 13)", icon: "🚁🎓", desc: "Продолжение обучения пилотированию БПЛА. Урок 13 из курса.", url: "https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-13", isNew: false, specialBadge: "🚁 дрон" },
-        { title: "🚁 Симулятор дрона (Урок 14)", icon: "🚁🎓", desc: "Продолжение обучения пилотированию БПЛА. Урок 14 из курса.", url: "https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson--14-", isNew: false, specialBadge: "🚁 дрон" },
-        { title: "🚁 Симулятор дрона (Урок 15)", icon: "🚁🎓", desc: "Продолжение обучения пилотированию БПЛА. Урок 15 из курса.", url: "https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-15", isNew: false, specialBadge: "🚁 дрон" },
-        { title: "🚁 Симулятор дрона (Урок 16)", icon: "🚁🎓", desc: "Продолжение обучения пилотированию БПЛА. Урок 16 из курса.", url: "https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-16", isNew: false, specialBadge: "🚁 дрон" },
-        { title: "🚁 Симулятор дрона (Урок 17)", icon: "🚁🎓", desc: "Продолжение обучения пилотированию БПЛА. Урок 17 из курса.", url: "https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-17", isNew: false, specialBadge: "🚁 дрон" },
-        { title: "🚁 Симулятор дрона (Урок 18)", icon: "🚁🎓", desc: "Продолжение обучения пилотированию БПЛА. Урок 18 из курса.", url: "https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-18", isNew: false, specialBadge: "🚁 дрон" },
-        { title: "🚁 Симулятор дрона (Урок 19)", icon: "🚁🎓", desc: "Продолжение обучения пилотированию БПЛА. Урок 19 из курса.", url: "https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-19", isNew: false, specialBadge: "🚁 дрон" },
-        { title: "🚁 Симулятор дрона (Урок 20)", icon: "🚁🎓", desc: "Продолжение обучения пилотированию БПЛА. Урок 20 из курса.", url: "https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-20", isNew: false, specialBadge: "🚁 дрон" },
-        { title: "🚁 Симулятор дрона (Урок 21)", icon: "🚁🎓", desc: "Продолжение обучения пилотированию БПЛА. Урок 21 из курса.", url: "https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-21", isNew: false, specialBadge: "🚁 дрон" },
-        { title: "🚁 Симулятор дрона (Урок 22)", icon: "🚁🎓", desc: "Продолжение обучения пилотированию БПЛА. Урок 22 из курса.", url: "https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-22", isNew: false, specialBadge: "🚁 дрон" },
-        { title: "🚁 Симулятор дрона (Урок 23)", icon: "🚁🎓", desc: "Продолжение обучения пилотированию БПЛА. Урок 23 из курса.", url: "https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-23", isNew: false, specialBadge: "🚁 дрон" },
-        { title: "🚁 Симулятор дрона (Урок 24: Шпион)", icon: "🚁🕵️", desc: "Стелс-разведка! Проникните на вражескую территорию, соберите секретные данные и избегайте обнаружения.", url: "https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-24", isNew: false, specialBadge: "🚁 дрон" },
-        { title: "🚁 Симулятор дрона (Урок 25)", icon: "🚁🎓", desc: "Продолжение обучения пилотированию БПЛА. Урок 25 из курса.", url: "https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-25", isNew: false, specialBadge: "🚁 дрон" },
+    function sendMessage() {
+        const text = chatInput.value.trim();
+        if (!text) return;
+        
+        addMessage(text, 'user');
+        chatInput.value = '';
+        
+        setTimeout(() => {
+            const response = getBotResponse(text.toLowerCase());
+            addMessage(response, 'bot');
+        }, 400);
+    }
 
-        // ==========================================
-        // 🏛️ ACADEMY & ОБРАЗОВАНИЕ (Все проекты)
-        // ==========================================
-        { title: "🎓 Специалист по дипфейкам", icon: "🎓🕵️", desc: "Профессиональная программа по детекции deepfake-контента. TensorFlow Lite и визуальный анализ.", url: "https://ancf-hue.github.io/-anti-ai-qwen-academy--Deepfake-Detection-Specialist-", isNew: false, specialBadge: "🎓 безопасность" },
-        { title: "✅ Qwen Fact Checker", icon: "✅🔍", desc: "Локальный инструмент для проверки фактов и верификации информации. Офлайн-фактчекер.", url: "https://ancf-hue.github.io/anti-ai-qwen-academy-qwen-fact-checker", isNew: false, specialBadge: "✅ верификация" },
-        { title: "🎓 Промпт-инженер (полный курс)", icon: "🎓💬", desc: "Полный курс по созданию эффективных промптов для нейросетей. От новичка до профи.", url: "https://ancf-hue.github.io/anti-ai-qwen-academy-prompt-engineer-", isNew: false, specialBadge: "🎓 курс" },
-        { title: "🏛️ Менеджер ИИ-продуктов", icon: "🏛️🚀", desc: "Комплексная офлайн-платформа для подготовки специалистов по управлению продуктами на базе ИИ.", url: "https://ancf-hue.github.io/anti-ai-qwen-academy-ai-product-manager-", isNew: false, specialBadge: "🎓 курс" },
-        { title: "🏛️ Менеджер ИИ-продуктов (Phi версия)", icon: "🏛️📱", desc: "Подготовка AI Product Manager с фокусом на эффективные и легкие модели (Phi) для локального развертывания.", url: "https://anti-ai-qwen-academy-ai-product-man-phi.vercel.app/", isNew: false, specialBadge: "🎓 Phi-модели" },
-        { title: "🏛️ Специалист по безопасности ИИ-моделей", icon: "🏛️🛡️", desc: "Ищет уязвимости в коде нейросетей, защищая их от взлома. Офлайн-тренажёр по AI Model Security.", url: "https://ancf-hue.github.io/Anti-AI-Qwen-Academy-AI-Model-Security-Specialist#support", isNew: false, specialBadge: "🔒 безопасность" },
-        { title: "🏛️ Юрист в сфере ИИ (AI Legal Specialist)", icon: "🏛️⚖️", desc: "Изучение правового регулирования ИИ, авторского права и защиты данных в цифровую эпоху.", url: "https://ancf-hue.github.io/Anti-AI-Qwen-Academy-AI-Legal-Specialist", isNew: false, specialBadge: "⚖️ право" },
-        { title: "🏛️ AI Ethics Officer (Специалист по этике ИИ)", icon: "🏛️🤝", desc: "Офлайн-платформа для подготовки специалистов по этике ИИ и предотвращению bias в алгоритмах.", url: "https://ancf-hue.github.io/-Anti-AI-Qwen-Academy-AI-Ethics-Officer", isNew: false, specialBadge: "🎓 этика" },
-        { title: "🏛️ Куратор данных (Data Curator)", icon: "🏛️🗂️", desc: "Подготовка, очистка и верификация датасетов для обучения нейросетей офлайн.", url: "https://ancf-hue.github.io/anti-ai-qwen-academy-data-curator", isNew: false, specialBadge: "📊 данные" },
-        { title: "🏛️ Промпт-дизайнер (Нейроиллюстратор)", icon: "🏛️🎨", desc: "Искусство создания точных запросов для генерации изображений и текстов. Офлайн-справочник.", url: "https://ancf-hue.github.io/anti-ai-qwen-academy-Prompt-Designer-Neuroillustrator", isNew: false, specialBadge: "🎨 дизайн" },
-        { title: "🏛️ AI-редактор / Нейрокопирайтер", icon: "🏛️✍️", desc: "Детекция дипфейков и создание качественного контента. Навыки верификации и редактирования ИИ-текстов.", url: "https://ancf-hue.github.io/anti-ai-qwen-academy-deepfake-detection", isNew: false, specialBadge: "✍️ контент" },
-        { title: "🏛️ Киборг-Атлет: Mobile", icon: "🏛️🏃‍♂️", desc: "Трансформация мобильных геймеров в киборг-спортсменов с усиленными реакциями и цифровой гигиеной.", url: "https://ancf-hue.github.io/anti-ai-qwen-academy-cyborg-athlete-mobile", isNew: false, specialBadge: "🎓 курс" },
-        { title: "🏛️ Глубокая тех. разработка для ML-инженеров", icon: "🏛️💻", desc: "Курс по глубокой технической разработке для инженеров машинного обучения без облачных зависимостей.", url: "https://ancf-hue.github.io/anti-ai-qwen-academy-deep-technical-development-for-ML-engineers", isNew: false, specialBadge: "🎓 ML" },
-        { title: "🏛️ Бизнес-интегратор ИИ", icon: "🏛️💼", desc: "Образовательная программа по внедрению готовых нейросетей в бизнес-процессы для сокращения расходов.", url: "https://ancf-hue.github.io/anti-ai-business-integrator", isNew: false, specialBadge: "💼 бизнес" },
-        { title: "💰 Заработок с Qwen AI", icon: "💰🤖", desc: "Практические стратегии монетизации навыков работы с ИИ. Офлайн-гид по заработку.", url: "https://ancf-hue.github.io/anti-ai-qwen-earn-money", isNew: false, specialBadge: "💡 доход" },
-        { title: "🤖 Анти-ИИ-Квен-Компаньон", icon: "🤖🤝", desc: "Персональный офлайн-помощник для безопасного взаимодействия с ИИ-системами.", url: "https://ancf-hue.github.io/anti-ai-qwen-companion", isNew: false, specialBadge: "🔒 приватность" },
+    chatSend.addEventListener('click', sendMessage);
+    chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') sendMessage();
+    });
 
-        // ==========================================
-        // 🛡️ БЕЗОПАСНОСТЬ & ЗАЩИТА
-        // ==========================================
-        { title: "🛡️ Анти-ИИ Щит (Защита от мошенников)", icon: "📞🛡️", desc: "Блокировка телефонных атак и защита от мошенников.", url: "https://ancf-hue.github.io/anti-ai-shield", isNew: false, specialBadge: "защита" },
-        { title: "🔐 Анти ИИ СМС Шифрование", icon: "📱🔐", desc: "Шифрование SMS-сообщений и защита переписки от ИИ-анализа. Полностью офлайн-режим.", url: "https://ancf-hue.github.io/anti-ai-sms-shield", isNew: false, specialBadge: "🔒 шифр" },
-        { title: "🔋 Анти ИИ Аккумуляторная зарядка", icon: "🔋⚡", desc: "Оптимизация заряда батареи и защита от энергопотребляющих ИИ-процессов.", url: "https://ancf-hue.github.io/anti-ai-battery-shield", isNew: false, specialBadge: "🔋 энергия" },
-        { title: "🌪️ Анти-ИИ Кибер-взломщик", icon: "🔐⚡", desc: "Обучение этичному хакингу и защите от цифровых угроз. Офлайн-симулятор кибербезопасности.", url: "https://ancf-hue.github.io/anti-ai-cyber-hack", isNew: false, specialBadge: "🛡️ защита" },
-        { title: "🔄 Анти ИИ Нарциссический цикл", icon: "🔄🧠", desc: "Распознавание и защита от манипуляций, основанных на нарциссических паттернах поведения.", url: "https://ancf-hue.github.io/anti-ai-narc-cycle", isNew: false, specialBadge: "психология" },
-        { title: "🎋 Анти ИИ · Цикл осознания", icon: "🎋🧘", desc: "Восточная практика осознанности для распознавания нарциссических манипуляций в цифровом общении.", url: "https://ancf-hue.github.io/anti-ai-narc-cycle-oriental", isNew: false, specialBadge: "🎋 восточный" },
-        { title: "🛡️ Анти-ИИ: Манифест Суверенной Личности", icon: "🛡️👤", desc: "Философско-технический манифест о цифровой автономии и суверенитете личности в эпоху ИИ.", url: "https://ancf-hue.github.io/ai-core-autonomy", isNew: false, specialBadge: "манифест" },
+    // Изменено на innerHTML для поддержки форматирования (жирный шрифт, переносы, ссылки)
+    function addMessage(htmlContent, sender) {
+        const div = document.createElement('div');
+        div.className = `message ${sender}`;
+        div.innerHTML = htmlContent;
+        chatMessages.appendChild(div);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
 
-        // ==========================================
-        // 🏎️ МЕХАНИКА & АВТО
-        // ==========================================
-        { title: "🏎️ Анти ИИ Механик: Коленвал (Двигатель)", icon: "🏎️⚙️", desc: "Наглядный урок 1: Коленвал, шатун и поршень. Разбор сборки двигателя.", url: "https://ancf-hue.github.io/-ANTI-AI-MECHANIC---Lesson-1-Engine-Assembly-Crankshaft-Connecting-Rod-and-Piston-For-", isNew: false, specialBadge: "механика" },
-        { title: "🏎️ Анти ИИ Механик: ГРМ", icon: "🏎️🔧", desc: "Наглядный урок 2: Газораспределительный механизм, распредвал и клапаны.", url: "https://ancf-hue.github.io/-ANTI-AI-MECHANIC---Lesson-2-Timing-Mechanism-Camshaft-Timing-Gear-and-Valve-For-Kids-", isNew: false, specialBadge: "ГРМ" },
-        { title: "🏎️ Анти ИИ Механик: Трансмиссия", icon: "🏎️🚗", desc: "Наглядный урок 3: Маховик, диск сцепления и вал коробки передач.", url: "https://ancf-hue.github.io/-ANTI-AI-MECHANIC---Lesson-3-Transmission-Assembly-Flywheel-Clutch-Disc-and-Gearbox-Shaft-For-Kids-", isNew: false, specialBadge: "трансмиссия" },
-        { title: "🏎️ Анти ИИ Механик: Турбонаддув", icon: "🏎️💨", desc: "Наглядный урок 4: Корпус турбины, рабочее колесо и интеркулер.", url: "https://ancf-hue.github.io/-ANTI-AI-MECHANIC---Lesson-4-Turbocharger-Turbine-Housing-Impeller-and-Intercooler-For-Kids-", isNew: false, specialBadge: "турбо" },
-        { title: "🚗 Анти ИИ Автомобиль", icon: "🚗⚡", desc: "Помощник водителя.", url: "https://ancf-hue.github.io/anti-ai-auto", isNew: false, specialBadge: "авто" },
-        { title: "🕶️ Анти-ИИ Слепая зона", icon: "🕶️🚗", desc: "Обучение контролю слепых зон автомобиля. Безопасное вождение и парковка офлайн.", url: "https://ancf-hue.github.io/anti-ai-blind-zone", isNew: false, specialBadge: "🚗 авто" },
+    function getBotResponse(input) {
+        const lang = currentLang;
 
-        // ==========================================
-        // 🎮 ИГРЫ, ТРЕНАЖЁРЫ & ИНСТРУМЕНТЫ
-        // ==========================================
-        { title: "🐾 Анти-ИИ Следопыт", icon: "🐾🔍", desc: "Бесплатная офлайн-игра: учись распознавать следы животных, развивай наблюдательность.", url: "https://ancf-hue.github.io/anti-ai-tracker", isNew: false, specialBadge: "🎮 игра" },
-        { title: "🎲 Анти ИИ — Удача", icon: "🎲🍀", desc: "Развитие навыков принятия решений и распознаванию манипуляций с вероятностями.", url: "https://ancf-hue.github.io/anti-ai-udacha", isNew: false, specialBadge: "🧠 мышление" },
-        { title: "🔤 Анти-ИИ Алфавит", icon: "🔤🧒", desc: "Обучающая игра для детей: алфавит, буквы и слова без интернета. Тактильное обучение.", url: "https://ancf-hue.github.io/anti-ai-abc", isNew: false, specialBadge: "🧒 дети" },
-        { title: "👁️ Анти-ИИ Визометр", icon: "👁️📊", desc: "Проверка остроты зрения и обучение распознаванию визуальных дипфейков.", url: "https://ancf-hue.github.io/anti-ai-visometer", isNew: false, specialBadge: "👁️ зрение" },
-        { title: "👁️ Анти-ИИ Визометр (Детский)", icon: "👁️🧒", desc: "Проверка остроты зрения и обучение распознаванию визуальных дипфейков для детей.", url: "https://ancf-hue.github.io/Anti-AI-Visometer-Kids", isNew: false, specialBadge: "🧒 детский" },
-        { title: "👁️ Анти-ИИ Осмотр", icon: "👁️🩺", desc: "Расширенная проверка остроты зрения, цветовосприятия и диагностика глаз.", url: "https://ancf-hue.github.io/anti-ai-vision-check", isNew: false, specialBadge: "👁️ зрение" },
-        { title: "🏋️ Анти-ИИ Гимнастика для глаз", icon: "👁️🏋️", desc: "Упражнения для снятия усталости и тренировки глазных мышц. Офлайн-тренажёр.", url: "https://ancf-hue.github.io/anti-ai-eyes-gym", isNew: false, specialBadge: "👁️ здоровье" },
-        { title: "👁️ Анти ИИ Взгляд", icon: "👁️🛡️", desc: "Система безопасности для незрячих. Предупреждает о ямах, лужах, ветках.", url: "https://ancf-hue.github.io/anti-ai-glance", isNew: false, specialBadge: "👁️ для незрячих" },
-        { title: "🧭 Анти ИИ Навигатор (Прямо)", icon: "🧭🚶", desc: "Голосовой навигатор помогает идти прямо и не сбиться с пути.", url: "https://ancf-hue.github.io/Anti-AI-Navigator-Straight-", isNew: false, specialBadge: "🧭 навигация" },
-        { title: "📏 Анти-ИИ Расстояние", icon: "📏📐", desc: "Измерение расстояния от камеры до лица.", url: "https://ancf-hue.github.io/anti-ai-distance", isNew: false, specialBadge: "инструмент" },
-        { title: "📱 Анти ИИ Штрих-код", icon: "📱🔍", desc: "Сканирование товаров.", url: "https://ancf-hue.github.io/anti-ai-barcode", isNew: false, specialBadge: "инструмент" },
-        { title: "📐 Анти ИИ Уровень", icon: "📐📏", desc: "Цифровой уровень.", url: "https://ancf-hue.github.io/anti-ai-level", isNew: false, specialBadge: "инструмент" },
-        { title: "🪞 Анти ИИ Электронное зеркало", icon: "🪞✨", desc: "Цифровое зеркало для самодиагностики.", url: "https://ancf-hue.github.io/anti-ai-electronic-mirror", isNew: false, specialBadge: "здоровье" },
-        { title: "🧠 Анти ИИ Память", icon: "🧠📚", desc: "Тренировка мозга.", url: "https://ancf-hue.github.io/anti-ai-memory", isNew: false, specialBadge: "мозг" },
-        { title: "🔐 Анти ИИ Пароли", icon: "🔐🔑", desc: "Генератор паролей.", url: "https://ancf-hue.github.io/anti-ai-passwords", isNew: false, specialBadge: "безопасность" },
-        { title: "🧩 Анти-ИИ: Мозаика", icon: "🧩🎨", desc: "Игра-головоломка для тренировки внимания и распознавания визуальных паттернов.", url: "https://ancf-hue.github.io/anti-ai-mosaic", isNew: false, specialBadge: "головоломка" },
-        { title: "🧩 Анти-ИИ: Мозаика (Визуал)", icon: "🧩👁️", desc: "Тренировка человеческого зрения через пазлы и визуальные задачи.", url: "https://ancf-hue.github.io/-Human-Vision-Puzzle", isNew: false, specialBadge: "зрение" },
-        { title: "🧊 CubeCraft Pro", icon: "🧊🎮", desc: "3D-головоломка на развитие пространственного мышления и логики. Офлайн-игра.", url: "https://ancf-hue.github.io/cubecraft-pro-antiai", isNew: false, specialBadge: "🎮 игра" },
-        { title: "🔷 Собери кубики", icon: "🔷🧩", desc: "Игра на память и внимание: найди пары одинаковых кубиков.", url: "https://ancf-hue.github.io/match-cubes-collection", isNew: false, specialBadge: "🧩 игра" },
-        { title: "🧩 Анти ИИ Тетрис", icon: "🧩🎮", desc: "Классический тетрис с механикой блоков. Тренировка реакции и внимания.", url: "https://ancf-hue.github.io/anti-ai-tetris", isNew: false, specialBadge: "игра" },
+        // 1. Базовые команды
+        if (input.includes('привет') || input.includes('здравствуй') || input.includes('hi') || input.includes('hello')) {
+            return lang === 'ru' 
+                ? "Приветствую! Я знаю всё о 100+ проектах. Напишите часть названия (например: <i>\"тетрис\"</i>, <i>\"урок 5\"</i>, <i>\"механик\"</i>, <i>\"зрение\"</i>), и я выдам полную карточку проекта." 
+                : "Greetings! I know everything about 100+ projects. Type part of a name (e.g., <i>\"tetris\"</i>, <i>\"lesson 5\"</i>, <i>\"mechanic\"</i>), and I will provide the full project card.";
+        }
+        if (input.includes('поддерж') || input.includes('донат') || input.includes('support') || input.includes('donate')) {
+            return lang === 'ru'
+                ? "Проекты бесплатны. Поддержать развитие можно переводом по номеру: <b>8-920-227-56-76</b> (СБП, любой банк). Или пишите на an.cf@yandex.ru"
+                : "Projects are free. You can support development by transferring to: <b>8-920-227-56-76</b> (SBP, any bank). Or write to an.cf@yandex.ru";
+        }
 
-        // ==========================================
-        // 🎵 МУЗЫКА & ТВОРЧЕСТВО
-        // ==========================================
-        { title: "🥁 Анти-ИИ Барабан-Шары", icon: "🥁🔴", desc: "Ритмическая игра для развития чувства такта, реакции и музыкального слуха.", url: "https://ancf-hue.github.io/-Anti-AI-Drum-Balls-", isNew: false, specialBadge: "🎵 музыка" },
-        { title: "🎵 20 ритмов", icon: "🎵🥁", desc: "Тренировка музыкального слуха и чувства ритма. 20 разнообразных упражнений.", url: "https://ancf-hue.github.io/anti-ai-20-ritmov", isNew: false, specialBadge: "🎵 музыка" },
-        { title: "🥁 Анти ИИ Барабан (Метроном)", icon: "🥁🎛️", desc: "Профессиональный метроном.", url: "https://ancf-hue.github.io/anti-ai-drum-metronome", isNew: false, specialBadge: "музыка" },
-        { title: "🐾 Анти ИИ: Животные поют", icon: "🐾🎵", desc: "Весёлые песни животных.", url: "https://ancf-hue.github.io/anti-ai-animals", isNew: false, specialBadge: "дети" },
-        { title: "📝 Анти ИИ Считаем до 10", icon: "📝🔢", desc: "Интерактивное обучение счёту для детей.", url: "https://ancf-hue.github.io/anti-ai-count-to-10", isNew: false, specialBadge: "дети" },
-        { title: "🧠 Анти ИИ Проверка слуха (память)", icon: "👂🧠", desc: "Тренировка памяти и слухового внимания.", url: "https://ancf-hue.github.io/anti-ai-hearing-test-memory-training-", isNew: false, specialBadge: "🎧 память" },
-        { title: "⚡ Анти ИИ Проверка слуха (быстрая)", icon: "👂⚡", desc: "Экспресс-тренировка памяти и скорости реакции.", url: "https://ancf-hue.github.io/anti-ai-hearing-test-fast", isNew: false, specialBadge: "🚀 быстрая" },
-        { title: "🐢 Анти ИИ Проверка слуха (медленная)", icon: "👂🐢", desc: "Размеренная тренировка памяти и слуха.", url: "https://ancf-hue.github.io/Anti-AI-Hearing-Test-slow-memory-training-", isNew: false, specialBadge: "🎵 медленная" },
-        { title: "📊 Анти-ИИ Аудиометр", icon: "👂📊", desc: "Профессиональный аудиометр для оценки чувствительности слуха.", url: "https://ancf-hue.github.io/Anti-AI-Audiometer", isNew: false, specialBadge: "🔊 точный" },
-
-        // ==========================================
-        // 🛠️ УТИЛИТЫ & КОНВЕРТЕРЫ
-        // ==========================================
-        { title: "💡 Анти-ИИ Свет", icon: "💡🪄", desc: "Управление освещением и цветотерапия для улучшения настроения и концентрации.", url: "https://ancf-hue.github.io/Anti-AI-Light", isNew: false, specialBadge: "💡 инструмент" },
-        { title: "🎬 Анти-ИИ Кадр", icon: "🎬🖼️", desc: "Захват и извлечение кадров из видеофайлов. Работает полностью офлайн.", url: "https://ancf-hue.github.io/anti-ai-video-frame-capturer", isNew: false, specialBadge: "🎬 видео" },
-        { title: "✂️ Анти-ИИ Видео-ножницы", icon: "✂️🎥", desc: "Простой обрезчик видео без потери качества. Всё локально.", url: "https://ancf-hue.github.io/anti-ai-video-cutter", isNew: false, specialBadge: "✂️ видео" },
-        { title: "🖼️ Photo Converter Pro", icon: "🖼️🔄", desc: "Конвертация изображений в JPEG, PNG, WEBP. Офлайн, быстро.", url: "https://ancf-hue.github.io/photo-converter-pro", isNew: false, specialBadge: "🖼️ фото" },
-        { title: "📝 Редактор фото с текстом", icon: "📝🖌️", desc: "Добавляй подписи, стикеры и текст на фото. Простой графический редактор.", url: "https://ancf-hue.github.io/photo-editor-text", isNew: false, specialBadge: "🖌️ фото" },
-        { title: "📝 Text Converter Pro", icon: "📝🔄", desc: "Конвертация текста между форматами: TXT, HTML, Markdown.", url: "https://ancf-hue.github.io/text-converter-pro", isNew: false, specialBadge: "📝 текст" },
-        { title: "🎭 DF Generator RU", icon: "🎭🤖", desc: "Генератор дипфейков для образовательных целей. Изучай технологии и защищайся.", url: "https://ancf-hue.github.io/df-generator-ru", isNew: false, specialBadge: "🎓 образование" },
-        { title: "✨ Анти ИИ Космос", icon: "✨🌌", desc: "3D-атлас звёзд.", url: "https://ancf-hue.github.io/anti-ai-cosmos", isNew: false, specialBadge: "образование" },
-        { title: "🧘 Анти-ИИ Стресс", icon: "🧘🌿", desc: "Медитации и техники расслабления.", url: "https://ancf-hue.github.io/anti-ai-stress", isNew: false, specialBadge: "здоровье" },
-        { title: "✨ ВолшебствО | Rutube", icon: "🎬✨", desc: "Авторский музыкальный канал: детские песни-сказки, лирика, юмор.", url: "https://rutube.ru/channel/24404224/", isRutube: true, isNew: false, specialBadge: "музыка" }
-    ];
-
-    function renderProjects() {
-        const container = document.getElementById('dynamicProjects');
-        if (!container) return;
-        container.innerHTML = '';
-
-        projectsData.forEach(proj => {
-            const card = document.createElement('div');
-            card.className = 'project-card';
-            if (proj.isRutube) card.classList.add('rutube-card');
-            
-            let badgeHtml = '<span class="badge-offline">⚡ оффлайн</span>';
-            if (proj.specialBadge) badgeHtml += ` <span class="special-badge">${proj.specialBadge}</span>`;
-            if (proj.isNew) badgeHtml += ' <span class="new-badge">НОВОЕ</span>';
-            
-            card.innerHTML = `
-                <span class="card-icon">${proj.icon}</span>
-                <div class="card-title">${proj.title} ${badgeHtml}</div>
-                <div class="card-desc">${proj.desc}</div>
-                <a class="project-btn" href="${proj.url}" target="_blank" rel="noopener noreferrer">ОТКРЫТЬ ПРОЕКТ →</a>
-            `;
-            container.appendChild(card);
+        // 2. ПОИСК ПО БАЗЕ ПРОЕКТОВ
+        // Ищем совпадения в slug, названии (RU/EN), описании (RU/EN) или бейдже
+        const matches = rawProjects.filter(p => {
+            const searchStr = `${p[0]} ${p[2]} ${p[3]} ${p[4]} ${p[5]} ${p[6] || ''}`.toLowerCase();
+            // Разбиваем запрос на слова для более гибкого поиска (например, "урок 5" найдёт и "урок", и "5")
+            const words = input.split(/\s+/).filter(w => w.length > 1);
+            return words.every(word => searchStr.includes(word));
         });
+
+        if (matches.length === 1) {
+            // ТОЧНОЕ СОВПАДЕНИЕ: выдаём полную карточку
+            const p = matches[0];
+            const title = lang === 'ru' ? p[2] : p[3];
+            const desc = lang === 'ru' ? p[4] : (p[5] || p[4]);
+            const badge = p[6] ? `[${p[6]}]` : '';
+            const isNew = p[7] ? ' 🔥 NEW' : '';
+            const url = p[8] || `https://ancf-hue.github.io/${p[0]}`;
+            
+            return `<b>${p[1]} ${title} ${badge}${isNew}</b><br><br>${desc}<br><br><a href="${url}" target="_blank" class="proj-link">${lang === 'ru' ? '🔗 Открыть проект' : '🔗 Open Project'}</a>`;
+        
+        } else if (matches.length > 1 && matches.length <= 5) {
+            // НЕСКОЛЬКО СОВПАДЕНИЙ: выводим список с краткой инфой
+            let response = lang === 'ru' ? `<b>Найдено проектов: ${matches.length}:</b><br><ul>` : `<b>Found ${matches.length} projects:</b><br><ul>`;
+            matches.forEach(p => {
+                const title = lang === 'ru' ? p[2] : p[3];
+                const url = p[8] || `https://ancf-hue.github.io/${p[0]}`;
+                response += `<li>${p[1]} <a href="${url}" target="_blank" class="inline-link">${title}</a> <span style="color:#9ca3af; font-size:11px;">[${p[6] || 'info'}]</span></li>`;
+            });
+            response += `</ul><br><i>${lang === 'ru' ? 'Уточните запрос (например, добавьте номер урока), чтобы получить полное описание.' : 'Refine your query (e.g., add lesson number) to get full details.'}</i>`;
+            return response;
+        
+        } else if (matches.length > 5) {
+            // СЛИШКОМ МНОГО СОВПАДЕНИЙ (например, запрос "урок" дал 25 результатов)
+            let response = lang === 'ru' ? `<b>Найдено много совпадений (${matches.length}). Вот первые 4:</b><br><ul>` : `<b>Many matches found (${matches.length}). Here are the first 4:</b><br><ul>`;
+            matches.slice(0, 4).forEach(p => {
+                const title = lang === 'ru' ? p[2] : p[3];
+                const url = p[8] || `https://ancf-hue.github.io/${p[0]}`;
+                response += `<li>${p[1]} <a href="${url}" target="_blank" class="inline-link">${title}</a></li>`;
+            });
+            response += `</ul><br><i>${lang === 'ru' ? 'Пожалуйста, уточните запрос. Например: "урок 5", "механик турбо" или "БПЛА шпион".' : 'Please refine your query. E.g., "lesson 5", "mechanic turbo", or "UAV spy".'}</i>`;
+            return response;
+        }
+
+        // 3. НИЧЕГО НЕ НАЙДЕНО
+        return lang === 'ru'
+            ? "Проект не найден. 💡 <b>Совет:</b> Попробуйте ввести часть названия или ключевое слово, например: <i>\"тетрис\"</i>, <i>\"урок 1\"</i>, <i>\"механик\"</i>, <i>\"зрение\"</i>, <i>\"БПЛА\"</i> или <i>\"рутуб\"</i>."
+            : "Project not found. 💡 <b>Tip:</b> Try typing part of the name or a keyword, e.g., <i>\"tetris\"</i>, <i>\"lesson 1\"</i>, <i>\"mechanic\"</i>, <i>\"vision\"</i>, <i>\"UAV\"</i>, or <i>\"rutube\"</i>.";
     }
 
     window.addEventListener('DOMContentLoaded', () => {
         handleRedirectFrom404();
-        renderProjects();
+        applyLanguage();
         setupQRClick();
     });
 </script>
