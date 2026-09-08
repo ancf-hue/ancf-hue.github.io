@@ -118,20 +118,20 @@ footer{text-align:center;padding:2.2rem;font-size:.8rem;color:#4b5563;border-top
 <footer><span data-i18n="footer_text">© 2026 Anti‑AI Shield • Технологии для людей • 100% оффлайн-философия</span></footer>
 <div id="errorToast" class="error-toast"></div>
 <button class="chatbot-toggle" id="chatbotToggle" aria-label="Открыть чат">🛡️</button>
-<div class="chatbot-window" id="chatbotWindow"><div class="chat-header"><h3><span class="chat-status"></span> <span data-i18n="chat_title">Офлайн-Ассистент</span></h3><button class="chat-close" id="chatbotClose">×</button></div><div class="chat-messages" id="chatMessages"><div class="message bot" data-i18n="chat_welcome">Привет! Я знаю все проекты в 7 разделах. Спросите: <i>"здоровье"</i>, <i>"музыка"</i>, <i>"игры"</i>, <i>"детские"</i>, <i>"спорт"</i>, <i>"образование"</i>, <i>"инструменты"</i> или название проекта.</div></div><div class="chat-quick-tags" id="quickTags"></div><div class="chat-input-area"><input type="text" class="chat-input" id="chatInput" data-i18n-placeholder="chat_placeholder" placeholder="Раздел или проект..." autocomplete="off"><button class="chat-send" id="chatSend">➤</button></div></div>
+<div class="chatbot-window" id="chatbotWindow"><div class="chat-header"><h3><span class="chat-status"></span> <span data-i18n="chat_title">Офлайн-Ассистент</span></h3><button class="chat-close" id="chatbotClose">×</button></div><div class="chat-messages" id="chatMessages"><div class="message bot" data-i18n="chat_welcome">Привет! Я знаю все проекты в 8 разделах. Спросите: <i>"здоровье"</i>, <i>"музыка"</i>, <i>"игры"</i>, <i>"змея"</i>, <i>"детские"</i>, <i>"спорт"</i>, <i>"образование"</i>, <i>"инструменты"</i> или название проекта.</div></div><div class="chat-quick-tags" id="quickTags"></div><div class="chat-input-area"><input type="text" class="chat-input" id="chatInput" data-i18n-placeholder="chat_placeholder" placeholder="Раздел или проект..." autocomplete="off"><button class="chat-send" id="chatSend">➤</button></div></div>
 
 <script>
 const sections=[
 {id:"health",icon:"🩺",titleRu:"Здоровье",titleEn:"Health",descRu:"Тренажёры зрения, слуха, памяти, стресс-менеджмент, психология.",descEn:"Vision, hearing, memory trainers, stress management, psychology.",keywords:["здоровье","зрение","слух","память","стресс","визометр","аудиометр","глаз","нарцис","зеркало","кожа"]},
 {id:"music",icon:"🎵",titleRu:"Музыка",titleEn:"Music",descRu:"Скроллеры нот, метрономы, ритмические тренажёры.",descEn:"Sheet music scrollers, metronomes, rhythmic trainers.",keywords:["музыка","ритм","барабан","метроном","скроллер","рутуб","нот"]},
-{id:"games",icon:"🎮",titleRu:"Игры",titleEn:"Games",descRu:"Головоломки, аркады, симуляторы, квесты, развлекательные тесты.",descEn:"Puzzles, arcades, simulators, quests, fun tests.",keywords:["игра","тетрис","головоломк","аркад","оракл","яйца","стрелок","крот","облак","мрамор","змей","шутер","кубик","бильярд","гольф","удача"]},
+{id:"games",icon:"🎮",titleRu:"Игры",titleEn:"Games",descRu:"Головоломки, аркады, симуляторы, квесты, развлекательные тесты.",descEn:"Puzzles, arcades, simulators, quests, fun tests.",keywords:["игра","тетрис","головоломк","аркад","оракл","яйца","стрелок","крот","облак","мрамор","шутер","кубик","бильярд","гольф","удача"]},
+{id:"snake_games",icon:"🐍",titleRu:"Игры со змеей",titleEn:"Snake Games",descRu:"3D-аркады со змеёй: охота, гонки, выживание, приключения и бои.",descEn:"3D snake arcades: hunting, racing, survival, adventures and battles.",keywords:["змея","snake","змее","гонки","светляч","лягушк","мёд","огонь","паук","дракон","муравей","мелодия","пузыр","стрекоз","мышка","ябл","доска"]},
 {id:"kids",icon:"🧒",titleRu:"Детские",titleEn:"Kids",descRu:"Алфавит, счёт, механика, антибуллинг, сортировщики.",descEn:"Alphabet, counting, mechanics, anti-bullying, sorters.",keywords:["детск","алфавит","счёт","животн","механик","буллинг","коленвал","грм","трансмисс","турбо","азбук","фигур"]},
 {id:"sports",icon:"🏆",titleRu:"Спорт",titleEn:"Sports",descRu:"Теннис, дартс, стрельба, хоккей, футбол, лыжи, биатлон, плавание.",descEn:"Tennis, darts, archery, hockey, soccer, skiing, biathlon, swimming.",keywords:["спорт","теннис","дартс","лук","киборг","атлет","гандбол","баскетбол","биатлон","водное поло","ватерпол","боулинг","рыбалк","велогонк","кроль","плаван","archery","хоккей","футбол","лыж","коньки","скачки","байдар","пенальти","кёрлинг","теннис"]},
 {id:"education",icon:"🎓",titleRu:"Образование",titleEn:"Education",descRu:"Академия ИИ, БПЛА, безопасность, бизнес, профессии, манифесты.",descEn:"AI Academy, UAV, security, business, professions, manifestos.",keywords:["образован","академ","бпла","дрон","безопасн","щит","бизнес","манифест","юрист","промпт","щит","компаньон","challenge","челлендж"]},
 {id:"tools",icon:"🛠️",titleRu:"Инструменты",titleEn:"Tools",descRu:"Конвертеры, редакторы, сканеры, измерительные приборы, утилиты.",descEn:"Converters, editors, scanners, meters, utilities.",keywords:["инструмент","конвертер","редактор","сканер","уровень","люксметр","навигатор","расстояние","пароль","смс","штрих","аккумулятор","видео","фото","pdf","cosmos","космос","авто","battery","пароли"]}
 ];
 
-// Все проекты с РАБОЧИМИ ссылками (исправленная категоризация)
 const rawProjects=[
 // === ЗДОРОВЬЕ (13) ===
 ["anti-ai-visometer","👁️📊","Визометр","Visometer","Острота зрения + дипфейки","Visual acuity + deepfakes","👁️",false,"https://anti-ai-visometer.vercel.app"],
@@ -156,7 +156,7 @@ const rawProjects=[
 ["rutube-channel","🎬✨","ВолшебствО | Rutube","MagiO Rutube","Авторские песни","Author songs","🎵",false,"https://rutube.ru/channel/24404224/",true],
 ["anti-ai-blind-zone","🕶️🚗","Слепая зона","Blind Zone","Слепой режим ритма","Blind rhythm mode","🚗",false,"https://anti-ai-blind-zone.vercel.app"],
 
-// === ИГРЫ (20) - убран Challenge, добавлена Удача ===
+// === ИГРЫ (18) — без змей ===
 ["anti-a-i-golf","⛳🏌️","Гольф","Anti-AI Golf","День и ночь","Day and night","🎮",true,"https://anti-a-i-golf.vercel.app"],
 ["anti-ai-pool","🎱🎯","Бильярд","Pool","Real 3D Pool","3D billiards","🎮",false,"https://anti-ai-pool.vercel.app"],
 ["anti-ai-tower-3d","🏰🧊","Башня 3D","Tower 3D","3D головоломка","3D puzzle","🛡️",false,"https://anti-ai-tower-3d.vercel.app"],
@@ -173,10 +173,24 @@ const rawProjects=[
 ["anti-ai-tetris","🧩🎮","Тетрис","Tetris","Хаотичное вращение","Chaotic rotation","🎮",false,"https://anti-ai-tetris.vercel.app"],
 ["anti-ai-cloud-flight-3d","☁️🎮","Полёт в облаках","Cloud Flight 3D","3D космический","3D space","🎮",false,"https://anti-ai-cloud-flight-3d.vercel.app"],
 ["anti-ai-mole-3d","🐹🔨","Крот 3D","Mole 3D","Поймай крота","Catch the mole","🎮",false,"https://anti-ai-mole-3d.vercel.app"],
-["anti-a-i-snake-and-mouse","🐍🐭","Змея и Мышка","Snake & Mouse","3D-игра, ловля мышки","3D game","🎮",false,"https://anti-a-i-snake-and-mouse.vercel.app"],
-["anti-ai-snake-apples","🐍🍎","Змея и Яблоки","Snake Apples","3D змейка","3D snake","🎮",false,"https://anti-ai-snake-apples.vercel.app"],
 ["anti-ai-space-simulator","🚀🌌","Космический шутер","Space Sim","3D динамический шутер","3D space shooter","🎮",false,"https://anti-ai-space-simulator.vercel.app"],
 ["anti-ai-udacha","🎲🍀","Удача","Luck","Тест интуиции","Intuition test","🧠",false,"https://anti-ai-udacha.vercel.app"],
+
+// === 🐍 ИГРЫ СО ЗМЕЕЙ (14) ===
+["anti-ii-zmeya-vse-igry","🏆🐍","Доска Змея","Snake Board","Доска почёта всех змеиных игр","Leaderboard of all snake games","🐍",false,"https://anti-ii-zmeya-vse-igry.vercel.app"],
+["anti-a-i-snake-and-fireflies","🐍✨","Змея и Светлячки","Snake & Fireflies","Собирайте светлячков за 3 минуты","Collect fireflies in 3 min","🐍",false,"https://anti-a-i-snake-and-fireflies.vercel.app"],
+["anti-ai-snake-race","🐍🏁","Змея и Гонка","Snake Race","Забег 300м с препятствиями и прыжками","300m race with obstacles","🐍",false,"https://anti-ai-snake-race.vercel.app"],
+["anti-a-i-snake-and-frog","🐍🐸","Змея и Лягушка","Snake & Frog","3D-аркада, поймай 3 раза за 3 минуты","3D arcade, catch 3 times","🐍",false,"https://anti-a-i-snake-and-frog.vercel.app"],
+["anti-a-i-snake-and-honey","🐍🍯","Змея и Мёд","Snake & Honey","Добудь мёд, обойди пчёл-охранников","Get honey, avoid bees","🐍",false,"https://anti-a-i-snake-and-honey.vercel.app"],
+["anti-a-i-snake-and-fire","🐍🔥","Змея и Огонь","Snake & Fire","Пожарная арена против ИИ","Fire arena vs AI","🐍",false,"https://anti-a-i-snake-and-fire.vercel.app"],
+["anti-ai-snake-and-spider","🐍🕷️","Змея и Паук","Snake & Spider","Убеги от паука за 3 минуты","Escape spider in 3 min","🐍",false,"https://anti-ai-snake-and-spider.vercel.app"],
+["anti-ai-snake-and-dragon","🐍🐉","Змея и Дракон","Snake & Dragon","3D-битва со змеей против дракона","3D dragon battle","🐍",false,"https://anti-ai-snake-and-dragon.vercel.app"],
+["anti-ai-snake-ant","🐍🐜","Змея и Муравей","Snake & Ant","Переползти муравьиную тропу незаметно","Cross ant trail silently","🐍",false,"https://anti-ai-snake-ant.vercel.app"],
+["anti-ai-snake-melody-night","🐍🎵","Змея и Мелодия","Snake & Melody","Музыкальная 3D-игра ночью","Musical 3D game at night","🐍",false,"https://anti-ai-snake-melody-night.vercel.app"],
+["anti-a-i-snake-and-bubbles","🐍🫧","Змея и Пузыри","Snake & Bubbles","Ломай мыльные пузыри хвостом","Break bubbles with tail","🐍",false,"https://anti-a-i-snake-and-bubbles.vercel.app"],
+["anti-ii-snake-and-dragonfly","🐍🪰","Змея и Стрекоза","Snake & Dragonfly","Поймай стрекозу 3 раза за 3 минуты","Catch dragonfly 3 times","🐍",false,"https://anti-ii-snake-and-dragonfly.vercel.app"],
+["anti-a-i-snake-and-mouse","🐍🐭","Змея и Мышка","Snake & Mouse","Поймай мышку 3 раза за 3 минуты","Catch mouse 3 times","🐍",false,"https://anti-a-i-snake-and-mouse.vercel.app"],
+["anti-ai-snake-apples","🐍🍎","Змея и Яблоки","Snake Apples","3D стеклянная змейка","3D glass snake","🐍",false,"https://anti-ai-snake-apples.vercel.app"],
 
 // === ДЕТСКИЕ (13) ===
 ["anti-ai-animals","🐾🎵","Животные поют","Singing Animals","Дуэты с питомцами","Pet duets","🧒",false,"https://anti-ai-animals.vercel.app"],
@@ -237,7 +251,7 @@ const rawProjects=[
 ["anti-ai-auto","🚗⚡","Анти-ИИ Авто","Auto","Диагностика двигателя","Engine diagnostics","🚗",false,"https://anti-ai-auto.vercel.app"],
 ["anti-ai-glance","👁️🛡️","Взгляд","Glance","Помощь слепым","Help for the blind","👁️",false,"https://anti-ai-glance.vercel.app"],
 
-// === ОБРАЗОВАНИЕ (59) - добавлен Challenge и Манифест ===
+// === ОБРАЗОВАНИЕ (59) ===
 ["anti-ai-challenge","🏆⚡","Challenge","Challenge","Тест цифровой безопасности","Digital safety test","🏆",false,"https://anti-ai-challenge.vercel.app"],
 ["ai-core-autonomy","🛡️👤","Манифест Суверенной Личности","Sovereign Manifesto","Философия","Philosophy","манифест",false,"https://ai-core-autonomy.vercel.app"],
 ["a-young-operator-of-an-unmanned-aer","🚁👦","Юный оператор БПЛА","Young UAV","25 уроков","25 lessons","🚁 дрон",true,"https://a-young-operator-of-an-unmanned-aer.vercel.app"],
@@ -288,7 +302,6 @@ const rawProjects=[
 ["anti-ai-qwen-earn-money","💰🤖","Заработок с Qwen","Earn with Qwen","Live вакансии","Live jobs","💡",false,"https://anti-ai-qwen-earn-money.vercel.app"]
 ];
 
-// Точный словарь распределения по разделам (7 разделов) - ИСПРАВЛЕН
 const sectionMap = {
   // ЗДОРОВЬЕ (13)
   "anti-ai-visometer": "health",
@@ -311,7 +324,7 @@ const sectionMap = {
   "anti-ai-drum-metronome": "music",
   "rutube-channel": "music",
   "anti-ai-blind-zone": "music",
-  // ИГРЫ (20) - УБРАН Challenge, ДОБАВЛЕНА Удача
+  // ИГРЫ (18) — без змеиных
   "anti-a-i-golf": "games",
   "anti-ai-pool": "games",
   "anti-ai-tower-3d": "games",
@@ -328,10 +341,23 @@ const sectionMap = {
   "anti-ai-tetris": "games",
   "anti-ai-cloud-flight-3d": "games",
   "anti-ai-mole-3d": "games",
-  "anti-a-i-snake-and-mouse": "games",
-  "anti-ai-snake-apples": "games",
   "anti-ai-space-simulator": "games",
   "anti-ai-udacha": "games",
+  // 🐍 ИГРЫ СО ЗМЕЕЙ (14)
+  "anti-ii-zmeya-vse-igry": "snake_games",
+  "anti-a-i-snake-and-fireflies": "snake_games",
+  "anti-ai-snake-race": "snake_games",
+  "anti-a-i-snake-and-frog": "snake_games",
+  "anti-a-i-snake-and-honey": "snake_games",
+  "anti-a-i-snake-and-fire": "snake_games",
+  "anti-ai-snake-and-spider": "snake_games",
+  "anti-ai-snake-and-dragon": "snake_games",
+  "anti-ai-snake-ant": "snake_games",
+  "anti-ai-snake-melody-night": "snake_games",
+  "anti-a-i-snake-and-bubbles": "snake_games",
+  "anti-ii-snake-and-dragonfly": "snake_games",
+  "anti-a-i-snake-and-mouse": "snake_games",
+  "anti-ai-snake-apples": "snake_games",
   // ДЕТСКИЕ (13)
   "anti-ai-animals": "kids",
   "anti-ai-count-to-10": "kids",
@@ -388,7 +414,7 @@ const sectionMap = {
   "anti-ai-cosmos": "tools",
   "anti-ai-auto": "tools",
   "anti-ai-glance": "tools",
-  // ОБРАЗОВАНИЕ (59) - ДОБАВЛЕНЫ Challenge и Манифест
+  // ОБРАЗОВАНИЕ (59)
   "anti-ai-challenge": "education",
   "ai-core-autonomy": "education",
   "a-young-operator-of-an-unmanned-aer": "education",
@@ -439,7 +465,7 @@ const sectionMap = {
   "anti-ai-qwen-earn-money": "education"
 };
 
-const i18n={ru:{hero_title:"ANTI‑AI SHIELD",hero_sub:"Цифровая крепость · приватность без облаков · профессии будущего",qr_text:"Сканируй ↑",support_title:"💙 Поддержать проекты",support_desc:"Все приложения бесплатны и без рекламы.",support_phone_label:"📱 Перевод по номеру телефона (СБП, любой банк)",support_email:"✉️ По вопросам сотрудничества: an.cf@yandex.ru",support_thanks:"✨ Спасибо, что с нами — защищаем мир без слежки ✨",usa_title:"A.I. Core Autonomy // USA Edition",usa_desc:"«Анти-ИИ: Манифест Суверенной Личности».",footer_text:"© 2026 Anti‑AI Shield • Технологии для людей",btn_open:"ОТКРЫТЬ →",badge_offline:"⚡ оффлайн",badge_new:"НОВОЕ",toast_copy_success:"✅ Ссылка скопирована: ",toast_copy_error:"❌ Не удалось скопировать",chat_title:"Офлайн-Ассистент",chat_welcome:"Привет! Спросите: <i>\"здоровье\"</i>, <i>\"музыка\"</i>, <i>\"игры\"</i>, <i>\"детские\"</i>, <i>\"спорт\"</i>, <i>\"образование\"</i>, <i>\"инструменты\"</i>.",chat_placeholder:"Раздел или проект...",back_to_sections:"Все разделы"},en:{hero_title:"ANTI‑AI SHIELD",hero_sub:"Digital fortress · cloudless privacy · professions of the future",qr_text:"Scan me ↑",support_title:"💙 Support the projects",support_desc:"All apps are free and ad-free.",support_phone_label:"📱 Transfer by phone number",support_email:"✉️ Cooperation: an.cf@yandex.ru",support_thanks:"✨ Thank you — protecting the world ✨",usa_title:"A.I. Core Autonomy // USA Edition",usa_desc:"\"Anti-AI: Manifesto of the Sovereign Individual\".",footer_text:"© 2026 Anti‑AI Shield • Technology for people",btn_open:"OPEN →",badge_offline:"⚡ offline",badge_new:"NEW",toast_copy_success:"✅ Link copied: ",toast_copy_error:"❌ Failed to copy",chat_title:"Offline Assistant",chat_welcome:"Hello! Ask: <i>\"health\"</i>, <i>\"music\"</i>, <i>\"games\"</i>, <i>\"kids\"</i>, <i>\"sports\"</i>, <i>\"education\"</i>, <i>\"tools\"</i>.",chat_placeholder:"Section or project...",back_to_sections:"All sections"}};
+const i18n={ru:{hero_title:"ANTI‑AI SHIELD",hero_sub:"Цифровая крепость · приватность без облаков · профессии будущего",qr_text:"Сканируй ↑",support_title:"💙 Поддержать проекты",support_desc:"Все приложения бесплатны и без рекламы.",support_phone_label:"📱 Перевод по номеру телефона (СБП, любой банк)",support_email:"✉️ По вопросам сотрудничества: an.cf@yandex.ru",support_thanks:"✨ Спасибо, что с нами — защищаем мир без слежки ✨",usa_title:"A.I. Core Autonomy // USA Edition",usa_desc:"«Анти-ИИ: Манифест Суверенной Личности».",footer_text:"© 2026 Anti‑AI Shield • Технологии для людей",btn_open:"ОТКРЫТЬ →",badge_offline:"⚡ оффлайн",badge_new:"НОВОЕ",toast_copy_success:"✅ Ссылка скопирована: ",toast_copy_error:"❌ Не удалось скопировать",chat_title:"Офлайн-Ассистент",chat_welcome:"Привет! Я знаю все проекты в 8 разделах. Спросите: <i>\"здоровье\"</i>, <i>\"музыка\"</i>, <i>\"игры\"</i>, <i>\"змея\"</i>, <i>\"детские\"</i>, <i>\"спорт\"</i>, <i>\"образование\"</i>, <i>\"инструменты\"</i>.",chat_placeholder:"Раздел или проект...",back_to_sections:"Все разделы"},en:{hero_title:"ANTI‑AI SHIELD",hero_sub:"Digital fortress · cloudless privacy · professions of the future",qr_text:"Scan me ↑",support_title:"💙 Support the projects",support_desc:"All apps are free and ad-free.",support_phone_label:"📱 Transfer by phone number",support_email:"✉️ Cooperation: an.cf@yandex.ru",support_thanks:"✨ Thank you — protecting the world ✨",usa_title:"A.I. Core Autonomy // USA Edition",usa_desc:"\"Anti-AI: Manifesto of the Sovereign Individual\".",footer_text:"© 2026 Anti‑AI Shield • Technology for people",btn_open:"OPEN →",badge_offline:"⚡ offline",badge_new:"NEW",toast_copy_success:"✅ Link copied: ",toast_copy_error:"❌ Failed to copy",chat_title:"Offline Assistant",chat_welcome:"Hello! Ask: <i>\"health\"</i>, <i>\"music\"</i>, <i>\"games\"</i>, <i>\"snake\"</i>, <i>\"kids\"</i>, <i>\"sports\"</i>, <i>\"education\"</i>, <i>\"tools\"</i>.",chat_placeholder:"Section or project...",back_to_sections:"All sections"}};
 
 let currentLang=localStorage.getItem('anti_ai_lang')||'ru';let currentView='sections';let currentSectionId=null;
 
@@ -462,7 +488,7 @@ function setupQRClick(){const qrArea=document.getElementById('qrClickArea');if(q
 
 const chatbotToggle=document.getElementById('chatbotToggle');const chatbotWindow=document.getElementById('chatbotWindow');const chatbotClose=document.getElementById('chatbotClose');const chatInput=document.getElementById('chatInput');const chatSend=document.getElementById('chatSend');const chatMessages=document.getElementById('chatMessages');const quickTags=document.getElementById('quickTags');
 
-function renderQuickTags(){if(!quickTags)return;quickTags.innerHTML='';const tags=currentLang==='ru'?['здоровье','музыка','игры','детские','спорт','образование','инструменты']:['health','music','games','kids','sports','education','tools'];tags.forEach(t=>{const btn=document.createElement('span');btn.className='chat-tag';btn.textContent=t;btn.onclick=()=>{chatInput.value=t;sendMessage()};quickTags.appendChild(btn)})}
+function renderQuickTags(){if(!quickTags)return;quickTags.innerHTML='';const tags=currentLang==='ru'?['здоровье','музыка','игры','змея','детские','спорт','образование','инструменты']:['health','music','games','snake','kids','sports','education','tools'];tags.forEach(t=>{const btn=document.createElement('span');btn.className='chat-tag';btn.textContent=t;btn.onclick=()=>{chatInput.value=t;sendMessage()};quickTags.appendChild(btn)})}
 
 chatbotToggle.addEventListener('click',()=>{chatbotWindow.classList.toggle('active');if(chatbotWindow.classList.contains('active'))setTimeout(()=>chatInput.focus(),300)});chatbotClose.addEventListener('click',()=>chatbotWindow.classList.remove('active'));document.getElementById('backBtn').addEventListener('click',showSections);
 
@@ -472,7 +498,7 @@ chatSend.addEventListener('click',sendMessage);chatInput.addEventListener('keypr
 
 function addMessage(htmlContent,sender,action){const div=document.createElement('div');div.className=`message ${sender}`;div.innerHTML=htmlContent;chatMessages.appendChild(div);if(action&&action.type==='openSection'){const btn=div.querySelector('[data-open-section]');if(btn)btn.addEventListener('click',()=>showSection(action.sectionId,true))}chatMessages.scrollTop=chatMessages.scrollHeight}
 
-function getBotResponse(input){const lang=currentLang;if(/привет|здравствуй|hi|hello/i.test(input)){return{html:lang==='ru'?`Приветствую! ${rawProjects.length} проектов в 7 разделах.`:`Greetings! ${rawProjects.length} projects in 7 sections.`}}if(/поддерж|донат|support|donate/i.test(input)){return{html:lang==='ru'?"Проекты бесплатны. Поддержать: <b>8-920-227-56-76</b> (СБП).":"Projects are free. Support: <b>8-920-227-56-76</b>."}}if(/^раздел|^секци|^sect|^все раздел|^all section/i.test(input)){showSections();return{html:lang==='ru'?"✅ Возвращаю к <b>7 разделам</b>.":"✅ Returning to <b>7 sections</b>."}}const matchedSection=sections.find(s=>{const searchText=`${s.titleRu} ${s.titleEn} ${s.descRu} ${s.descEn} ${s.keywords.join(' ')}`.toLowerCase();return s.keywords.some(kw=>input.includes(kw.toLowerCase()))||searchText.includes(input)});const matches=rawProjects.filter(p=>{const searchStr=`${p[0]} ${p[2]} ${p[3]} ${p[4]} ${p[5]} ${p[6]||''}`.toLowerCase();const words=input.split(/\s+/).filter(w=>w.length>1);return words.length>0&&words.every(word=>searchStr.includes(word))});if(matchedSection&&matches.length===0){const title=lang==='ru'?matchedSection.titleRu:matchedSection.titleEn;const desc=lang==='ru'?matchedSection.descRu:matchedSection.descEn;const count=getProjectsInSection(matchedSection.id).length;const btnText=lang==='ru'?`📂 Открыть (${count})`:`📂 Open (${count})`;return{html:`<b>${matchedSection.icon} ${title}</b><br>${desc}<br><br><button class="proj-link" data-open-section="${matchedSection.id}">${btnText}</button>`,action:{type:'openSection',sectionId:matchedSection.id}}}if(matches.length===1){const p=matches[0];const title=lang==='ru'?p[2]:p[3];const desc=lang==='ru'?p[4]:(p[5]||p[4]);const url=p[8]||`https://ancf-hue.github.io/${p[0]}/`;const section=sections.find(s=>s.id===getSectionForProject(p[0]));const sTitle=section?(lang==='ru'?section.titleRu:section.titleEn):'';const badge=p[6]?` [${p[6]}]`:'';const isNew=p[7]?' 🔥':'';return{html:`<b>${p[1]} ${title}${badge}${isNew}</b><br><span style="color:#9ca3af;font-size:14px;">📂 ${sTitle}</span><br><br>${desc}<br><br><a href="${url}" target="_blank" class="proj-link">${lang==='ru'?'🔗 Открыть':'🔗 Open'}</a>`}}if(matches.length>1&&matches.length<=10){let r=lang==='ru'?`<b>Найдено: ${matches.length}</b><br><ul>`:`<b>Found: ${matches.length}</b><br><ul>`;matches.forEach(p=>{const title=lang==='ru'?p[2]:p[3];const url=p[8]||`https://ancf-hue.github.io/${p[0]}/`;r+=`<li>${p[1]} <a href="${url}" target="_blank" class="inline-link">${title}</a></li>`});return{html:r+`</ul>`}}if(matches.length>10){let r=lang==='ru'?`<b>Много совпадений (${matches.length}). Первые 8:</b><br><ul>`:`<b>Many matches (${matches.length}). First 8:</b><br><ul>`;matches.slice(0,8).forEach(p=>{const title=lang==='ru'?p[2]:p[3];const url=p[8]||`https://ancf-hue.github.io/${p[0]}/`;r+=`<li>${p[1]} <a href="${url}" target="_blank" class="inline-link">${title}</a></li>`});return{html:r+`</ul>`}}return{html:lang==='ru'?"Не найдено. 💡 Попробуйте раздел или название проекта.":"Not found. 💡 Try a section or project name."}}
+function getBotResponse(input){const lang=currentLang;if(/привет|здравствуй|hi|hello/i.test(input)){return{html:lang==='ru'?`Приветствую! ${rawProjects.length} проектов в 8 разделах.`:`Greetings! ${rawProjects.length} projects in 8 sections.`}}if(/поддерж|донат|support|donate/i.test(input)){return{html:lang==='ru'?"Проекты бесплатны. Поддержать: <b>8-920-227-56-76</b> (СБП).":"Projects are free. Support: <b>8-920-227-56-76</b>."}}if(/^раздел|^секци|^sect|^все раздел|^all section/i.test(input)){showSections();return{html:lang==='ru'?"✅ Возвращаю к <b>8 разделам</b>.":"✅ Returning to <b>8 sections</b>."}}const matchedSection=sections.find(s=>{const searchText=`${s.titleRu} ${s.titleEn} ${s.descRu} ${s.descEn} ${s.keywords.join(' ')}`.toLowerCase();return s.keywords.some(kw=>input.includes(kw.toLowerCase()))||searchText.includes(input)});const matches=rawProjects.filter(p=>{const searchStr=`${p[0]} ${p[2]} ${p[3]} ${p[4]} ${p[5]} ${p[6]||''}`.toLowerCase();const words=input.split(/\s+/).filter(w=>w.length>1);return words.length>0&&words.every(word=>searchStr.includes(word))});if(matchedSection&&matches.length===0){const title=lang==='ru'?matchedSection.titleRu:matchedSection.titleEn;const desc=lang==='ru'?matchedSection.descRu:matchedSection.descEn;const count=getProjectsInSection(matchedSection.id).length;const btnText=lang==='ru'?`📂 Открыть (${count})`:`📂 Open (${count})`;return{html:`<b>${matchedSection.icon} ${title}</b><br>${desc}<br><br><button class="proj-link" data-open-section="${matchedSection.id}">${btnText}</button>`,action:{type:'openSection',sectionId:matchedSection.id}}}if(matches.length===1){const p=matches[0];const title=lang==='ru'?p[2]:p[3];const desc=lang==='ru'?p[4]:(p[5]||p[4]);const url=p[8]||`https://ancf-hue.github.io/${p[0]}/`;const section=sections.find(s=>s.id===getSectionForProject(p[0]));const sTitle=section?(lang==='ru'?section.titleRu:section.titleEn):'';const badge=p[6]?` [${p[6]}]`:'';const isNew=p[7]?' 🔥':'';return{html:`<b>${p[1]} ${title}${badge}${isNew}</b><br><span style="color:#9ca3af;font-size:14px;">📂 ${sTitle}</span><br><br>${desc}<br><br><a href="${url}" target="_blank" class="proj-link">${lang==='ru'?'🔗 Открыть':'🔗 Open'}</a>`}}if(matches.length>1&&matches.length<=10){let r=lang==='ru'?`<b>Найдено: ${matches.length}</b><br><ul>`:`<b>Found: ${matches.length}</b><br><ul>`;matches.forEach(p=>{const title=lang==='ru'?p[2]:p[3];const url=p[8]||`https://ancf-hue.github.io/${p[0]}/`;r+=`<li>${p[1]} <a href="${url}" target="_blank" class="inline-link">${title}</a></li>`});return{html:r+`</ul>`}}if(matches.length>10){let r=lang==='ru'?`<b>Много совпадений (${matches.length}). Первые 8:</b><br><ul>`:`<b>Many matches (${matches.length}). First 8:</b><br><ul>`;matches.slice(0,8).forEach(p=>{const title=lang==='ru'?p[2]:p[3];const url=p[8]||`https://ancf-hue.github.io/${p[0]}/`;r+=`<li>${p[1]} <a href="${url}" target="_blank" class="inline-link">${title}</a></li>`});return{html:r+`</ul>`}}return{html:lang==='ru'?"Не найдено. 💡 Попробуйте раздел или название проекта.":"Not found. 💡 Try a section or project name."}}
 
 window.addEventListener('DOMContentLoaded',()=>{applyLanguage();setupQRClick();setTimeout(()=>{chatbotWindow.classList.add('active');setTimeout(()=>chatInput.focus(),300)},1500)});
 </script>
