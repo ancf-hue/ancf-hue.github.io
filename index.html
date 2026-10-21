@@ -118,9 +118,12 @@ footer{text-align:center;padding:2.2rem;font-size:.8rem;color:#4b5563;border-top
 <footer><span data-i18n="footer_text">© 2026 Anti‑AI Shield • Технологии для людей • 100% оффлайн-философия</span></footer>
 <div id="errorToast" class="error-toast"></div>
 <button class="chatbot-toggle" id="chatbotToggle" aria-label="Открыть чат">🛡️</button>
-<div class="chatbot-window" id="chatbotWindow"><div class="chat-header"><h3><span class="chat-status"></span> <span data-i18n="chat_title">Офлайн-Ассистент</span></h3><button class="chat-close" id="chatbotClose">×</button></div><div class="chat-messages" id="chatMessages"><div class="message bot" data-i18n="chat_welcome">Привет! Я знаю все проекты в 8 разделах. Спросите: <i>"здоровье"</i>, <i>"музыка"</i>, <i>"игры"</i>, <i>"змея"</i>, <i>"детские"</i>, <i>"спорт"</i>, <i>"образование"</i>, <i>"инструменты"</i> или название проекта.</div></div><div class="chat-quick-tags" id="quickTags"></div><div class="chat-input-area"><input type="text" class="chat-input" id="chatInput" data-i18n-placeholder="chat_placeholder" placeholder="Раздел или проект..." autocomplete="off"><button class="chat-send" id="chatSend">➤</button></div></div>
+<div class="chatbot-window" id="chatbotWindow"><div class="chat-header"><h3><span class="chat-status"></span> <span data-i18n="chat_title">Офлайн-Ассистент</span></h3><button class="chat-close" id="chatbotClose">×</button></div><div class="chat-messages" id="chatMessages"><div class="message bot" id="chatWelcome" data-i18n="chat_welcome">Привет! Я знаю все проекты в 9 разделах. Спросите: <i>"здоровье"</i>, <i>"музыка"</i>, <i>"игры"</i>, <i>"змея"</i>, <i>"детские"</i>, <i>"спорт"</i>, <i>"экзамены"</i>, <i>"образование"</i>, <i>"инструменты"</i>.</div></div><div class="chat-quick-tags" id="quickTags"></div><div class="chat-input-area"><input type="text" class="chat-input" id="chatInput" data-i18n-placeholder="chat_placeholder" placeholder="Раздел или проект..." autocomplete="off"><button class="chat-send" id="chatSend">➤</button></div></div>
 
 <script>
+/* ============================================================
+   РАЗДЕЛЫ
+   ============================================================ */
 const sections=[
 {id:"health",icon:"🩺",titleRu:"Здоровье",titleEn:"Health",descRu:"Тренажёры зрения, слуха, памяти, стресс-менеджмент, психология.",descEn:"Vision, hearing, memory trainers, stress management, psychology.",keywords:["здоровье","зрение","слух","память","стресс","визометр","аудиометр","глаз","нарцис","зеркало","кожа","health","vision","hearing","memory","stress","visometer","audiometer","eye","narcissist","mirror","skin"]},
 {id:"music",icon:"🎵",titleRu:"Музыка",titleEn:"Music",descRu:"Скроллеры нот, метрономы, ритмические тренажёры.",descEn:"Sheet music scrollers, metronomes, rhythmic trainers.",keywords:["музыка","ритм","барабан","метроном","скроллер","рутуб","нот","music","rhythm","drum","metronome","scroller","rutube","notes"]},
@@ -128,21 +131,25 @@ const sections=[
 {id:"snake_games",icon:"🐍",titleRu:"Игры со змеей",titleEn:"Snake Games",descRu:"3D-аркады со змеёй: охота, гонки, выживание, приключения и бои.",descEn:"3D snake arcades: hunting, racing, survival, adventures and battles.",keywords:["змея","snake","змее","гонки","светляч","лягушк","мёд","огонь","паук","дракон","муравей","мелодия","пузыр","стрекоз","мышка","ябл","доска","камень","океан","ёжик","ежик","шарик","сортировщик","сова","дождь","удар","лабиринт","ручей","компас","арбуз","бочка","тыква","льдина","снежок","яйцо","race","frog","honey","fire","spider","dragon","ant","melody","bubbles","dragonfly","mouse","apples","board","stone","ocean","hedgehog","balloons","sorter","owl","rain","strike","labyrinth","stream","compass","watermelon","barrel","pumpkin","ice","snowball","egg"]},
 {id:"kids",icon:"🧒",titleRu:"Детские",titleEn:"Kids",descRu:"Алфавит, счёт, механика, антибуллинг, сортировщики.",descEn:"Alphabet, counting, mechanics, anti-bullying, sorters.",keywords:["детск","алфавит","счёт","животн","механик","буллинг","коленвал","грм","трансмисс","турбо","азбук","фигур","kids","children","alphabet","counting","animals","mechanic","bullying","crankshaft","timing","transmission","turbo","abc","shapes","golf kids","marble","penalty kids"]},
 {id:"sports",icon:"🏆",titleRu:"Спорт",titleEn:"Sports",descRu:"Теннис, дартс, стрельба, хоккей, футбол, лыжи, биатлон, плавание.",descEn:"Tennis, darts, archery, hockey, soccer, skiing, biathlon, swimming.",keywords:["спорт","теннис","дартс","лук","киборг","атлет","гандбол","баскетбол","биатлон","водное поло","ватерпол","боулинг","рыбалк","велогонк","кроль","плаван","archery","хоккей","футбол","лыж","коньки","скачки","байдар","пенальти","кёрлинг","sports","tennis","darts","archer","cyborg","athlete","handball","basketball","biathlon","waterpolo","bowling","fishing","cycling","backstroke","swimming","curling","soccer","ski","skates","horse racing","kayak","hockey","penalty"]},
-{id:"education",icon:"🎓",titleRu:"Образование",titleEn:"Education",descRu:"Академия ИИ, БПЛА, безопасность, бизнес, профессии, манифесты, ЕГЭ.",descEn:"AI Academy, UAV, security, business, professions, manifestos, EGE exams.",keywords:["образован","академ","бпла","дрон","безопасн","щит","бизнес","манифест","юрист","промпт","компаньон","челлендж","еге","экзамен","подготовка","math","history","physics","chemistry","biology","literature","geography","chinese","social studies","computer science","education","academy","uav","drone","security","shield","business","manifesto","lawyer","prompt","companion","challenge","cyber hacker","ege","exam","preparation"]},
+{id:"exams",icon:"📝",titleRu:"Экзамены",titleEn:"Exams",descRu:"ЕГЭ, ГВЭ-9 и итоговое собеседование: офлайн-тренажёры, билеты, критерии, справочники и планы подготовки.",descEn:"EGE, GVE-9 and final interview: offline trainers, tickets, criteria, handbooks and study plans.",keywords:["экзамен","экзамены","егэ","гвэ","гвэ-9","oge","gve","ege","itogovoe","собеседование","подготовка","тренажёр","тренажер","билеты","критерии","fipi","фи","русский","математика","физика","химия","биология","история","обществознание","география","литература","информатика","китайский","английский","немецкий","испанский","французский","exam","exams","test","tests","preparation","tickets","criteria","study plan","russian","math","physics","chemistry","biology","history","social studies","geography","literature","computer science","chinese","english","german","spanish","french"]},
+{id:"education",icon:"🎓",titleRu:"Образование",titleEn:"Education",descRu:"Академия ИИ, БПЛА, безопасность, бизнес, профессии, манифесты.",descEn:"AI Academy, UAV, security, business, professions, manifestos.",keywords:["образован","академ","бпла","дрон","безопасн","щит","бизнес","манифест","юрист","промпт","компаньон","челлендж","education","academy","uav","drone","security","shield","business","manifesto","lawyer","prompt","companion","challenge","cyber hacker"]},
 {id:"tools",icon:"🛠️",titleRu:"Инструменты",titleEn:"Tools",descRu:"Конвертеры, редакторы, сканеры, измерительные приборы, утилиты.",descEn:"Converters, editors, scanners, meters, utilities.",keywords:["инструмент","конвертер","редактор","сканер","уровень","люксметр","навигатор","расстояние","пароль","смс","штрих","аккумулятор","видео","фото","pdf","cosmos","космос","авто","battery","пароли","наложение","наложить","оверлей","watermark","фото на фото","photo on photo","tools","converter","editor","scanner","level","luxmeter","navigator","distance","password","sms","barcode","battery","video","photo","overlay","auto","cosmos","glance","frame","cutter","df"]}
 ];
 
+/* ============================================================
+   ПРОЕКТЫ — каждый массив: [slug, icon, titleRu, titleEn, descRu, descEn, badge, isNew, url, isRutube]
+   ============================================================ */
 const rawProjects=[
 // === ЗДОРОВЬЕ (13) ===
-["anti-ai-visometer","👁️📊","Визометр","Visometer","Острота зрения + дипфейки","Visual acuity + deepfakes","👁️",false,"https://anti-ai-visometer.vercel.app"],
+["anti-ai-visometer","👁️","Визометр","Visometer","Острота зрения + дипфейки","Visual acuity + deepfakes","👁️",false,"https://anti-ai-visometer.vercel.app"],
 ["anti-ai-visometer-kids","👁️🧒","Визометр (Детский)","Visometer Kids","Проверка зрения для детей","Kids vision test","🧒",false,"https://anti-ai-visometer-kids.vercel.app"],
 ["anti-ai-vision-check","👁️","Осмотр зрения","Vision Check","13 тестов зрения","13 professional tests","👁️",false,"https://anti-ai-vision-check.vercel.app"],
-["anti-ai-eyes-gym","👁️🏋️","Зарядка для глаз","Eye Gym","5 уроков восстановления","5 eye exercises","👁️",false,"https://anti-ai-eyes-gym.vercel.app"],
+["anti-ai-eyes-gym","👁️️","Зарядка для глаз","Eye Gym","5 уроков восстановления","5 eye exercises","👁️",false,"https://anti-ai-eyes-gym.vercel.app"],
 ["anti-ai-memory","🧠📚","Память","Memory","Simon Says 3D","Memory training","🧠",false,"https://anti-ai-memory.vercel.app"],
 ["anti-ai-hearing-test-memory-trainin","🧠","Слух (память)","Hearing Memory","3 уровня шума","3 noise levels","🎧",false,"https://anti-ai-hearing-test-memory-trainin.vercel.app"],
 ["anti-ai-hearing-test-fast","⚡👂","Слух (быстрый)","Hearing Fast","Ускоренный темп","Express training","🚀",false,"https://anti-ai-hearing-test-fast.vercel.app"],
 ["anti-ai-hearing-test-slow-memory-tr","🐢👂","Слух (медленный)","Hearing Slow","Медленная тренировка","Measured training","🎵",false,"https://anti-ai-hearing-test-slow-memory-tr.vercel.app"],
-["anti-ai-audiometer","📊👂","Аудиометр","Audiometer","Проверка слуха","Hearing test","🔊",false,"https://anti-ai-audiometer.vercel.app"],
+["anti-ai-audiometer","📊","Аудиометр","Audiometer","Проверка слуха","Hearing test","🔊",false,"https://anti-ai-audiometer.vercel.app"],
 ["anti-ai-stress","🧘🌿","Стресс","Stress","Дыхательные техники","Breathing techniques","🧘",false,"https://anti-ai-stress.vercel.app"],
 ["anti-ai-narc-cycle","🔄","Нарциссический цикл","Narcissistic Cycle","Защита от манипуляций","Manipulation protection","🧠",false,"https://anti-ai-narc-cycle.vercel.app"],
 ["anti-ai-narc-cycle-oriental","🎋","Цикл осознания","Awareness Cycle","Восточная философия","Eastern philosophy","🎋",false,"https://anti-ai-narc-cycle-oriental.vercel.app"],
@@ -156,36 +163,36 @@ const rawProjects=[
 ["rutube-channel","🎬✨","ВолшебствО | Rutube","MagiO Rutube","Авторские песни","Author songs","🎵",false,"https://rutube.ru/channel/24404224/",true],
 ["anti-ai-blind-zone","🕶️","Слепая зона","Blind Zone","Слепой режим ритма","Blind rhythm mode","🚗",false,"https://anti-ai-blind-zone.vercel.app"],
 
-// === ИГРЫ (19) — ДОБАВЛЕН ДУРАК ===
+// === ИГРЫ (19) ===
 ["anti-a-i-golf","⛳️","Гольф","Anti-AI Golf","День и ночь","Day and night","🎮",true,"https://anti-a-i-golf.vercel.app"],
 ["anti-ai-pool","🎱","Бильярд","Pool","Real 3D Pool","3D billiards","🎮",false,"https://anti-ai-pool.vercel.app"],
-["anti-ai-tower-3d","🏰🧊","Башня 3D","Tower 3D","3D головоломка","3D puzzle","🛡️",false,"https://anti-ai-tower-3d.vercel.app"],
+["anti-ai-tower-3d","🏰","Башня 3D","Tower 3D","3D головоломка","3D puzzle","🛡️",false,"https://anti-ai-tower-3d.vercel.app"],
 ["anti-ai-shield-tower-i3ry","🏗️🏰","Башня (2D)","Shield Tower","Наклон платформы","Tilting platform","🛡️",false,"https://anti-ai-shield-tower-i3ry.vercel.app"],
 ["ar-anatomy-ultimate","🧬","AR-Анатомия","AR-Anatomy","Геометрия монстров","Monster geometry","🎮",false,"https://ar-anatomy-ultimate.vercel.app"],
 ["anti-ai-magic-oracle","🔮","Магический Оракул","Magic Oracle","Умный шар","Smart ball","🔮",false,"https://anti-ai-magic-oracle.vercel.app"],
 ["rock-paper-scissors-beta-hazel","✊✋✌️","Камень-Ножницы-Бумага","RPS","Классика","Classic","🎮",false,"https://rock-paper-scissors-beta-hazel.vercel.app"],
-["anti-ai-shield-shooter","🛡️🎯","Шутер","Shield Shooter","3D от первого лица","3D FPS","🎮",false,"https://anti-ai-shield-shooter.vercel.app"],
-["anti-ai-shield-eggs","🥚🛡️","Ловец Яиц","Shield Eggs","3D корзина","3D basket","🎮",false,"https://anti-ai-shield-eggs.vercel.app"],
-["anti-ai-mosaic","🧩🎨","Мозаика","Mosaic","Пятнашки 2D","Sliding puzzle","🧩",false,"https://anti-ai-mosaic.vercel.app"],
+["anti-ai-shield-shooter","🛡️","Шутер","Shield Shooter","3D от первого лица","3D FPS","🎮",false,"https://anti-ai-shield-shooter.vercel.app"],
+["anti-ai-shield-eggs","🥚️","Ловец Яиц","Shield Eggs","3D корзина","3D basket","🎮",false,"https://anti-ai-shield-eggs.vercel.app"],
+["anti-ai-mosaic","🧩","Мозаика","Mosaic","Пятнашки 2D","Sliding puzzle","🧩",false,"https://anti-ai-mosaic.vercel.app"],
 ["human-vision-puzzle","🧩👁️","Мозаика (Визуал)","Vision Puzzle","Целостность образа","Image integrity","👁️",false,"https://human-vision-puzzle.vercel.app"],
 ["cubecraft-pro-antiai","🧊","CubeCraft Pro","CubeCraft Pro","2D песочница","2D sandbox","🎮",false,"https://cubecraft-pro-antiai.vercel.app"],
 ["match-cubes-collection","🔷","Кубики","Match Cubes","4 уровня","4 levels","🧩",false,"https://match-cubes-collection.vercel.app"],
 ["anti-ai-tetris","🧩🎮","Тетрис","Tetris","Хаотичное вращение","Chaotic rotation","🎮",false,"https://anti-ai-tetris.vercel.app"],
 ["anti-ai-cloud-flight-3d","☁️🎮","Полёт в облаках","Cloud Flight 3D","3D космический","3D space","🎮",false,"https://anti-ai-cloud-flight-3d.vercel.app"],
-["anti-ai-mole-3d","🐹🔨","Крот 3D","Mole 3D","Поймай крота","Catch the mole","🎮",false,"https://anti-ai-mole-3d.vercel.app"],
+["anti-ai-mole-3d","🐹","Крот 3D","Mole 3D","Поймай крота","Catch the mole","🎮",false,"https://anti-ai-mole-3d.vercel.app"],
 ["anti-ai-space-simulator","🚀","Космический шутер","Space Sim","3D динамический шутер","3D space shooter","🎮",false,"https://anti-ai-space-simulator.vercel.app"],
 ["anti-ai-udacha","🎲","Удача","Luck","Тест интуиции","Intuition test","🧠",false,"https://anti-ai-udacha.vercel.app"],
-["anti-ai-durok-3d","🃏🤖","Дурак 3D","Durak 3D","Подкидной дурак против ИИ","Card game vs AI","🎮",false,"https://lively-treacle-002fbf.netlify.app/"], 
+["anti-ai-durok-3d","🃏🤖","Дурак 3D","Durak 3D","Подкидной дурак против ИИ","Card game vs AI","🎮",false,"https://lively-treacle-002fbf.netlify.app/"],
 
-// === 🐍 ИГРЫ СО ЗМЕЕЙ (31) — ДОБАВЛЕНО 7 НОВЫХ ===
-["anti-ii-zmeya-vse-igry","🏆🐍","Доска Змея","Snake Board","Доска почёта всех змеиных игр","Leaderboard of all snake games","🐍",false,"https://anti-ii-zmeya-vse-igry.vercel.app"],
+// === 🐍 ИГРЫ СО ЗМЕЕЙ (31) ===
+["anti-ii-zmeya-vse-igry","🏆","Доска Змея","Snake Board","Доска почёта всех змеиных игр","Leaderboard of all snake games","🐍",false,"https://anti-ii-zmeya-vse-igry.vercel.app"],
 ["anti-a-i-snake-and-fireflies","🐍✨","Змея и Светлячки","Snake & Fireflies","Собирайте светлячков за 3 минуты","Collect fireflies in 3 min","🐍",false,"https://anti-a-i-snake-and-fireflies.vercel.app"],
 ["anti-ai-snake-race","🐍🏁","Змея и Гонка","Snake Race","Забег 300м с препятствиями и прыжками","300m race with obstacles","🐍",false,"https://anti-ai-snake-race.vercel.app"],
-["anti-a-i-snake-and-frog","🐍🐸","Змея и Лягушка","Snake & Frog","3D-аркада, поймай 3 раза за 3 минуты","3D arcade, catch 3 times","🐍",false,"https://anti-a-i-snake-and-frog.vercel.app"],
-["anti-a-i-snake-and-honey","🐍🍯","Змея и Мёд","Snake & Honey","Добудь мёд, обойди пчёл-охранников","Get honey, avoid bees","🐍",false,"https://anti-a-i-snake-and-honey.vercel.app"],
+["anti-a-i-snake-and-frog","🐍","Змея и Лягушка","Snake & Frog","3D-аркада, поймай 3 раза за 3 минуты","3D arcade, catch 3 times","🐍",false,"https://anti-a-i-snake-and-frog.vercel.app"],
+["anti-a-i-snake-and-honey","🐍","Змея и Мёд","Snake & Honey","Добудь мёд, обойди пчёл-охранников","Get honey, avoid bees","🐍",false,"https://anti-a-i-snake-and-honey.vercel.app"],
 ["anti-a-i-snake-and-fire","🐍🔥","Змея и Огонь","Snake & Fire","Пожарная арена против ИИ","Fire arena vs AI","🐍",false,"https://anti-a-i-snake-and-fire.vercel.app"],
 ["anti-ai-snake-and-spider","🐍️","Змея и Паук","Snake & Spider","Убеги от паука за 3 минуты","Escape spider in 3 min","🐍",false,"https://anti-ai-snake-and-spider.vercel.app"],
-["anti-ai-snake-and-dragon","🐍🐉","Змея и Дракон","Snake & Dragon","3D-битва со змеей против дракона","3D dragon battle","🐍",false,"https://anti-ai-snake-and-dragon.vercel.app"],
+["anti-ai-snake-and-dragon","🐍","Змея и Дракон","Snake & Dragon","3D-битва со змеей против дракона","3D dragon battle","🐍",false,"https://anti-ai-snake-and-dragon.vercel.app"],
 ["anti-ai-snake-ant","🐍🐜","Змея и Муравей","Snake & Ant","Переползти муравьиную тропу незаметно","Cross ant trail silently","🐍",false,"https://anti-ai-snake-ant.vercel.app"],
 ["anti-ai-snake-melody-night","🐍🎵","Змея и Мелодия","Snake & Melody","Музыкальная 3D-игра ночью","Musical 3D game at night","🐍",false,"https://anti-ai-snake-melody-night.vercel.app"],
 ["anti-a-i-snake-and-bubbles","🐍🫧","Змея и Пузыри","Snake & Bubbles","Ломай мыльные пузыри хвостом","Break bubbles with tail","🐍",false,"https://anti-a-i-snake-and-bubbles.vercel.app"],
@@ -198,11 +205,10 @@ const rawProjects=[
 ["anti-ii-snake-balloons","🐍🎈","Змея и Шарики","Snake & Balloons","Лопай синие шарики, не трогай золотые, набери 15 очков за 3 минуты","Pop blue balloons, avoid gold, score 15 points in 3 minutes","🐍",false,"https://anti-ii-snake-balloons.vercel.app"],
 ["anti-ai-snake-sorter","🐍","Змея Сортировщик","Snake Sorter","Выбивай красные посылки, не трогай зелёные, объезжай ящики, набери 15 очков","Hit red parcels, avoid green, dodge boxes, score 15 points","🐍",false,"https://anti-ai-snake-sorter.vercel.app"],
 ["anti-a-i-snake-and-owl","🐍🦉","Змея и Сова","Snake & Owl","Укради золотое яйцо, пока сова спит. Замри, когда она смотрит","Steal the golden egg while the owl sleeps. Freeze when she watches","🐍",false,"https://anti-a-i-snake-and-owl.vercel.app"],
-["anti-ai-snake-and-rain","🐍🌧️","Змея и Дождь","Snake & Rain","Лови падающие капли дождя, избегай молний, собирай комбо","Catch falling raindrops, avoid lightning, collect combos","🐍",false,"https://anti-ai-snake-and-rain.vercel.app"],
+["anti-ai-snake-and-rain","🐍️","Змея и Дождь","Snake & Rain","Лови падающие капли дождя, избегай молний, собирай комбо","Catch falling raindrops, avoid lightning, collect combos","🐍",false,"https://anti-ai-snake-and-rain.vercel.app"],
 ["anti-ai-snake-strike","🐍💥","Змея и Удар","Snake & Strike","Заряди удар, разбей цели, набери 15 очков","Charge a strike, smash targets, score 15 points","🐍",false,"https://anti-ai-snake-strike.vercel.app"],
-["anti-ai-snake-labyrinth","🐍🧩","Змея и Лабиринт","Snake & Labyrinth","Найди выход из лабиринта за 3 минуты. Озвучка RU/EN","Find the maze exit in 3 minutes. RU/EN voice","🐍",false,"https://anti-ai-snake-labyrinth.vercel.app"],
-["anti-ii-snake-stream","🐍🏞️","Змея и Ручей","Snake & Stream","Перепрыгни через ручей, пока вода поднимается","Jump over the stream while the water rises","🐍",false,"https://anti-ii-snake-stream.vercel.app"],
-// NEW SNAKE GAMES
+["anti-ai-snake-labyrinth","🐍","Змея и Лабиринт","Snake & Labyrinth","Найди выход из лабиринта за 3 минуты. Озвучка RU/EN","Find the maze exit in 3 minutes. RU/EN voice","🐍",false,"https://anti-ai-snake-labyrinth.vercel.app"],
+["anti-ii-snake-stream","🐍️","Змея и Ручей","Snake & Stream","Перепрыгни через ручей, пока вода поднимается","Jump over the stream while the water rises","🐍",false,"https://anti-ii-snake-stream.vercel.app"],
 ["anti-a-i-snake-and-compass","🐍🧭","Змея и Компас","Snake & Compass","3D выживание с гравитационным компасом","Survival with gravity compass","🐍",false,"https://anti-a-i-snake-and-compass.vercel.app"],
 ["anti-ai-snake-watermelon","🐍🍉","Змея и Арбуз","Snake & Watermelon","Аркада: подбрось арбуз через препятствия","Arcade: toss watermelon over obstacles","🐍",false,"https://anti-ai-snake-watermelon.vercel.app"],
 ["anti-a-i-snake-and-barrel","🐍️","Змея и Бочка","Snake & Barrel","Кати бочку вниз с горы, держи тормоз","Roll barrel down hill, hold brake","🐍",false,"https://anti-a-i-snake-and-barrel.vercel.app"],
@@ -218,7 +224,7 @@ const rawProjects=[
 ["anti-bullying-app-one","🏫🛡️","Защита от буллинга","Anti-Bullying","Офлайн","Offline","🛡️",false,"https://anti-bullying-app-one.vercel.app"],
 ["anti-ai-mechanic-lesson-1","🏎️⚙️","Механик: Коленвал","Mechanic L1","Двигатель","Engine","механика",false,"https://ancf-hue.github.io/-ANTI-AI-MECHANIC---Lesson-1-Engine-Assembly-Crankshaft-Connecting-Rod-and-Piston-For-/"],
 ["anti-ai-mechanic-lesson-2-timing-me","🏎️","Механик: ГРМ","Mechanic L2","Газораспределение","Timing","ГРМ",false,"https://anti-ai-mechanic-lesson-2-timing-me.vercel.app"],
-["anti-ai-mechanic-lesson-3-transmiss","🏎️🚗","Механик: Трансмиссия","Mechanic L3","Сцепление","Transmission","трансмиссия",false,"https://anti-ai-mechanic-lesson-3-transmiss.vercel.app"],
+["anti-ai-mechanic-lesson-3-transmiss","🏎️","Механик: Трансмиссия","Mechanic L3","Сцепление","Transmission","трансмиссия",false,"https://anti-ai-mechanic-lesson-3-transmiss.vercel.app"],
 ["anti-ai-mechanic-lesson-4-turbochar","🏎️💨","Механик: Турбонаддув","Mechanic L4","Турбина","Turbocharger","турбо",false,"https://anti-ai-mechanic-lesson-4-turbochar.vercel.app"],
 ["anti-ai-shape-sorter","🔷","Сортировщик форм","Shape Sorter","Для детей","For kids","🧩",false,"https://anti-ai-shape-sorter.vercel.app"],
 ["anti-ai-golf-kids","🏌️⛳","Гольф (Детский)","Golf (Kids)","Для детей","For kids","🧒",true,"https://anti-ai-golf-kids.vercel.app"],
@@ -231,7 +237,7 @@ const rawProjects=[
 ["anti-ai-darts","🎯🏹","Дротики","Darts","3D дартс","3D darts","🎮",false,"https://anti-ai-darts.vercel.app"],
 ["anti-ai-archery","🏹","Стрельба из лука","Archery","3D с ИИ","3D vs AI","🎮",false,"https://anti-ai-archery.vercel.app"],
 ["anti-ai-table-tennis-3d","🏓","Настольный теннис 3D","Table Tennis 3D","3D пинг-понг","3D ping-pong","🎮",false,"https://anti-ai-table-tennis-3d.vercel.app"],
-["anti-ai-qwen-academy-cyborg-athlete","🏛️🏃‍♂️","Киборг-Атлет","Cyborg-Athlete","Mobile","Mobile","🎓",false,"https://anti-ai-qwen-academy-cyborg-athlete.vercel.app"],
+["anti-ai-qwen-academy-cyborg-athlete","🏛️‍♂️","Киборг-Атлет","Cyborg-Athlete","Mobile","Mobile","🎓",false,"https://anti-ai-qwen-academy-cyborg-athlete.vercel.app"],
 ["anti-ai-handball-3d","🤾🎯","Гандбол 3D","Handball 3D","Штрафные броски","Penalty shots","🏆 спорт",true,"https://anti-ai-handball-3d.vercel.app"],
 ["anti-ai-basketball-3d-perimeter","🏀️","Баскетбол 3D","Basketball 3D","По периметру","Perimeter shots","🏆 спорт",true,"https://anti-ai-basketball-3d-perimeter.vercel.app"],
 ["anti-a-i-biathlon","🎿🎯","Биатлон","Biathlon","Лыжи + стрельба","Ski + shoot","🏆 спорт",true,"https://anti-a-i-biathlon.vercel.app"],
@@ -240,7 +246,7 @@ const rawProjects=[
 ["anti-ai-fishing-5","🎣","Рыбалка 5","Fishing 5","3D офлайн","3D offline","🏆 спорт",true,"https://anti-ai-fishing-5.vercel.app"],
 ["anti-ai-velogonka","🚴🏁","Велогонка 300","Velo Race 300","3D велогонка","3D cycling","🏆 спорт",true,"https://anti-ai-velogonka.vercel.app"],
 ["anti-ai-backstroke","🏊💦","Кроль на спине","Backstroke 100","Заплыв 100м","100m swim","🏆 спорт",true,"https://anti-ai-backstroke.vercel.app"],
-["anti-ai-qwen-curling","🥌🎯","Кёрлинг Qwen","Curling Qwen","8 уроков","8 lessons","🎮",false,"https://anti-ai-qwen-curling.vercel.app"],
+["anti-ai-qwen-curling","🥌","Кёрлинг Qwen","Curling Qwen","8 уроков","8 lessons","🎮",false,"https://anti-ai-qwen-curling.vercel.app"],
 ["anti-ai-curling","🥌❄️","Кёрлинг","Curling Classic","3D-симулятор","3D simulator","🎮",true,"https://anti-ai-curling.vercel.app"],
 ["anti-ai-ski-trail-300","🎿❄️","Лыжня 300","Ski Trail 300","Лыжная гонка","Ski race","🏆 спорт",false,"https://anti-ai-ski-trail-300.vercel.app"],
 ["anti-ii-swim-100","🏊💦","Заплыв 100","Swim 100","100м вольным стилем","100m freestyle","🏆 спорт",false,"https://anti-ii-swim-100.vercel.app"],
@@ -269,16 +275,16 @@ const rawProjects=[
 ["anti-ai-navigator-straight","🧭🚶","Навигатор (Прямо)","Navigator","Голосовой помощник","Voice guide","🧭",false,"https://anti-ai-navigator-straight.vercel.app"],
 ["anti-ai-cosmos","✨🌌","Космос","Cosmos","Звёздный атлас","Star atlas","🌌",false,"https://anti-ai-cosmos.vercel.app"],
 ["anti-ai-auto","🚗","Анти-ИИ Авто","Auto","Диагностика двигателя","Engine diagnostics","🚗",false,"https://anti-ai-auto.vercel.app"],
-["anti-ai-glance","👁️🛡️","Взгляд","Glance","Помощь слепым","Help for the blind","👁️",false,"https://anti-ai-glance.vercel.app"],
+["anti-ai-glance","👁️️","Взгляд","Glance","Помощь слепым","Help for the blind","👁️",false,"https://anti-ai-glance.vercel.app"],
 
-// === ОБРАЗОВАНИЕ (58) — ДОБАВЛЕНО 10 ЕГЭ ТРЕНАЖЁРОВ ===
-["anti-ai-challenge","🏆⚡","Challenge","Challenge","Тест цифровой безопасности","Digital safety test","🏆",false,"https://anti-ai-challenge.vercel.app"],
+// === ОБРАЗОВАНИЕ (48) ===
+["anti-ai-challenge","🏆","Challenge","Challenge","Тест цифровой безопасности","Digital safety test","🏆",false,"https://anti-ai-challenge.vercel.app"],
 ["ai-core-autonomy","🛡️👤","Манифест Суверенной Личности","Sovereign Manifesto","Философия","Philosophy","манифест",false,"https://ai-core-autonomy.vercel.app"],
-["a-young-operator-of-an-unmanned-aer","🚁👦","Юный оператор БПЛА","Young UAV","25 уроков","25 lessons","🚁 дрон",true,"https://a-young-operator-of-an-unmanned-aer.vercel.app"],
+["a-young-operator-of-an-unmanned-aer","🚁","Юный оператор БПЛА","Young UAV","25 уроков","25 lessons","🚁 дрон",true,"https://a-young-operator-of-an-unmanned-aer.vercel.app"],
 ["lesson-1-for-a-professional-uav-operator","🚁🎓","Профи БПЛА: Урок 1","Pro UAV L1","Обнаружение","Detection","🚁 дрон",false,"https://ancf-hue.github.io/lesson-1-for-a-professional-uav-operator/"],
 ["anti-ai-qwen-uav-simulator-lesson-1","🚁🎯","БПЛА Урок 1: Тир","UAV L1: Target","Базовое пилотирование","Basic flight","🚁 дрон",false,"https://anti-ai-qwen-uav-simulator-lesson-1.vercel.app"],
 ["anti-ai-qwen-uav-simulator-lesson-1-three","📡","БПЛА Урок 1б: Диспетчер","UAV L1b: Dispatcher","30 дронов","30 drones","🚁 дрон",false,"https://anti-ai-qwen-uav-simulator-lesson-1-three.vercel.app"],
-["anti-ai-qwen-uav-simulator-lesson-1-one","📦🚁","БПЛА Урок 1в: Курьер","UAV L1c: Courier","Доставка","Delivery","🚁 дрон",false,"https://anti-ai-qwen-uav-simulator-lesson-1-one.vercel.app"],
+["anti-ai-qwen-uav-simulator-lesson-1-one","📦","БПЛА Урок 1в: Курьер","UAV L1c: Courier","Доставка","Delivery","🚁 дрон",false,"https://anti-ai-qwen-uav-simulator-lesson-1-one.vercel.app"],
 ["anti-ai-qwen-uav-simulator-lesson-2","🗺️","БПЛА Урок 2: Навигация","UAV L2: Route","Трасса","Track","🚁 дрон",false,"https://anti-ai-qwen-uav-simulator-lesson-2.vercel.app"],
 ["anti-ai-qwen-uav-simulator-lesson-2-gamma","🏆","БПЛА Урок 25: Легенда","UAV L25: Legend","Финальная миссия","Final mission","🚁 дрон",false,"https://anti-ai-qwen-uav-simulator-lesson-2-gamma.vercel.app"],
 ["anti-ai-qwen-uav-simulator-lesson-2-nu","🏗️🚁","БПЛА Урок 20: Архитектор","UAV L20: Architect","Инспекция зданий","Building inspection","🚁 дрон",false,"https://anti-ai-qwen-uav-simulator-lesson-2-nu.vercel.app"],
@@ -290,279 +296,354 @@ const rawProjects=[
 ["anti-ai-qwen-uav-simulator-lesson-4","🎯🚁","БПЛА Урок 4: Пикирование","UAV L4: Dive","Бомбардировка","Bombing","🚁 дрон",false,"https://anti-ai-qwen-uav-simulator-lesson-4.vercel.app"],
 ["anti-ai-qwen-uav-simulator-lesson-5","📦🚁","БПЛА Урок 5: Доставка","UAV L5: Cargo","Грузы","Cargo","🚁 дрон",false,"https://anti-ai-qwen-uav-simulator-lesson-5.vercel.app"],
 ["anti-ai-qwen-uav-simulator-lesson-6","🕵️","БПЛА Урок 6: ПРИЗРАК","UAV L6: Ghost","Стелс-разведка","Stealth recon","🚁 дрон",false,"https://anti-ai-qwen-uav-simulator-lesson-6.vercel.app"],
-["anti-ai-qwen-uav-simulator-lesson-7","⛈️🚁","БПЛА Урок 7: Шторм","UAV L7: Storm","Молнии","Lightning","🚁 дрон",false,"https://anti-ai-qwen-uav-simulator-lesson-7.vercel.app"],
+["anti-ai-qwen-uav-simulator-lesson-7","⛈️","БПЛА Урок 7: Шторм","UAV L7: Storm","Молнии","Lightning","🚁 дрон",false,"https://anti-ai-qwen-uav-simulator-lesson-7.vercel.app"],
 ["anti-ai-qwen-uav-simulator-lesson-8","💣🚁","БПЛА Урок 8: Сапёр","UAV L8: Sapper","Разминирование","Demining","🚁 дрон",false,"https://anti-ai-qwen-uav-simulator-lesson-8.vercel.app"],
 ["anti-ai-qwen-uav-simulator-lesson-9","🚑🚁","БПЛА Урок 9: Спасатель","UAV L9: Rescue","Спасение","Rescue","🚁 дрон",false,"https://anti-ai-qwen-uav-simulator-lesson-9.vercel.app"],
 ["anti-ai-qwen-uav-simulator-lesson-1-seven","🌲🚁","БПЛА Урок 11: Генерал","UAV L11: General","В лесу","In the forest","🚁 дрон",false,"https://anti-ai-qwen-uav-simulator-lesson-1-seven.vercel.app"],
 ["anti-ai-qwen-uav-simulator-lesson-1-mu","🔧","БПЛА Урок 13: Инженер","UAV L13: Engineer","Сборка БПЛА","Drone assembly","🚁 дрон",false,"https://anti-ai-qwen-uav-simulator-lesson-1-mu.vercel.app"],
-["anti-ai-qwen-uav-simulator-lesson-1-nine","🔩🚁","БПЛА Урок 14: Ремонт","UAV L14: Repair","Механик дронов","Drone mechanic","🚁 дрон",false,"https://anti-ai-qwen-uav-simulator-lesson-1-nine.vercel.app"],
+["anti-ai-qwen-uav-simulator-lesson-1-nine","🔩","БПЛА Урок 14: Ремонт","UAV L14: Repair","Механик дронов","Drone mechanic","🚁 дрон",false,"https://anti-ai-qwen-uav-simulator-lesson-1-nine.vercel.app"],
 ["anti-ai-qwen-uav-simulator-lesson-1-virid","👨‍🏫🚁","БПЛА Урок 15: Наставник","UAV L15: Mentor","Обучение ИИ","Teaching AI","🚁 дрон",false,"https://anti-ai-qwen-uav-simulator-lesson-1-virid.vercel.app"],
 ["anti-ai-qwen-uav-simulator-lesson-1-delta","🌾🚁","БПЛА Урок 16: Агроном","UAV L16: Agronomist","Поля","Fields","🚁 дрон",false,"https://anti-ai-qwen-uav-simulator-lesson-1-delta.vercel.app"],
-["anti-ai-qwen-uav-simulator-lesson-1-pi","⛏️🚁","БПЛА Урок 17: Геолог","UAV L17: Geologist","Геологоразведка","Geology","🚁 дрон",false,"https://anti-ai-qwen-uav-simulator-lesson-1-pi.vercel.app"],
-["anti-ai-qwen-uav-simulator-lesson-1-sigma","🌿🚁","БПЛА Урок 18: Эколог","UAV L18: Ecologist","Охрана природы","Nature","🚁 дрон",false,"https://anti-ai-qwen-uav-simulator-lesson-1-sigma.vercel.app"],
+["anti-ai-qwen-uav-simulator-lesson-1-pi","⛏️","БПЛА Урок 17: Геолог","UAV L17: Geologist","Геологоразведка","Geology","🚁 дрон",false,"https://anti-ai-qwen-uav-simulator-lesson-1-pi.vercel.app"],
+["anti-ai-qwen-uav-simulator-lesson-1-sigma","🌿","БПЛА Урок 18: Эколог","UAV L18: Ecologist","Охрана природы","Nature","🚁 дрон",false,"https://anti-ai-qwen-uav-simulator-lesson-1-sigma.vercel.app"],
 ["anti-ai-qwen-uav-simulator-lesson-1-murex","🎬🚁","БПЛА Урок 19: Кинооператор","UAV L19: Filmmaker","Аэросъёмка","Aerial filming","🚁 дрон",false,"https://anti-ai-qwen-uav-simulator-lesson-1-murex.vercel.app"],
 ["anti-ai-qwen-academy-prompt-enginee","🎓💬","Промпт-инженер","Prompt Engineer","HARD-курс","Hard course","🎓",false,"https://anti-ai-qwen-academy-prompt-enginee.vercel.app"],
 ["anti-ai-qwen-academy-ai-product-man-phi","🏛️📱","AI Product Manager","AI PM","Менеджер ИИ","AI product mgmt","🎓",false,"https://anti-ai-qwen-academy-ai-product-man-phi.vercel.app"],
 ["anti-ai-qwen-academy-ai-model-secur","🏛️️","Безопасность ИИ","AI Model Security","Поиск уязвимостей","Vulnerabilities","🔒",false,"https://anti-ai-qwen-academy-ai-model-secur.vercel.app"],
 ["anti-ai-qwen-academy-ai-legal-speci","🏛️⚖️","Юрист ИИ","AI Legal","Авторские права","Copyright","⚖️",false,"https://anti-ai-qwen-academy-ai-legal-speci.vercel.app"],
 ["anti-ai-qwen-academy-ai-ethics-offi","🏛️🤝","AI Ethics Officer","AI Ethics","Этика ИИ","AI ethics","🎓",false,"https://anti-ai-qwen-academy-ai-ethics-offi.vercel.app"],
-["anti-ai-qwen-academy-data-curator","🏛️🗂️","Куратор данных","Data Curator","Датасеты","Datasets","📊",false,"https://anti-ai-qwen-academy-data-curator.vercel.app"],
+["anti-ai-qwen-academy-data-curator","🏛️️","Куратор данных","Data Curator","Датасеты","Datasets","📊",false,"https://anti-ai-qwen-academy-data-curator.vercel.app"],
 ["anti-ai-qwen-academy-prompt-designe","🏛️","Промпт-дизайнер","Prompt Designer","Нейроиллюстратор","Neuroillustrator","🎨",false,"https://anti-ai-qwen-academy-prompt-designe.vercel.app"],
 ["anti-ai-qwen-academy-deepfake-detec-virid","🏛️✍️","AI-редактор","AI Editor","Нейрокопирайтер","Neurocopywriter","✍️",false,"https://anti-ai-qwen-academy-deepfake-detec-virid.vercel.app"],
 ["anti-ai-qwen-academy-deep-technical","🏛️💻","Deep Tech для ML","Deep Tech ML","25 уроков","25 lessons","🎓",false,"https://anti-ai-qwen-academy-deep-technical.vercel.app"],
 ["anti-ai-qwen-humor-academy-face-dis","😂🎭","Академия юмора","Humor Academy","Искажение лиц","Face distortion","🎓",false,"https://anti-ai-qwen-humor-academy-face-dis.vercel.app"],
-["anti-ai-qwen-academy-deepfake-detec-kohl","🎓🕵️","Детектор дипфейков","Deepfake Detection","10-дневный курс","10-day course","🎓",false,"https://anti-ai-qwen-academy-deepfake-detec-kohl.vercel.app"],
+["anti-ai-qwen-academy-deepfake-detec-kohl","🎓️","Детектор дипфейков","Deepfake Detection","10-дневный курс","10-day course","🎓",false,"https://anti-ai-qwen-academy-deepfake-detec-kohl.vercel.app"],
 ["anti-ai-qwen-academy-qwen-fact-chec-one","✅🔍","Qwen Fact-Checker","Fact Checker","Верификатор","Verifier","✅",false,"https://anti-ai-qwen-academy-qwen-fact-chec-one.vercel.app"],
-["ai-business-designer-republic-of-co","🏛️💼","AI Бизнес-дизайнер","AI Business","РКС","RCS","💼",false,"https://ai-business-designer-republic-of-co.vercel.app"],
+["ai-business-designer-republic-of-co","🏛️","AI Бизнес-дизайнер","AI Business","РКС","RCS","💼",false,"https://ai-business-designer-republic-of-co.vercel.app"],
 ["anti-ai-shield","📞🛡️","Анти-ИИ Щит","Shield","Телефонные мошенники","Phone scammers","🛡️",false,"https://anti-ai-shield.vercel.app"],
 ["anti-ai-cyber-hack","🔐","Кибер-взломщик","Cyber Hacker","Этичный хакинг","Ethical hacking","🛡️",false,"https://anti-ai-cyber-hack.vercel.app"],
 ["anti-ai-qwen-companion","🤖🤝","Qwen Компаньон","Qwen Companion","Конструктор промптов","Prompt builder","🔒",false,"https://anti-ai-qwen-companion.vercel.app"],
 ["the-republic-of-cognitive-sovereign","🏛️","Республика когнитивного суверенитета","RCS","Манифест","Manifesto","манифест",true,"https://the-republic-of-cognitive-sovereign.vercel.app"],
 ["anti-ai-business-integrator","🏛️💼","Бизнес-интегратор","Business Integrator","Внедрение ИИ","AI integration","💼",false,"https://anti-ai-business-integrator.vercel.app"],
 ["anti-ai-qwen-earn-money","💰🤖","Заработок с Qwen","Earn with Qwen","Live вакансии","Live jobs","💡",false,"https://anti-ai-qwen-earn-money.vercel.app"],
-// NEW EGE TRAINERS
-["anti-ai-Qwen-academy-full-social-studies-ege-2026-trainer","📚🎓","ЕГЭ Обществознание","EGE Social Studies","Полный тренажёр ЕГЭ-2026","Full EGE Trainer 2026","🎓",false,"https://ancf-hue.github.io/anti-ai-Qwen-academy-full-social-studies-ege-2026-trainer/"],
+
+// === ЭКЗАМЕНЫ (23) ===
+["anti-ai-Qwen-academy-full-social-studies-ege-2026-trainer","📚","ЕГЭ Обществознание","EGE Social Studies","Полный тренажёр ЕГЭ-2026","Full EGE Trainer 2026","🎓",false,"https://ancf-hue.github.io/anti-ai-Qwen-academy-full-social-studies-ege-2026-trainer/"],
 ["anti-ai-Qwen-academy-full-history-ege-2026-trainer","🏛️","ЕГЭ История","EGE History","Полный тренажёр ЕГЭ-2026","Full EGE Trainer 2026","🎓",false,"https://ancf-hue.github.io/anti-ai-Qwen-academy-full-history-ege-2026-trainer/"],
 ["anti-ai-Qwen-academy-full-computer-science-ege-2026-trainer","💻🎓","ЕГЭ Информатика","EGE CS","Полный тренажёр ЕГЭ-2026","Full EGE Trainer 2026","🎓",false,"https://ancf-hue.github.io/anti-ai-Qwen-academy-full-computer-science-ege-2026-trainer/"],
 ["anti-ai-qwen-academy-ege-geography","🌍🎓","ЕГЭ География","EGE Geography","Тренажёр ЕГЭ-2027","EGE Trainer 2027","🎓",false,"https://anti-ai-qwen-academy-ege-geography.vercel.app/"],
 ["anti-ai-qwen-academy-chemistry-ege","🧪🎓","ЕГЭ Химия","EGE Chemistry","Тренажёр ЕГЭ-2026","EGE Trainer 2026","🎓",false,"https://anti-ai-qwen-academy-chemistry-ege.vercel.app/"],
-["anti-ai-qwen-academy-russian-ege-20","🇷","ЕГЭ Русский язык","EGE Russian","Тренажёр ЕГЭ-2026","EGE Trainer 2026","🎓",false,"https://anti-ai-qwen-academy-russian-ege-20.vercel.app/"],
+["anti-ai-qwen-academy-russian-ege-20","🇷🇺","ЕГЭ Русский язык","EGE Russian","Тренажёр ЕГЭ-2026","EGE Trainer 2026","🎓",false,"https://anti-ai-qwen-academy-russian-ege-20.vercel.app/"],
 ["anti-ai-qwen-academy-physics-ege-20","⚛️🎓","ЕГЭ Физика","EGE Physics","Тренажёр ЕГЭ-2026","EGE Trainer 2026","🎓",false,"https://anti-ai-qwen-academy-physics-ege-20.vercel.app/"],
 ["anti-ii-qwen-academy-ege-literature","📖🎓","ЕГЭ Литература","EGE Literature","Тренажёр ЕГЭ-2026","EGE Trainer 2026","🎓",false,"https://anti-ii-qwen-academy-ege-literature.vercel.app/"],
 ["anti-ii-qwen-academy-ege-bio-2026","🧬","ЕГЭ Биология","EGE Biology","Тренажёр ЕГЭ-2026","EGE Trainer 2026","🎓",false,"https://anti-ii-qwen-academy-ege-bio-2026.vercel.app/"],
 ["anti-ii-qwen-academy-ege-math-2026","📐🎓","ЕГЭ Математика","EGE Math","Тренажёр ЕГЭ-2026","EGE Trainer 2026","🎓",false,"https://anti-ii-qwen-academy-ege-math-2026.vercel.app/"],
-["anti-ai-kven-academy-ege-2026-chine","🇨🇳🎓","ЕГЭ Китайский","EGE Chinese","Тренажёр ЕГЭ-2026","EGE Trainer 2026","🎓",false,"https://anti-ai-kven-academy-ege-2026-chine.vercel.app/"]
+["anti-ai-kven-academy-ege-2026-chine","🇨🎓","ЕГЭ Китайский","EGE Chinese","Тренажёр ЕГЭ-2026","EGE Trainer 2026","🎓",false,"https://anti-ai-kven-academy-ege-2026-chine.vercel.app/"],
+["anti-ai-qwen-literature-gve-9-2027","📖🧒","ГВЭ-9 Литература 2027","GVE-9 Literature 2027","4 задания с текстами, устная форма 10 билетов, критерии, термины, планы анализа","4 tasks with texts, oral form 10 tickets, criteria, terms, analysis plans","🎓",true,"https://ancf-hue.github.io/anti-ai-qwen-literature-gve-9-2027/"],
+["anti-ai-qwen-history-gve9-2027","🏛️","ГВЭ-9 История 2027","GVE-9 History 2027","18 заданий ФИПИ, устная форма, билеты, критерии, справочник, чек-лист, план 25 дней","18 FIPI tasks, oral form, tickets, criteria, handbook, checklist, 25-day plan","🎓",true,"https://ancf-hue.github.io/anti-ai-qwen-history-gve9-2027/"],
+["anti-ai-qwen-academy-informatika-gve-9-2027","💻🧒","ГВЭ-9 Информатика 2027","GVE-9 Computer Science 2027","10 заданий ФИПИ, устная форма 15 билетов, критерии, справочник, чек-лист, план 20 дней","10 FIPI tasks, oral form 15 tickets, criteria, handbook, checklist, 20-day plan","🎓",true,"https://ancf-hue.github.io/anti-ai-qwen-academy-informatika-gve-9-2027/"],
+["anti-ai-qwen-academy-inostrannye-yazyki-gve-9-2027","🌍🧒","ГВЭ-9 Иностранные языки 2027","GVE-9 Foreign Languages 2027","Английский, испанский, немецкий, французский: 20 заданий, устная форма 15 билетов, критерии, справочник, чек-лист, план 20 дней","English, Spanish, German, French: 20 tasks, oral form 15 tickets, criteria, handbook, checklist, 20-day plan","🎓",true,"https://ancf-hue.github.io/anti-ai-qwen-academy-inostrannye-yazyki-gve-9-2027/"],
+["anti-ai-qwen-academy-russkiy-gve-9-2027","📝🧒","ГВЭ-9 Русский язык 2027","GVE-9 Russian 2027","Сжатое изложение и сочинение, 4 формата, устная форма, критерии ФИПИ, справочник, чек-лист, план 25 дней","Compressed retelling and essay, 4 formats, oral form, FIPI criteria, handbook, checklist, 25-day plan","🎓",true,"https://ancf-hue.github.io/anti-ai-qwen-academy-russkiy-gve-9-2027/"],
+["anti-ai-itogovoe-sobesedovanie-2027-russkiy-9-klass","🎤🧒","Итоговое собеседование 2027","Final Interview 2027","Русский язык, 9 класс: 4 варианта, 3 задания, критерии ФИПИ, порог 10/17 баллов","Russian, grade 9: 4 variants, 3 tasks, FIPI criteria, threshold 10/17 points","🎓",true,"https://ancf-hue.github.io/anti-ai-itogovoe-sobesedovanie-2027-russkiy-9-klass/"],
+["anti-ai-qwen-academy-geography-gve-9-2027","🌍","ГВЭ-9 География 2027","GVE-9 Geography 2027","19 заданий ФИПИ, устная форма 15 билетов, критерии, справочник, чек-лист, план 25 дней","19 FIPI tasks, oral form 15 tickets, criteria, handbook, checklist, 25-day plan","🎓",true,"https://ancf-hue.github.io/anti-ai-qwen-academy-geography-gve-9-2027/"],
+["anti-ai-qwen-academy-biology-gve9-2027","🧬🧒","ГВЭ-9 Биология 2027","GVE-9 Biology 2027","26 заданий ФИПИ, устная форма 15 билетов, критерии, справочник, чек-лист, план 25 дней","26 FIPI tasks, oral form 15 tickets, criteria, handbook, checklist, 25-day plan","🎓",true,"https://ancf-hue.github.io/anti-ai-qwen-academy-biology-gve9-2027/"],
+["anti-aI-qwen-academy-english-ege-2026-full-trainer","🇬🇧🎓","ЕГЭ Английский 2026","EGE English 2026","Полный офлайн-тренажёр: аудирование, чтение, грамматика, письмо, говорение, таймер, план 25 дней, RU/EN","Full offline trainer: listening, reading, grammar, writing, speaking, timer, 25-day plan, RU/EN","🎓",true,"https://ancf-hue.github.io/anti-aI-qwen-academy-english-ege-2026-full-trainer/"],
+["anti-ai-qwen-academy-full-trainer-ege-2026-german-language","🇩🇪🎓","ЕГЭ Немецкий 2026","EGE German 2026","Полный офлайн-тренажёр: аудирование, чтение, грамматика, письмо, говорение, таймер, план 25 дней, RU/EN","Full offline trainer: listening, reading, grammar, writing, speaking, timer, 25-day plan, RU/EN","🎓",true,"https://ancf-hue.github.io/anti-ai-qwen-academy-full-trainer-ege-2026-german-language/"],
+["anti-ai-Qwen-academy-full-spanish-ege-2026-trainer","🇪🇸🎓","ЕГЭ Испанский 2026","EGE Spanish 2026","Аудирование, чтение, грамматика, лексика, письменная и устная часть, таймер, RU/EN","Listening, reading, grammar, vocabulary, written and speaking parts, timer, RU/EN","🎓",true,"https://ancf-hue.github.io/anti-ai-Qwen-academy-full-spanish-ege-2026-trainer/"],
+["anti-ai-qwen-academy-full-french-ege-2026-trainer","🇫🎓","ЕГЭ Французский 2026","EGE French 2026","Автономный тренажёр ЕГЭ-2026, RU/EN, таймер, задания, критерии, план подготовки","Autonomous EGE-2026 trainer, RU/EN, timer, tasks, criteria, study plan","🎓",true,"https://ancf-hue.github.io/anti-ai-qwen-academy-full-french-ege-2026-trainer/"]
 ];
 
-const sectionMap = {
-  // ЗДОРОВЬЕ (13)
-  "anti-ai-visometer": "health",
-  "anti-ai-visometer-kids": "health",
-  "anti-ai-vision-check": "health",
-  "anti-ai-eyes-gym": "health",
-  "anti-ai-memory": "health",
-  "anti-ai-hearing-test-memory-trainin": "health",
-  "anti-ai-hearing-test-fast": "health",
-  "anti-ai-hearing-test-slow-memory-tr": "health",
-  "anti-ai-audiometer": "health",
-  "anti-ai-stress": "health",
-  "anti-ai-narc-cycle": "health",
-  "anti-ai-narc-cycle-oriental": "health",
-  "anti-ai-electronic-mirror": "health",
-  // МУЗЫКА (6)
-  "anti-ai-music-scroller": "music",
-  "anti-ai-drum-balls": "music",
-  "anti-ai-20-ritmov": "music",
-  "anti-ai-drum-metronome": "music",
-  "rutube-channel": "music",
-  "anti-ai-blind-zone": "music",
-  // ИГРЫ (19)
-  "anti-a-i-golf": "games",
-  "anti-ai-pool": "games",
-  "anti-ai-tower-3d": "games",
-  "anti-ai-shield-tower-i3ry": "games",
-  "ar-anatomy-ultimate": "games",
-  "anti-ai-magic-oracle": "games",
-  "rock-paper-scissors-beta-hazel": "games",
-  "anti-ai-shield-shooter": "games",
-  "anti-ai-shield-eggs": "games",
-  "anti-ai-mosaic": "games",
-  "human-vision-puzzle": "games",
-  "cubecraft-pro-antiai": "games",
-  "match-cubes-collection": "games",
-  "anti-ai-tetris": "games",
-  "anti-ai-cloud-flight-3d": "games",
-  "anti-ai-mole-3d": "games",
-  "anti-ai-space-simulator": "games",
-  "anti-ai-udacha": "games",
-  "anti-ai-durok-3d": "games", 
-  // 🐍 ИГРЫ СО ЗМЕЕЙ (31)
-  "anti-ii-zmeya-vse-igry": "snake_games",
-  "anti-a-i-snake-and-fireflies": "snake_games",
-  "anti-ai-snake-race": "snake_games",
-  "anti-a-i-snake-and-frog": "snake_games",
-  "anti-a-i-snake-and-honey": "snake_games",
-  "anti-a-i-snake-and-fire": "snake_games",
-  "anti-ai-snake-and-spider": "snake_games",
-  "anti-ai-snake-and-dragon": "snake_games",
-  "anti-ai-snake-ant": "snake_games",
-  "anti-ai-snake-melody-night": "snake_games",
-  "anti-a-i-snake-and-bubbles": "snake_games",
-  "anti-ii-snake-and-dragonfly": "snake_games",
-  "anti-a-i-snake-and-mouse": "snake_games",
-  "anti-ai-snake-apples": "snake_games",
-  "anti-a-i-snake-and-stone": "snake_games",
-  "anti-a-i-snake-and-the-ocean": "snake_games",
-  "anti-a-i-snake-and-hedgehog": "snake_games",
-  "anti-ii-snake-balloons": "snake_games",
-  "anti-ai-snake-sorter": "snake_games",
-  "anti-a-i-snake-and-owl": "snake_games",
-  "anti-ai-snake-and-rain": "snake_games",
-  "anti-ai-snake-strike": "snake_games",
-  "anti-ai-snake-labyrinth": "snake_games",
-  "anti-ii-snake-stream": "snake_games",
-  "anti-a-i-snake-and-compass": "snake_games",
-  "anti-ai-snake-watermelon": "snake_games",
-  "anti-a-i-snake-and-barrel": "snake_games",
-  "anti-ai-snake-pumpkin": "snake_games",
-  "anti-a-i-snake-and-ice-floe": "snake_games",
-  "anti-a-i-snake-and-snowball": "snake_games",
-  "anti-a-i-snake-and-egg": "snake_games",
-  // ДЕТСКИЕ (13)
-  "anti-ai-animals": "kids",
-  "anti-ai-count-to-10": "kids",
-  "anti-ai-abc": "kids",
-  "anti-bullying-app-one": "kids",
-  "anti-ai-mechanic-lesson-1": "kids",
-  "anti-ai-mechanic-lesson-2-timing-me": "kids",
-  "anti-ai-mechanic-lesson-3-transmiss": "kids",
-  "anti-ai-mechanic-lesson-4-turbochar": "kids",
-  "anti-ai-shape-sorter": "kids",
-  "anti-ai-golf-kids": "kids",
-  "anti-ai-tracker": "kids",
-  "anti-ai-3d-marble-maze": "kids",
-  "anti-ai-shtrafnoy-brosok-5-detskiy": "kids",
-  // СПОРТ (23)
-  "anti-ai-big-tennis": "sports",
-  "anti-ai-darts": "sports",
-  "anti-ai-archery": "sports",
-  "anti-ai-table-tennis-3d": "sports",
-  "anti-ai-qwen-academy-cyborg-athlete": "sports",
-  "anti-ai-handball-3d": "sports",
-  "anti-ai-basketball-3d-perimeter": "sports",
-  "anti-a-i-biathlon": "sports",
-  "anti-ai-waterpolo": "sports",
-  "anti-a-i-bowling": "sports",
-  "anti-ai-fishing-5": "sports",
-  "anti-ai-velogonka": "sports",
-  "anti-ai-backstroke": "sports",
-  "anti-ai-qwen-curling": "sports",
-  "anti-ai-curling": "sports",
-  "anti-ai-ski-trail-300": "sports",
-  "anti-ii-swim-100": "sports",
-  "anti-ai-skates-250": "sports",
-  "anti-a-i-soccer-penalty-shootout": "sports",
-  "anti-ai-kayak-250": "sports",
-  "anti-ai-horse-racing-240": "sports",
-  "anti-ai-hockey-bullets": "sports",
-  "anti-ai-table-hockey": "sports",
-  // ИНСТРУМЕНТЫ (18)
-  "text-converter-pro": "tools",
-  "photo-converter-pro": "tools",
-  "photo-editor-text": "tools",
-  "anti-a-i-photo-editor-photo-on-phot": "tools",
-  "df-generator-ru": "tools",
-  "anti-ai-video-frame-capturer": "tools",
-  "anti-ai-video-cutter": "tools",
-  "anti-ai-barcode": "tools",
-  "anti-ai-passwords": "tools",
-  "anti-ai-sms-shield": "tools",
-  "anti-ai-battery-shield": "tools",
-  "anti-ai-level": "tools",
-  "anti-ai-light": "tools",
-  "anti-ai-distance": "tools",
-  "anti-ai-navigator-straight": "tools",
-  "anti-ai-cosmos": "tools",
-  "anti-ai-auto": "tools",
-  "anti-ai-glance": "tools",
-  // ОБРАЗОВАНИЕ (58)
-  "anti-ai-challenge": "education",
-  "ai-core-autonomy": "education",
-  "a-young-operator-of-an-unmanned-aer": "education",
-  "lesson-1-for-a-professional-uav-operator": "education",
-  "anti-ai-qwen-uav-simulator-lesson-1": "education",
-  "anti-ai-qwen-uav-simulator-lesson-1-three": "education",
-  "anti-ai-qwen-uav-simulator-lesson-1-one": "education",
-  "anti-ai-qwen-uav-simulator-lesson-2": "education",
-  "anti-ai-qwen-uav-simulator-lesson-2-gamma": "education",
-  "anti-ai-qwen-uav-simulator-lesson-2-nu": "education",
-  "anti-ai-qwen-uav-simulator-lesson-2-omega": "education",
-  "anti-ai-qwen-uav-simulator-lesson-2-rose": "education",
-  "anti-ai-qwen-uav-simulator-lesson-2-livid": "education",
-  "anti-ai-qwen-uav-simulator-lesson-2-kohl": "education",
-  "anti-ai-qwen-uav-simulator-lesson-3": "education",
-  "anti-ai-qwen-uav-simulator-lesson-4": "education",
-  "anti-ai-qwen-uav-simulator-lesson-5": "education",
-  "anti-ai-qwen-uav-simulator-lesson-6": "education",
-  "anti-ai-qwen-uav-simulator-lesson-7": "education",
-  "anti-ai-qwen-uav-simulator-lesson-8": "education",
-  "anti-ai-qwen-uav-simulator-lesson-9": "education",
-  "anti-ai-qwen-uav-simulator-lesson-1-seven": "education",
-  "anti-ai-qwen-uav-simulator-lesson-1-mu": "education",
-  "anti-ai-qwen-uav-simulator-lesson-1-nine": "education",
-  "anti-ai-qwen-uav-simulator-lesson-1-virid": "education",
-  "anti-ai-qwen-uav-simulator-lesson-1-delta": "education",
-  "anti-ai-qwen-uav-simulator-lesson-1-pi": "education",
-  "anti-ai-qwen-uav-simulator-lesson-1-sigma": "education",
-  "anti-ai-qwen-uav-simulator-lesson-1-murex": "education",
-  "anti-ai-qwen-academy-prompt-enginee": "education",
-  "anti-ai-qwen-academy-ai-product-man-phi": "education",
-  "anti-ai-qwen-academy-ai-model-secur": "education",
-  "anti-ai-qwen-academy-ai-legal-speci": "education",
-  "anti-ai-qwen-academy-ai-ethics-offi": "education",
-  "anti-ai-qwen-academy-data-curator": "education",
-  "anti-ai-qwen-academy-prompt-designe": "education",
-  "anti-ai-qwen-academy-deepfake-detec-virid": "education",
-  "anti-ai-qwen-academy-deep-technical": "education",
-  "anti-ai-qwen-humor-academy-face-dis": "education",
-  "anti-ai-qwen-academy-deepfake-detec-kohl": "education",
-  "anti-ai-qwen-academy-qwen-fact-chec-one": "education",
-  "ai-business-designer-republic-of-co": "education",
-  "anti-ai-shield": "education",
-  "anti-ai-cyber-hack": "education",
-  "anti-ai-qwen-companion": "education",
-  "the-republic-of-cognitive-sovereign": "education",
-  "anti-ai-business-integrator": "education",
-  "anti-ai-qwen-earn-money": "education",
-  "anti-ai-Qwen-academy-full-social-studies-ege-2026-trainer": "education",
-  "anti-ai-Qwen-academy-full-history-ege-2026-trainer": "education",
-  "anti-ai-Qwen-academy-full-computer-science-ege-2026-trainer": "education",
-  "anti-ai-qwen-academy-ege-geography": "education",
-  "anti-ai-qwen-academy-chemistry-ege": "education",
-  "anti-ai-qwen-academy-russian-ege-20": "education",
-  "anti-ai-qwen-academy-physics-ege-20": "education",
-  "anti-ii-qwen-academy-ege-literature": "education",
-  "anti-ii-qwen-academy-ege-bio-2026": "education",
-  "anti-ii-qwen-academy-ege-math-2026": "education",
-  "anti-ai-kven-academy-ege-2026-chine": "education"
-};
+/* ============================================================
+   ПРИСВОЕНИЕ РАЗДЕЛОВ + ВАЛИДАЦИЯ
+   ============================================================ */
+const examSlugs=new Set([
+"anti-ai-Qwen-academy-full-social-studies-ege-2026-trainer",
+"anti-ai-Qwen-academy-full-history-ege-2026-trainer",
+"anti-ai-Qwen-academy-full-computer-science-ege-2026-trainer",
+"anti-ai-qwen-academy-ege-geography",
+"anti-ai-qwen-academy-chemistry-ege",
+"anti-ai-qwen-academy-russian-ege-20",
+"anti-ai-qwen-academy-physics-ege-20",
+"anti-ii-qwen-academy-ege-literature",
+"anti-ii-qwen-academy-ege-bio-2026",
+"anti-ii-qwen-academy-ege-math-2026",
+"anti-ai-kven-academy-ege-2026-chine",
+"anti-ai-qwen-literature-gve-9-2027",
+"anti-ai-qwen-history-gve9-2027",
+"anti-ai-qwen-academy-informatika-gve-9-2027",
+"anti-ai-qwen-academy-inostrannye-yazyki-gve-9-2027",
+"anti-ai-qwen-academy-russkiy-gve-9-2027",
+"anti-ai-itogovoe-sobesedovanie-2027-russkiy-9-klass",
+"anti-ai-qwen-academy-geography-gve-9-2027",
+"anti-ai-qwen-academy-biology-gve9-2027",
+"anti-aI-qwen-academy-english-ege-2026-full-trainer",
+"anti-ai-qwen-academy-full-trainer-ege-2026-german-language",
+"anti-ai-Qwen-academy-full-spanish-ege-2026-trainer",
+"anti-ai-qwen-academy-full-french-ege-2026-trainer"
+]);
 
-const i18n={ru:{hero_title:"ANTI‑AI SHIELD",hero_sub:"Цифровая крепость · приватность без облаков · профессии будущего",qr_text:"Сканируй ↑",support_title:"💙 Поддержать проекты",support_desc:"Все приложения бесплатны и без рекламы.",support_phone_label:"📱 Перевод по номеру телефона (СБП, любой банк)",support_email:"✉️ По вопросам сотрудничества: an.cf@yandex.ru",support_thanks:"✨ Спасибо, что с нами — защищаем мир без слежки ✨",usa_title:"A.I. Core Autonomy // USA Edition",usa_desc:"«Анти-ИИ: Манифест Суверенной Личности».",footer_text:"© 2026 Anti‑AI Shield • Технологии для людей",btn_open:"ОТКРЫТЬ →",badge_offline:"⚡ оффлайн",badge_new:"НОВОЕ",toast_copy_success:"✅ Ссылка скопирована: ",toast_copy_error:"❌ Не удалось скопировать",chat_title:"Офлайн-Ассистент",chat_welcome:"Привет! Я знаю все проекты в 8 разделах. Спросите: <i>\"здоровье\"</i>, <i>\"музыка\"</i>, <i>\"игры\"</i>, <i>\"змея\"</i>, <i>\"детские\"</i>, <i>\"спорт\"</i>, <i>\"образование\"</i>, <i>\"инструменты\"</i>.",chat_placeholder:"Раздел или проект...",back_to_sections:"Все разделы"},en:{hero_title:"ANTI‑AI SHIELD",hero_sub:"Digital fortress · cloudless privacy · professions of the future",qr_text:"Scan me ↑",support_title:"💙 Support the projects",support_desc:"All apps are free and ad-free.",support_phone_label:"📱 Transfer by phone number",support_email:"✉️ Cooperation: an.cf@yandex.ru",support_thanks:"✨ Thank you — protecting the world ✨",usa_title:"A.I. Core Autonomy // USA Edition",usa_desc:"\"Anti-AI: Manifesto of the Sovereign Individual\".",footer_text:"© 2026 Anti‑AI Shield • Technology for people",btn_open:"OPEN →",badge_offline:"⚡ offline",badge_new:"NEW",toast_copy_success:"✅ Link copied: ",toast_copy_error:"❌ Failed to copy",chat_title:"Offline Assistant",chat_welcome:"Hello! Ask: <i>\"health\"</i>, <i>\"music\"</i>, <i>\"games\"</i>, <i>\"snake\"</i>, <i>\"kids\"</i>, <i>\"sports\"</i>, <i>\"education\"</i>, <i>\"tools\"</i>.",chat_placeholder:"Section or project...",back_to_sections:"All sections"}};
+// Диапазоны индексов [id, start, end). Меняя порядок проектов выше — обнови и здесь!
+const sectionRanges=[
+["health",0,13],
+["music",13,19],
+["games",19,38],
+["snake_games",38,69],
+["kids",69,82],
+["sports",82,105],
+["tools",105,123]
+];
 
-let currentLang=localStorage.getItem('anti_ai_lang')||'ru';let currentView='sections';let currentSectionId=null;
+const slugToSection = new Map();
+rawProjects.forEach((p,i)=>{
+  if(examSlugs.has(p[0])){ slugToSection.set(p[0], "exams"); return; }
+  for(const [id,start,end] of sectionRanges){
+    if(i>=start && i<end){ slugToSection.set(p[0], id); return; }
+  }
+  slugToSection.set(p[0], "education");
+});
 
-function getSectionForProject(slug){return sectionMap[slug]||"education"}
-function getProjectsInSection(id){return rawProjects.filter(p=>getSectionForProject(p[0])===id)}
+// Валидация: логируем, если какой-то проект попал не туда / потерялся
+(function validateSections(){
+  const counts = {};
+  sections.forEach(s => counts[s.id] = 0);
+  rawProjects.forEach(p => {
+    const sec = slugToSection.get(p[0]);
+    if(!sec){ console.warn("⚠️ Проект без раздела:", p[0]); return; }
+    if(!counts.hasOwnProperty(sec)){ console.warn("⚠️ Неизвестный раздел:", sec, "у проекта", p[0]); return; }
+    counts[sec]++;
+  });
+  sections.forEach(s => { if(counts[s.id]===0) console.warn("⚠️ Пустой раздел:", s.id); });
+  if(typeof console.table === "function") console.table(counts);
+})();
+
+function getSectionForProject(slug){ return slugToSection.get(slug) || "education"; }
+function getProjectsInSection(id){ return rawProjects.filter(p => slugToSection.get(p[0]) === id); }
+
+/* ============================================================
+   i18n
+   ============================================================ */
+const i18n={ru:{hero_title:"ANTI‑AI SHIELD",hero_sub:"Цифровая крепость · приватность без облаков · профессии будущего",qr_text:"Сканируй ↑",support_title:"💙 Поддержать проекты",support_desc:"Все приложения бесплатны и без рекламы.",support_phone_label:"📱 Перевод по номеру телефона (СБП, любой банк)",support_email:"✉️ По вопросам сотрудничества: an.cf@yandex.ru",support_thanks:"✨ Спасибо, что с нами — защищаем мир без слежки ✨",usa_title:"A.I. Core Autonomy // USA Edition",usa_desc:"«Анти-ИИ: Манифест Суверенной Личности».",footer_text:"© 2026 Anti‑AI Shield • Технологии для людей",btn_open:"ОТКРЫТЬ →",badge_offline:"⚡ оффлайн",badge_new:"НОВОЕ",toast_copy_success:"✅ Ссылка скопирована: ",toast_copy_error:"❌ Не удалось скопировать",chat_title:"Офлайн-Ассистент",chat_welcome:"Привет! Я знаю все проекты в {count} разделах. Спросите: <i>\"здоровье\"</i>, <i>\"музыка\"</i>, <i>\"игры\"</i>, <i>\"змея\"</i>, <i>\"детские\"</i>, <i>\"спорт\"</i>, <i>\"экзамены\"</i>, <i>\"образование\"</i>, <i>\"инструменты\"</i>.",chat_placeholder:"Раздел или проект...",back_to_sections:"Все разделы"},en:{hero_title:"ANTI‑AI SHIELD",hero_sub:"Digital fortress · cloudless privacy · professions of the future",qr_text:"Scan me ↑",support_title:"💙 Support the projects",support_desc:"All apps are free and ad-free.",support_phone_label:"📱 Transfer by phone number",support_email:"✉️ Cooperation: an.cf@yandex.ru",support_thanks:"✨ Thank you — protecting the world ✨",usa_title:"A.I. Core Autonomy // USA Edition",usa_desc:"\"Anti-AI: Manifesto of the Sovereign Individual\".",footer_text:"© 2026 Anti‑AI Shield • Technology for people",btn_open:"OPEN →",badge_offline:"⚡ offline",badge_new:"NEW",toast_copy_success:"✅ Link copied: ",toast_copy_error:"❌ Failed to copy",chat_title:"Offline Assistant",chat_welcome:"Hello! I know all projects in {count} sections. Ask: <i>\"health\"</i>, <i>\"music\"</i>, <i>\"games\"</i>, <i>\"snake\"</i>, <i>\"kids\"</i>, <i>\"sports\"</i>, <i>\"exams\"</i>, <i>\"education\"</i>, <i>\"tools\"</i>.",chat_placeholder:"Section or project...",back_to_sections:"All sections"}};
+
+let currentLang=localStorage.getItem('anti_ai_lang')||'ru';
+let currentView='sections';
+let currentSectionId=null;
 
 function toggleLanguage(){currentLang=currentLang==='ru'?'en':'ru';localStorage.setItem('anti_ai_lang',currentLang);applyLanguage()}
 
-function applyLanguage(){document.getElementById('langRu').className=currentLang==='ru'?'active-lang':'';document.getElementById('langEn').className=currentLang==='en'?'active-lang':'';document.documentElement.lang=currentLang;document.title=currentLang==='ru'?'Anti-AI Shield | Витрина цифровой защиты':'Anti-AI Shield | Digital Protection Showcase';document.querySelectorAll('[data-i18n]').forEach(el=>{const key=el.getAttribute('data-i18n');if(i18n[currentLang][key])el.innerHTML=i18n[currentLang][key]});document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{const key=el.getAttribute('data-i18n-placeholder');if(i18n[currentLang][key])el.placeholder=i18n[currentLang][key]});renderSections();renderQuickTags();if(currentView==='projects'&&currentSectionId)showSection(currentSectionId,false)}
+function applyLanguage(){
+  document.getElementById('langRu').className=currentLang==='ru'?'active-lang':'';
+  document.getElementById('langEn').className=currentLang==='en'?'active-lang':'';
+  document.documentElement.lang=currentLang;
+  document.title=currentLang==='ru'?'Anti-AI Shield | Витрина цифровой защиты':'Anti-AI Shield | Digital Protection Showcase';
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key=el.getAttribute('data-i18n');
+    if(i18n[currentLang][key]) el.innerHTML=i18n[currentLang][key].replace('{count}', sections.length);
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{
+    const key=el.getAttribute('data-i18n-placeholder');
+    if(i18n[currentLang][key]) el.placeholder=i18n[currentLang][key];
+  });
+  renderSections();
+  renderQuickTags();
+  if(currentView==='projects'&&currentSectionId) showSection(currentSectionId,false);
+}
 
-function renderSections(){const grid=document.getElementById('sectionsGrid');if(!grid)return;grid.innerHTML='';sections.forEach(section=>{const projects=getProjectsInSection(section.id);if(projects.length===0)return;const card=document.createElement('div');card.className='section-card';card.onclick=()=>showSection(section.id,true);const title=currentLang==='ru'?section.titleRu:section.titleEn;const desc=currentLang==='ru'?section.descRu:section.descEn;const countLabel=currentLang==='ru'?`${projects.length} проектов`:`${projects.length} projects`;const openText=currentLang==='ru'?'Открыть →':'Open →';card.innerHTML=`<div class="section-card-top"><div class="section-card-icon">${section.icon}</div><div class="section-card-info"><div class="section-card-title">${title}</div></div></div><div class="section-card-desc">${desc}</div><div class="section-card-footer"><span class="section-count-badge">${countLabel}</span><span class="section-open-arrow">${openText}</span></div>`;grid.appendChild(card)})}
+function renderSections(){
+  const grid=document.getElementById('sectionsGrid');
+  if(!grid) return;
+  grid.innerHTML='';
+  sections.forEach(section=>{
+    const projects=getProjectsInSection(section.id);
+    if(projects.length===0) return;
+    const card=document.createElement('div');
+    card.className='section-card';
+    card.onclick=()=>showSection(section.id,true);
+    const title=currentLang==='ru'?section.titleRu:section.titleEn;
+    const desc=currentLang==='ru'?section.descRu:section.descEn;
+    const countLabel=currentLang==='ru'?`${projects.length} проектов`:`${projects.length} projects`;
+    const openText=currentLang==='ru'?'Открыть →':'Open →';
+    card.innerHTML=`<div class="section-card-top"><div class="section-card-icon">${section.icon}</div><div class="section-card-info"><div class="section-card-title">${title}</div></div></div><div class="section-card-desc">${desc}</div><div class="section-card-footer"><span class="section-count-badge">${countLabel}</span><span class="section-open-arrow">${openText}</span></div>`;
+    grid.appendChild(card);
+  });
+}
 
-function showSection(sectionId,scroll=true){const section=sections.find(s=>s.id===sectionId);if(!section)return;currentView='projects';currentSectionId=sectionId;document.getElementById('sectionsView').classList.add('hidden');document.getElementById('projectsView').classList.add('active');const title=currentLang==='ru'?section.titleRu:section.titleEn;const projects=getProjectsInSection(sectionId);document.getElementById('backBarIcon').textContent=section.icon;document.getElementById('backBarTitle').textContent=title;document.getElementById('backBarCount').textContent=`${projects.length} ${currentLang==='ru'?'проектов':'projects'}`;const grid=document.getElementById('projectsGrid');grid.innerHTML='';projects.forEach(p=>{const card=document.createElement('div');card.className='project-card';const isRutube=p[9]===true;if(isRutube)card.classList.add('rutube-card');const titleP=currentLang==='en'?p[3]:p[2];const descP=currentLang==='en'?(p[5]||p[4]):p[4];const badge=p[6];const isNew=p[7]===true;const customUrl=p[8];let badgeHtml=`<span class="badge-offline">${i18n[currentLang].badge_offline}</span>`;if(badge)badgeHtml+=` <span class="special-badge">${badge}</span>`;if(isNew)badgeHtml+=` <span class="new-badge">${i18n[currentLang].badge_new}</span>`;const url=customUrl||`https://ancf-hue.github.io/${p[0]}/`;const btnText=i18n[currentLang].btn_open;card.innerHTML=`<span class="card-icon">${p[1]}</span><div class="card-title">${titleP} ${badgeHtml}</div><div class="card-desc">${descP}</div><a class="project-btn" href="${url}" target="_blank" rel="noopener noreferrer">${btnText}</a>`;grid.appendChild(card)});if(scroll)window.scrollTo({top:0,behavior:'smooth'})}
+function showSection(sectionId,scroll=true){
+  const section=sections.find(s=>s.id===sectionId);
+  if(!section) return;
+  currentView='projects';
+  currentSectionId=sectionId;
+  document.getElementById('sectionsView').classList.add('hidden');
+  document.getElementById('projectsView').classList.add('active');
+  const title=currentLang==='ru'?section.titleRu:section.titleEn;
+  const projects=getProjectsInSection(sectionId);
+  document.getElementById('backBarIcon').textContent=section.icon;
+  document.getElementById('backBarTitle').textContent=title;
+  document.getElementById('backBarCount').textContent=`${projects.length} ${currentLang==='ru'?'проектов':'projects'}`;
+  const grid=document.getElementById('projectsGrid');
+  grid.innerHTML='';
+  projects.forEach(p=>{
+    const card=document.createElement('div');
+    card.className='project-card';
+    const isRutube=p[9]===true;
+    if(isRutube) card.classList.add('rutube-card');
+    const titleP=currentLang==='en'?p[3]:p[2];
+    const descP=currentLang==='en'?(p[5]||p[4]):p[4];
+    const badge=p[6];
+    const isNew=p[7]===true;
+    const customUrl=p[8];
+    let badgeHtml=`<span class="badge-offline">${i18n[currentLang].badge_offline}</span>`;
+    if(badge) badgeHtml+=` <span class="special-badge">${badge}</span>`;
+    if(isNew) badgeHtml+=` <span class="new-badge">${i18n[currentLang].badge_new}</span>`;
+    const url=customUrl||`https://ancf-hue.github.io/${p[0]}/`;
+    const btnText=i18n[currentLang].btn_open;
+    card.innerHTML=`<span class="card-icon">${p[1]}</span><div class="card-title">${titleP} ${badgeHtml}</div><div class="card-desc">${descP}</div><a class="project-btn" href="${url}" target="_blank" rel="noopener noreferrer">${btnText}</a>`;
+    grid.appendChild(card);
+  });
+  if(scroll) window.scrollTo({top:0,behavior:'smooth'});
+}
 
-function showSections(){currentView='sections';currentSectionId=null;document.getElementById('sectionsView').classList.remove('hidden');document.getElementById('projectsView').classList.remove('active');window.scrollTo({top:0,behavior:'smooth'})}
+function showSections(){
+  currentView='sections';
+  currentSectionId=null;
+  document.getElementById('sectionsView').classList.remove('hidden');
+  document.getElementById('projectsView').classList.remove('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
 
-function showMessage(message,isError=true){const toast=document.getElementById('errorToast');if(toast){toast.textContent=message;toast.style.background=isError?'#dc2626':'#10b981';toast.style.display='block';setTimeout(()=>{toast.style.display='none'},5000)}}
+function showMessage(message,isError=true){
+  const toast=document.getElementById('errorToast');
+  if(toast){
+    toast.textContent=message;
+    toast.style.background=isError?'#dc2626':'#10b981';
+    toast.style.display='block';
+    setTimeout(()=>{toast.style.display='none'},5000);
+  }
+}
 
-function setupQRClick(){const qrArea=document.getElementById('qrClickArea');if(qrArea){qrArea.addEventListener('click',function(){navigator.clipboard.writeText('https://ancf-hue.github.io/').then(()=>{showMessage(i18n[currentLang].toast_copy_success+'https://ancf-hue.github.io/',false)}).catch(()=>{showMessage(i18n[currentLang].toast_copy_error)})})}}
+function setupQRClick(){
+  const qrArea=document.getElementById('qrClickArea');
+  if(qrArea){
+    qrArea.addEventListener('click',function(){
+      navigator.clipboard.writeText('https://ancf-hue.github.io/')
+        .then(()=>{showMessage(i18n[currentLang].toast_copy_success+'https://ancf-hue.github.io/',false)})
+        .catch(()=>{showMessage(i18n[currentLang].toast_copy_error)});
+    });
+  }
+}
 
-const chatbotToggle=document.getElementById('chatbotToggle');const chatbotWindow=document.getElementById('chatbotWindow');const chatbotClose=document.getElementById('chatbotClose');const chatInput=document.getElementById('chatInput');const chatSend=document.getElementById('chatSend');const chatMessages=document.getElementById('chatMessages');const quickTags=document.getElementById('quickTags');
+const chatbotToggle=document.getElementById('chatbotToggle');
+const chatbotWindow=document.getElementById('chatbotWindow');
+const chatbotClose=document.getElementById('chatbotClose');
+const chatInput=document.getElementById('chatInput');
+const chatSend=document.getElementById('chatSend');
+const chatMessages=document.getElementById('chatMessages');
+const quickTags=document.getElementById('quickTags');
 
-function renderQuickTags(){if(!quickTags)return;quickTags.innerHTML='';const tags=currentLang==='ru'?['здоровье','музыка','игры','змея','детские','спорт','образование','инструменты']:['health','music','games','snake','kids','sports','education','tools'];tags.forEach(t=>{const btn=document.createElement('span');btn.className='chat-tag';btn.textContent=t;btn.onclick=()=>{chatInput.value=t;sendMessage()};quickTags.appendChild(btn)})}
+function renderQuickTags(){
+  if(!quickTags) return;
+  quickTags.innerHTML='';
+  const tags=currentLang==='ru'?['здоровье','музыка','игры','змея','детские','спорт','экзамены','образование','инструменты']:['health','music','games','snake','kids','sports','exams','education','tools'];
+  tags.forEach(t=>{
+    const btn=document.createElement('span');
+    btn.className='chat-tag';
+    btn.textContent=t;
+    btn.onclick=()=>{chatInput.value=t;sendMessage()};
+    quickTags.appendChild(btn);
+  });
+}
 
-chatbotToggle.addEventListener('click',()=>{chatbotWindow.classList.toggle('active');if(chatbotWindow.classList.contains('active'))setTimeout(()=>chatInput.focus(),300)});chatbotClose.addEventListener('click',()=>chatbotWindow.classList.remove('active'));document.getElementById('backBtn').addEventListener('click',showSections);
+chatbotToggle.addEventListener('click',()=>{chatbotWindow.classList.toggle('active');if(chatbotWindow.classList.contains('active'))setTimeout(()=>chatInput.focus(),300)});
+chatbotClose.addEventListener('click',()=>chatbotWindow.classList.remove('active'));
+document.getElementById('backBtn').addEventListener('click',showSections);
 
-function sendMessage(){const text=chatInput.value.trim();if(!text)return;addMessage(text,'user');chatInput.value='';setTimeout(()=>{const response=getBotResponse(text.toLowerCase());addMessage(response.html,'bot',response.action)},250)}
+function sendMessage(){
+  const text=chatInput.value.trim();
+  if(!text) return;
+  addMessage(text,'user');
+  chatInput.value='';
+  setTimeout(()=>{const response=getBotResponse(text.toLowerCase());addMessage(response.html,'bot',response.action)},250);
+}
 
-chatSend.addEventListener('click',sendMessage);chatInput.addEventListener('keypress',(e)=>{if(e.key==='Enter')sendMessage()});
+chatSend.addEventListener('click',sendMessage);
+chatInput.addEventListener('keypress',(e)=>{if(e.key==='Enter')sendMessage()});
 
-function addMessage(htmlContent,sender,action){const div=document.createElement('div');div.className=`message ${sender}`;div.innerHTML=htmlContent;chatMessages.appendChild(div);if(action&&action.type==='openSection'){const btn=div.querySelector('[data-open-section]');if(btn)btn.addEventListener('click',()=>showSection(action.sectionId,true))}chatMessages.scrollTop=chatMessages.scrollHeight}
+function addMessage(htmlContent,sender,action){
+  const div=document.createElement('div');
+  div.className=`message ${sender}`;
+  div.innerHTML=htmlContent;
+  chatMessages.appendChild(div);
+  if(action&&action.type==='openSection'){
+    const btn=div.querySelector('[data-open-section]');
+    if(btn) btn.addEventListener('click',()=>showSection(action.sectionId,true));
+  }
+  chatMessages.scrollTop=chatMessages.scrollHeight;
+}
 
-function getBotResponse(input){const lang=currentLang;if(/привет|здравствуй|hi|hello/i.test(input)){return{html:lang==='ru'?`Приветствую! ${rawProjects.length} проектов в 8 разделах.`:`Greetings! ${rawProjects.length} projects in 8 sections.`}}if(/поддерж|донат|support|donate/i.test(input)){return{html:lang==='ru'?"Проекты бесплатны. Поддержать: <b>8-920-227-56-76</b> (СБП).":"Projects are free. Support: <b>8-920-227-56-76</b>."}}if(/^раздел|^секци|^sect|^все раздел|^all section/i.test(input)){showSections();return{html:lang==='ru'?"✅ Возвращаю к <b>8 разделам</b>.":"✅ Returning to <b>8 sections</b>."}}const matchedSection=sections.find(s=>{const searchText=`${s.titleRu} ${s.titleEn} ${s.descRu} ${s.descEn} ${s.keywords.join(' ')}`.toLowerCase();return s.keywords.some(kw=>input.includes(kw.toLowerCase()))||searchText.includes(input)});const matches=rawProjects.filter(p=>{const searchStr=`${p[0]} ${p[2]} ${p[3]} ${p[4]} ${p[5]} ${p[6]||''}`.toLowerCase();const words=input.split(/\s+/).filter(w=>w.length>1);return words.length>0&&words.every(word=>searchStr.includes(word))});if(matchedSection&&matches.length===0){const title=lang==='ru'?matchedSection.titleRu:matchedSection.titleEn;const desc=lang==='ru'?matchedSection.descRu:matchedSection.descEn;const count=getProjectsInSection(matchedSection.id).length;const btnText=lang==='ru'?`📂 Открыть (${count})`:`📂 Open (${count})`;return{html:`<b>${matchedSection.icon} ${title}</b><br>${desc}<br><br><button class="proj-link" data-open-section="${matchedSection.id}">${btnText}</button>`,action:{type:'openSection',sectionId:matchedSection.id}}}if(matches.length===1){const p=matches[0];const title=lang==='ru'?p[2]:p[3];const desc=lang==='ru'?p[4]:(p[5]||p[4]);const url=p[8]||`https://ancf-hue.github.io/${p[0]}/`;const section=sections.find(s=>s.id===getSectionForProject(p[0]));const sTitle=section?(lang==='ru'?section.titleRu:section.titleEn):'';const badge=p[6]?` [${p[6]}]`:'';const isNew=p[7]?' 🔥':'';return{html:`<b>${p[1]} ${title}${badge}${isNew}</b><br><span style="color:#9ca3af;font-size:14px;">📂 ${sTitle}</span><br><br>${desc}<br><br><a href="${url}" target="_blank" class="proj-link">${lang==='ru'?'🔗 Открыть':'🔗 Open'}</a>`}}if(matches.length>1&&matches.length<=10){let r=lang==='ru'?`<b>Найдено: ${matches.length}</b><br><ul>`:`<b>Found: ${matches.length}</b><br><ul>`;matches.forEach(p=>{const title=lang==='ru'?p[2]:p[3];const url=p[8]||`https://ancf-hue.github.io/${p[0]}/`;r+=`<li>${p[1]} <a href="${url}" target="_blank" class="inline-link">${title}</a></li>`});return{html:r+`</ul>`}}if(matches.length>10){let r=lang==='ru'?`<b>Много совпадений (${matches.length}). Первые 8:</b><br><ul>`:`<b>Many matches (${matches.length}). First 8:</b><br><ul>`;matches.slice(0,8).forEach(p=>{const title=lang==='ru'?p[2]:p[3];const url=p[8]||`https://ancf-hue.github.io/${p[0]}/`;r+=`<li>${p[1]} <a href="${url}" target="_blank" class="inline-link">${title}</a></li>`});return{html:r+`</ul>`}}return{html:lang==='ru'?"Не найдено. 💡 Попробуйте раздел или название проекта.":"Not found. 💡 Try a section or project name."}}
+function getBotResponse(input){
+  const lang=currentLang;
+  if(/привет|здравствуй|hi|hello/i.test(input)){
+    return{html:lang==='ru'?`Приветствую! ${rawProjects.length} проектов в ${sections.length} разделах.`:`Greetings! ${rawProjects.length} projects in ${sections.length} sections.`};
+  }
+  if(/поддерж|донат|support|donate/i.test(input)){
+    return{html:lang==='ru'?"Проекты бесплатны. Поддержать: <b>8-920-227-56-76</b> (СБП).":"Projects are free. Support: <b>8-920-227-56-76</b>."};
+  }
+  if(/^раздел|^секци|^sect|^все раздел|^all section/i.test(input)){
+    showSections();
+    return{html:lang==='ru'?`✅ Возвращаю к <b>${sections.length} разделам</b>.`:`✅ Returning to <b>${sections.length} sections</b>.`};
+  }
+  const matchedSection=sections.find(s=>{
+    const searchText=`${s.titleRu} ${s.titleEn} ${s.descRu} ${s.descEn} ${s.keywords.join(' ')}`.toLowerCase();
+    return s.keywords.some(kw=>input.includes(kw.toLowerCase()))||searchText.includes(input);
+  });
+  const matches=rawProjects.filter(p=>{
+    const searchStr=`${p[0]} ${p[2]} ${p[3]} ${p[4]} ${p[5]} ${p[6]||''}`.toLowerCase();
+    const words=input.split(/\s+/).filter(w=>w.length>1);
+    return words.length>0&&words.every(word=>searchStr.includes(word));
+  });
+  if(matchedSection&&matches.length===0){
+    const title=lang==='ru'?matchedSection.titleRu:matchedSection.titleEn;
+    const desc=lang==='ru'?matchedSection.descRu:matchedSection.descEn;
+    const count=getProjectsInSection(matchedSection.id).length;
+    const btnText=lang==='ru'?`📂 Открыть (${count})`:`📂 Open (${count})`;
+    return{html:`<b>${matchedSection.icon} ${title}</b><br>${desc}<br><br><button class="proj-link" data-open-section="${matchedSection.id}">${btnText}</button>`,action:{type:'openSection',sectionId:matchedSection.id}};
+  }
+  if(matches.length===1){
+    const p=matches[0];
+    const title=lang==='ru'?p[2]:p[3];
+    const desc=lang==='ru'?p[4]:(p[5]||p[4]);
+    const url=p[8]||`https://ancf-hue.github.io/${p[0]}/`;
+    const section=sections.find(s=>s.id===getSectionForProject(p[0]));
+    const sTitle=section?(lang==='ru'?section.titleRu:section.titleEn):'';
+    const badge=p[6]?` [${p[6]}]`:'';
+    const isNew=p[7]?' 🔥':'';
+    return{html:`<b>${p[1]} ${title}${badge}${isNew}</b><br><span style="color:#9ca3af;font-size:14px;">📂 ${sTitle}</span><br><br>${desc}<br><br><a href="${url}" target="_blank" class="proj-link">${lang==='ru'?'🔗 Открыть':'🔗 Open'}</a>`};
+  }
+  if(matches.length>1&&matches.length<=10){
+    let r=lang==='ru'?`<b>Найдено: ${matches.length}</b><br><ul>`:`<b>Found: ${matches.length}</b><br><ul>`;
+    matches.forEach(p=>{
+      const title=lang==='ru'?p[2]:p[3];
+      const url=p[8]||`https://ancf-hue.github.io/${p[0]}/`;
+      r+=`<li>${p[1]} <a href="${url}" target="_blank" class="inline-link">${title}</a></li>`;
+    });
+    return{html:r+`</ul>`};
+  }
+  if(matches.length>10){
+    let r=lang==='ru'?`<b>Много совпадений (${matches.length}). Первые 8:</b><br><ul>`:`<b>Many matches (${matches.length}). First 8:</b><br><ul>`;
+    matches.slice(0,8).forEach(p=>{
+      const title=lang==='ru'?p[2]:p[3];
+      const url=p[8]||`https://ancf-hue.github.io/${p[0]}/`;
+      r+=`<li>${p[1]} <a href="${url}" target="_blank" class="inline-link">${title}</a></li>`;
+    });
+    return{html:r+`</ul>`};
+  }
+  return{html:lang==='ru'?"Не найдено. 💡 Попробуйте раздел или название проекта.":"Not found. 💡 Try a section or project name."};
+}
 
-window.addEventListener('DOMContentLoaded',()=>{applyLanguage();setupQRClick();setTimeout(()=>{chatbotWindow.classList.add('active');setTimeout(()=>chatInput.focus(),300)},1500)});
+window.addEventListener('DOMContentLoaded',()=>{
+  applyLanguage();
+  setupQRClick();
+  setTimeout(()=>{chatbotWindow.classList.add('active');setTimeout(()=>chatInput.focus(),300)},1500);
+});
 </script>
 </body>
 </html>
