@@ -119,29 +119,6 @@ h1{font-size:2rem;font-weight:800;background:linear-gradient(135deg,#fff 0%,var(
 .phone-number{font-size:2.2rem;font-weight:800;font-family:monospace;background:#0f172a;display:inline-block;padding:.4rem 1.6rem;border-radius:70px;border:1px solid #3b82f6;margin:1rem 0;color:#b9e0ff}
 .support-note{color:#8c9bb0;font-size:.9rem}
 
-.usa-card-link{text-decoration:none;display:block;margin-top:2rem}
-.usa-card{background:rgba(255,255,255,.03);backdrop-filter:blur(15px);border:1px solid rgba(255,255,255,.08);border-top:3px solid #ff5500;border-radius:16px;padding:20px;transition:all .3s ease;cursor:pointer}
-.usa-card:hover{transform:translateY(-4px);border-color:rgba(255,85,0,.4);box-shadow:0 10px 25px -5px rgba(255,85,0,.2)}
-.usa-card-content{display:flex;align-items:center;gap:15px}
-.usa-card h3{margin:0;font-size:16px;color:#ff5500;text-transform:uppercase;font-family:'Courier New',monospace;letter-spacing:1px}
-.usa-card p{margin:6px 0 0 0;font-size:13px;color:#94a3b8;line-height:1.4}
-
-.seo-catalog{
-  max-width:1300px;
-  margin:0 auto 2rem;
-  padding:1.8rem;
-  background:linear-gradient(135deg,rgba(17,22,28,.85),rgba(10,13,18,.9));
-  border:1px solid var(--border-dim);
-  border-radius:24px;
-}
-.seo-catalog h2{font-size:1.55rem;color:#fff;margin-bottom:.8rem;line-height:1.25}
-.seo-catalog h3{font-size:1.1rem;color:var(--neon);margin:1.4rem 0 .65rem}
-.seo-catalog p{color:#b9c3d0;font-size:.95rem;line-height:1.6;margin-bottom:1rem;max-width:900px}
-.seo-catalog ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.6rem 1rem}
-.seo-catalog li{min-width:0}
-.seo-catalog a{color:#eef2ff;text-decoration:none;border-bottom:1px dotted rgba(0,245,160,.45);transition:color .2s ease,border-color .2s ease;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.seo-catalog a:hover{color:var(--neon);border-bottom-color:var(--neon)}
-
 footer{text-align:center;padding:2.2rem;font-size:.8rem;color:#4b5563;border-top:1px solid #1e293b;margin-top:2rem}
 
 .badge-offline{font-size:.7rem;background:#1f2a36;display:inline-block;padding:.2rem .6rem;border-radius:30px;color:#9bb9d9}
@@ -189,15 +166,10 @@ footer{text-align:center;padding:2.2rem;font-size:.8rem;color:#4b5563;border-top
   .hero-center{flex-direction:column;gap:12px}
   .sections-grid,.projects-grid{grid-template-columns:1fr}
   .phone-number{font-size:1.6rem}
-  .usa-card-content{flex-direction:column;text-align:center}
   .lang-toggle{top:15px;right:15px}
   .back-bar{padding:1rem}
   .back-bar-text h2{font-size:1.1rem}
   .back-btn{padding:8px 16px;font-size:.85rem}
-  .seo-catalog{padding:1.2rem;border-radius:18px}
-  .seo-catalog h2{font-size:1.25rem}
-  .seo-catalog ul{grid-template-columns:1fr}
-  .seo-catalog a{white-space:normal}
 }
 </style>
 </head>
@@ -251,32 +223,6 @@ footer{text-align:center;padding:2.2rem;font-size:.8rem;color:#4b5563;border-top
     <div class="projects-grid" id="projectsGrid"></div>
   </section>
 
-  <section class="seo-catalog" aria-labelledby="seoCatalogTitle">
-    <h2 id="seoCatalogTitle" data-i18n="seo_title">Anti-AI Shield: каталог офлайн-проектов</h2>
-    <p data-i18n="seo_intro">
-      На этой странице собраны проекты Anti-AI Shield: тренажёры ЕГЭ и ГВЭ, детские приложения,
-      игры, инструменты, образовательные курсы и сервисы цифровой безопасности.
-      Большинство приложений работают офлайн и не требуют облачной обработки данных.
-    </p>
-
-    <h3 data-i18n="seo_verified">Проверенные внутренние страницы</h3>
-    <ul id="verifiedInternalList"></ul>
-
-    <h3 data-i18n="seo_external">Популярные внешние приложения</h3>
-    <ul>
-      <li><a href="https://anti-ai-visometer.vercel.app" target="_blank" rel="noopener noreferrer">Визометр</a></li>
-      <li><a href="https://anti-ai-audiometer.vercel.app" target="_blank" rel="noopener noreferrer">Аудиометр</a></li>
-      <li><a href="https://anti-ai-stress.vercel.app" target="_blank" rel="noopener noreferrer">Стресс</a></li>
-      <li><a href="https://anti-ai-memory.vercel.app" target="_blank" rel="noopener noreferrer">Память</a></li>
-      <li><a href="https://anti-ai-tetris.vercel.app" target="_blank" rel="noopener noreferrer">Тетрис</a></li>
-      <li><a href="https://anti-ai-pool.vercel.app" target="_blank" rel="noopener noreferrer">Бильярд</a></li>
-      <li><a href="https://anti-ai-passwords.vercel.app" target="_blank" rel="noopener noreferrer">Генератор паролей</a></li>
-      <li><a href="https://anti-ai-barcode.vercel.app" target="_blank" rel="noopener noreferrer">Штрих-код</a></li>
-      <li><a href="https://anti-ai-level.vercel.app" target="_blank" rel="noopener noreferrer">Цифровой уровень</a></li>
-      <li><a href="https://ai-core-autonomy.vercel.app/" target="_blank" rel="noopener noreferrer">A.I. Core Autonomy</a></li>
-    </ul>
-  </section>
-
   <section class="support-hub">
     <h2 data-i18n="support_title">💙 Поддержать проекты</h2>
     <p style="max-width:500px;margin:0 auto .8rem" data-i18n="support_desc">
@@ -287,23 +233,6 @@ footer{text-align:center;padding:2.2rem;font-size:.8rem;color:#4b5563;border-top
     <div style="margin-top:1rem;font-size:.8rem;color:#9ca3af" data-i18n="support_email">✉️ По вопросам сотрудничества: an.cf@yandex.ru</div>
     <div style="margin-top:.5rem;font-size:.8rem" data-i18n="support_thanks">✨ Спасибо, что с нами — защищаем мир без слежки ✨</div>
   </section>
-
-  <a href="https://ai-core-autonomy.vercel.app/" target="_blank" rel="noopener noreferrer" class="usa-card-link">
-    <div class="usa-card">
-      <div class="usa-card-content">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ff5500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-        </svg>
-        <div>
-          <h3 data-i18n="usa_title">A.I. Core Autonomy // USA Edition</h3>
-          <p data-i18n="usa_desc">
-            «Анти-ИИ: Манифест Суверенной Личности». Двуязычный офлайн-симулятор против психологического взлома
-            и нарциссических качелей Big Tech.
-          </p>
-        </div>
-      </div>
-    </div>
-  </a>
 </main>
 
 <footer>
@@ -311,23 +240,11 @@ footer{text-align:center;padding:2.2rem;font-size:.8rem;color:#4b5563;border-top
 </footer>
 
 <noscript>
-  <section class="seo-catalog">
+  <section class="container">
     <h2>Anti-AI Shield без JavaScript</h2>
-    <p>
-      Для полной работы каталога включите JavaScript. Ниже доступны главная страница и основные внешние приложения.
-    </p>
+    <p>Для полной работы каталога включите JavaScript. Ниже доступна главная страница.</p>
     <ul>
       <li><a href="https://ancf-hue.github.io/">Главная страница Anti-AI Shield</a></li>
-      <li><a href="https://anti-ai-visometer.vercel.app">Визометр</a></li>
-      <li><a href="https://anti-ai-audiometer.vercel.app">Аудиометр</a></li>
-      <li><a href="https://anti-ai-stress.vercel.app">Стресс</a></li>
-      <li><a href="https://anti-ai-memory.vercel.app">Память</a></li>
-      <li><a href="https://anti-ai-tetris.vercel.app">Тетрис</a></li>
-      <li><a href="https://anti-ai-pool.vercel.app">Бильярд</a></li>
-      <li><a href="https://anti-ai-passwords.vercel.app">Генератор паролей</a></li>
-      <li><a href="https://anti-ai-barcode.vercel.app">Штрих-код</a></li>
-      <li><a href="https://anti-ai-level.vercel.app">Цифровой уровень</a></li>
-      <li><a href="https://ai-core-autonomy.vercel.app/">A.I. Core Autonomy</a></li>
     </ul>
   </section>
 </noscript>
@@ -347,8 +264,7 @@ footer{text-align:center;padding:2.2rem;font-size:.8rem;color:#4b5563;border-top
 
   <div class="chat-messages" id="chatMessages">
     <div class="message bot" id="chatWelcome" data-i18n="chat_welcome">
-      Привет! Я знаю все проекты в 9 разделах. Спросите: <i>"здоровье"</i>, <i>"музыка"</i>, <i>"игры"</i>,
-      <i>"змея"</i>, <i>"детские"</i>, <i>"спорт"</i>, <i>"экзамены"</i>, <i>"образование"</i>, <i>"инструменты"</i>.
+      Привет! Я знаю все проекты в 9 разделах. Спросите, <b>где находится проект</b> (например: <i>"где визометр"</i>, <i>"в каком разделе тетрис"</i>) — или назовите раздел: <i>"здоровье"</i>, <i>"музыка"</i>, <i>"игры"</i>, <i>"змея"</i>, <i>"детские"</i>, <i>"спорт"</i>, <i>"экзамены"</i>, <i>"образование"</i>, <i>"инструменты"</i>.
     </div>
   </div>
 
@@ -367,12 +283,6 @@ footer{text-align:center;padding:2.2rem;font-size:.8rem;color:#4b5563;border-top
 const SITE_URL = "https://ancf-hue.github.io/";
 const SITE_ORIGIN = "https://ancf-hue.github.io";
 
-/*
-  ВАРИАНТ A: доверяем всем внутренним URL проектов на ancf-hue.github.io.
-  Все 18 карточек будут кликабельны.
-  Если в будущем появятся новые 404 — переключите обратно на false
-  и заполните verifiedInternalUrls.
-*/
 const trustAllInternalProjectUrls = true;
 
 const verifiedInternalUrls = new Set([
@@ -396,7 +306,6 @@ const sections = [
 
 /* ============================================================
    ПРОЕКТЫ
-   Формат: [slug, icon, titleRu, titleEn, descRu, descEn, badge, isNew, url, isRutube]
    ============================================================ */
 const rawProjects = [
 // === ЗДОРОВЬЕ ===
@@ -677,6 +586,12 @@ function getProjectsInSection(id) {
   return rawProjects.filter(p => slugToSection.get(p[0]) === id);
 }
 
+function getSectionTitle(sectionId) {
+  const s = sections.find(x => x.id === sectionId);
+  if (!s) return '';
+  return currentLang === 'ru' ? s.titleRu : s.titleEn;
+}
+
 /* ============================================================
    URL HELPERS
    ============================================================ */
@@ -769,8 +684,6 @@ const i18n = {
     support_phone_label: "📱 Перевод по номеру телефона (СБП, любой банк)",
     support_email: "✉️ По вопросам сотрудничества: an.cf@yandex.ru",
     support_thanks: "✨ Спасибо, что с нами — защищаем мир без слежки ✨",
-    usa_title: "A.I. Core Autonomy // USA Edition",
-    usa_desc: "«Анти-ИИ: Манифест Суверенной Личности». Двуязычный офлайн-симулятор против психологического взлома и нарциссических качелей Big Tech.",
     footer_text: "© 2026 Anti‑AI Shield • Технологии для людей • 100% оффлайн-философия",
     btn_open: "ОТКРЫТЬ →",
     badge_offline: "⚡ оффлайн",
@@ -778,13 +691,9 @@ const i18n = {
     toast_copy_success: "✅ Ссылка скопирована: ",
     toast_copy_error: "❌ Не удалось скопировать",
     chat_title: "Офлайн-Ассистент",
-    chat_welcome: "Привет! Я знаю все проекты в {count} разделах. Спросите: <i>\"здоровье\"</i>, <i>\"музыка\"</i>, <i>\"игры\"</i>, <i>\"змея\"</i>, <i>\"детские\"</i>, <i>\"спорт\"</i>, <i>\"экзамены\"</i>, <i>\"образование\"</i>, <i>\"инструменты\"</i>.",
+    chat_welcome: "Привет! Я знаю все проекты в {count} разделах. Спросите, <b>где находится проект</b> (например: <i>\"где визометр\"</i>, <i>\"в каком разделе тетрис\"</i>) — или назовите раздел: <i>\"здоровье\"</i>, <i>\"музыка\"</i>, <i>\"игры\"</i>, <i>\"змея\"</i>, <i>\"детские\"</i>, <i>\"спорт\"</i>, <i>\"экзамены\"</i>, <i>\"образование\"</i>, <i>\"инструменты\"</i>.",
     chat_placeholder: "Раздел или проект...",
     back_to_sections: "Все разделы",
-    seo_title: "Anti-AI Shield: каталог офлайн-проектов",
-    seo_intro: "На этой странице собраны проекты Anti-AI Shield: тренажёры ЕГЭ и ГВЭ, детские приложения, игры, инструменты, образовательные курсы и сервисы цифровой безопасности. Большинство приложений работают офлайн и не требуют облачной обработки данных.",
-    seo_verified: "Проверенные внутренние страницы",
-    seo_external: "Популярные внешние приложения",
     coming_soon: "Скоро",
     not_verified: "Не проверено",
     not_verified_title: "Добавьте этот внутренний URL в verifiedInternalUrls после проверки, что страница открывает 200 OK"
@@ -798,8 +707,6 @@ const i18n = {
     support_phone_label: "📱 Transfer by phone number",
     support_email: "✉️ Cooperation: an.cf@yandex.ru",
     support_thanks: "✨ Thank you — protecting the world ✨",
-    usa_title: "A.I. Core Autonomy // USA Edition",
-    usa_desc: "\"Anti-AI: Manifesto of the Sovereign Individual\". Bilingual offline simulator against psychological manipulation and Big Tech narcissistic swings.",
     footer_text: "© 2026 Anti‑AI Shield • Technology for people • 100% offline philosophy",
     btn_open: "OPEN →",
     badge_offline: "⚡ offline",
@@ -807,13 +714,9 @@ const i18n = {
     toast_copy_success: "✅ Link copied: ",
     toast_copy_error: "❌ Failed to copy",
     chat_title: "Offline Assistant",
-    chat_welcome: "Hello! I know all projects in {count} sections. Ask: <i>\"health\"</i>, <i>\"music\"</i>, <i>\"games\"</i>, <i>\"snake\"</i>, <i>\"kids\"</i>, <i>\"sports\"</i>, <i>\"exams\"</i>, <i>\"education\"</i>, <i>\"tools\"</i>.",
+    chat_welcome: "Hello! I know all projects in {count} sections. Ask <b>where a project is</b> (e.g. <i>\"where is visometer\"</i>, <i>\"which section is tetris in\"</i>) — or name a section: <i>\"health\"</i>, <i>\"music\"</i>, <i>\"games\"</i>, <i>\"snake\"</i>, <i>\"kids\"</i>, <i>\"sports\"</i>, <i>\"exams\"</i>, <i>\"education\"</i>, <i>\"tools\"</i>.",
     chat_placeholder: "Section or project...",
     back_to_sections: "All sections",
-    seo_title: "Anti-AI Shield: offline projects catalog",
-    seo_intro: "This page collects Anti-AI Shield projects: EGE and GVE trainers, kids apps, games, tools, education courses and digital security services. Most apps work offline and do not require cloud data processing.",
-    seo_verified: "Verified internal pages",
-    seo_external: "Popular external apps",
     coming_soon: "Soon",
     not_verified: "Not verified",
     not_verified_title: "Add this internal URL to verifiedInternalUrls after checking that the page returns 200 OK"
@@ -855,7 +758,6 @@ function applyLanguage() {
 
   renderSections();
   renderQuickTags();
-  renderVerifiedInternalList();
   handleRoute();
 }
 
@@ -978,30 +880,6 @@ function handleRoute() {
   }
 }
 
-function renderVerifiedInternalList() {
-  const ul = document.getElementById('verifiedInternalList');
-  if (!ul) return;
-
-  ul.innerHTML = '';
-
-  Array.from(verifiedInternalUrls)
-    .sort()
-    .forEach(url => {
-      const li = document.createElement('li');
-      const a = document.createElement('a');
-      a.href = url;
-
-      if (url === SITE_URL || url === SITE_ORIGIN + '/') {
-        a.textContent = currentLang === 'ru' ? 'Главная страница Anti-AI Shield' : 'Anti-AI Shield Home';
-      } else {
-        a.textContent = url.replace(SITE_ORIGIN, '') || '/';
-      }
-
-      li.appendChild(a);
-      ul.appendChild(li);
-    });
-}
-
 /* ============================================================
    QR COPY
    ============================================================ */
@@ -1058,8 +936,8 @@ function renderQuickTags() {
   quickTags.innerHTML = '';
 
   const tags = currentLang === 'ru'
-    ? ['здоровье','музыка','игры','змея','детские','спорт','экзамены','образование','инструменты']
-    : ['health','music','games','snake','kids','sports','exams','education','tools'];
+    ? ['где визометр','где тетрис','где змея','здоровье','музыка','игры','детские','спорт','экзамены','образование','инструменты']
+    : ['where is visometer','where is tetris','where is snake','health','music','games','kids','sports','exams','education','tools'];
 
   tags.forEach(t => {
     const btn = document.createElement('span');
@@ -1120,14 +998,17 @@ function addMessage(htmlContent, sender, action) {
   chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
+/* ============================================================
+   ЧАТ-БОТ: ПОИСК ПРОЕКТОВ И ИХ РАЗДЕЛОВ
+   ============================================================ */
 function getBotResponse(input) {
   const lang = currentLang;
 
-  if (/привет|здравствуй|hi|hello/i.test(input)) {
+  if (/^(привет|здравствуй|здорово|hi|hello|hey)\b/i.test(input)) {
     return {
       html: lang === 'ru'
-        ? `Приветствую! ${rawProjects.length} проектов в ${sections.length} разделах.`
-        : `Greetings! ${rawProjects.length} projects in ${sections.length} sections.`
+        ? `Приветствую! ${rawProjects.length} проектов в ${sections.length} разделах.<br>Спросите: <i>"где визометр"</i>, <i>"в каком разделе тетрис"</i>.`
+        : `Greetings! ${rawProjects.length} projects in ${sections.length} sections.<br>Try: <i>"where is visometer"</i>, <i>"which section is tetris in"</i>.`
     };
   }
 
@@ -1139,7 +1020,7 @@ function getBotResponse(input) {
     };
   }
 
-  if (/^раздел|^секци|^sect|^все раздел|^all section/i.test(input)) {
+  if (/^раздел|^секци|^sect|^все раздел|^all section|^домой|^home/i.test(input)) {
     location.hash = '#/';
     return {
       html: lang === 'ru'
@@ -1148,16 +1029,33 @@ function getBotResponse(input) {
     };
   }
 
-  const matchedSection = sections.find(s => {
-    const searchText = `${s.titleRu} ${s.titleEn} ${s.descRu} ${s.descEn} ${s.keywords.join(' ')}`.toLowerCase();
-    return s.keywords.some(kw => input.includes(kw.toLowerCase())) || searchText.includes(input);
-  });
+  const stopWords = [
+    'где','находится','находиться','найди','найти','покажи','показать',
+    'какой','какая','какое','какие','в','каком','какой','это','что','проект','проекты','приложение','приложения',
+    'where','is','are','the','a','an','in','which','what','section','project','app','find','show','locate','located'
+  ];
 
-  const matches = rawProjects.filter(p => {
-    const searchStr = `${p[0]} ${p[2]} ${p[3]} ${p[4]} ${p[5]} ${p[6] || ''}`.toLowerCase();
-    const words = input.split(/\s+/).filter(w => w.length > 1);
-    return words.length > 0 && words.every(word => searchStr.includes(word));
-  });
+  const cleanWords = input
+    .split(/\s+/)
+    .map(w => w.replace(/[?!.,:;«»""'()]/g, ''))
+    .filter(w => w && !stopWords.includes(w.toLowerCase()) && w.length > 1);
+
+  const cleanInput = cleanWords.join(' ').trim();
+
+  let matchedSection = null;
+  if (cleanInput) {
+    matchedSection = sections.find(s => {
+      const searchText = `${s.titleRu} ${s.titleEn} ${s.descRu} ${s.descEn} ${s.keywords.join(' ')}`.toLowerCase();
+      return s.keywords.some(kw => cleanInput.includes(kw.toLowerCase())) || searchText.includes(cleanInput);
+    });
+  }
+
+  const matches = cleanWords.length > 0
+    ? rawProjects.filter(p => {
+        const searchStr = `${p[0]} ${p[2]} ${p[3]} ${p[4]} ${p[5]} ${p[6] || ''}`.toLowerCase();
+        return cleanWords.every(word => searchStr.includes(word.toLowerCase()));
+      })
+    : [];
 
   if (matchedSection && matches.length === 0) {
     const title = lang === 'ru' ? matchedSection.titleRu : matchedSection.titleEn;
@@ -1175,28 +1073,44 @@ function getBotResponse(input) {
     const p = matches[0];
     const title = lang === 'ru' ? p[2] : p[3];
     const desc = lang === 'ru' ? p[4] : (p[5] || p[4]);
-    const section = sections.find(s => s.id === getSectionForProject(p[0]));
-    const sTitle = section ? (lang === 'ru' ? section.titleRu : section.titleEn) : '';
+    const sectionId = getSectionForProject(p[0]);
+    const sTitle = getSectionTitle(sectionId);
+    const section = sections.find(s => s.id === sectionId);
+    const sIcon = section ? section.icon : '📂';
     const badge = p[6] ? ` [${p[6]}]` : '';
     const isNew = p[7] ? ' 🔥' : '';
 
     const linkHtml = makeProjectLinkHtml(
       p,
-      lang === 'ru' ? '🔗 Открыть' : '🔗 Open',
+      lang === 'ru' ? '🔗 Открыть проект' : '🔗 Open project',
       'proj-link'
     );
 
+    const sectionBtn = lang === 'ru'
+      ? `📂 Перейти в раздел «${sTitle}»`
+      : `📂 Go to "${sTitle}" section`;
+
     return {
-      html: `<b>${p[1]} ${title}${badge}${isNew}</b><br><span style="color:#9ca3af;font-size:14px;">📂 ${sTitle}</span><br><br>${desc}<br><br>${linkHtml}`
+      html: `<b>${p[1]} ${title}${badge}${isNew}</b>
+        <div style="margin-top:6px;color:#00f5a0;font-weight:700;">📍 ${lang === 'ru' ? 'Раздел' : 'Section'}: ${sIcon} ${sTitle}</div>
+        <br>${desc}<br><br>${linkHtml}
+        <br><button class="proj-link" style="margin-top:10px;" data-open-section="${sectionId}">${sectionBtn}</button>`,
+      action: { type: 'openSection', sectionId }
     };
   }
 
   if (matches.length > 1 && matches.length <= 10) {
-    let r = lang === 'ru' ? `<b>Найдено: ${matches.length}</b><br><ul>` : `<b>Found: ${matches.length}</b><br><ul>`;
+    let r = lang === 'ru'
+      ? `<b>Найдено: ${matches.length}</b> — вот где они находятся:<br><ul>`
+      : `<b>Found: ${matches.length}</b> — here's where they are:<br><ul>`;
 
     matches.forEach(p => {
       const title = lang === 'ru' ? p[2] : p[3];
-      r += `<li>${p[1]} ${projectInlineLink(p, title)}</li>`;
+      const sectionId = getSectionForProject(p[0]);
+      const sTitle = getSectionTitle(sectionId);
+      const section = sections.find(s => s.id === sectionId);
+      const sIcon = section ? section.icon : '📂';
+      r += `<li>${p[1]} ${projectInlineLink(p, title)} <span style="color:#9ca3af;font-size:13px;">· 📂 ${sIcon} ${sTitle}</span></li>`;
     });
 
     return { html: r + `</ul>` };
@@ -1204,12 +1118,16 @@ function getBotResponse(input) {
 
   if (matches.length > 10) {
     let r = lang === 'ru'
-      ? `<b>Много совпадений (${matches.length}). Первые 8:</b><br><ul>`
-      : `<b>Many matches (${matches.length}). First 8:</b><br><ul>`;
+      ? `<b>Много совпадений (${matches.length}). Первые 8 с разделами:</b><br><ul>`
+      : `<b>Many matches (${matches.length}). First 8 with sections:</b><br><ul>`;
 
     matches.slice(0, 8).forEach(p => {
       const title = lang === 'ru' ? p[2] : p[3];
-      r += `<li>${p[1]} ${projectInlineLink(p, title)}</li>`;
+      const sectionId = getSectionForProject(p[0]);
+      const sTitle = getSectionTitle(sectionId);
+      const section = sections.find(s => s.id === sectionId);
+      const sIcon = section ? section.icon : '📂';
+      r += `<li>${p[1]} ${projectInlineLink(p, title)} <span style="color:#9ca3af;font-size:13px;">· 📂 ${sIcon} ${sTitle}</span></li>`;
     });
 
     return { html: r + `</ul>` };
@@ -1217,8 +1135,8 @@ function getBotResponse(input) {
 
   return {
     html: lang === 'ru'
-      ? "Не найдено. 💡 Попробуйте раздел или название проекта."
-      : "Not found. 💡 Try a section or project name."
+      ? "Не нашёл. 💡 Попробуйте: <i>\"где визометр\"</i>, <i>\"в каком разделе тетрис\"</i>, <i>\"игры\"</i>, <i>\"экзамены\"</i>."
+      : "Not found. 💡 Try: <i>\"where is visometer\"</i>, <i>\"which section is tetris in\"</i>, <i>\"games\"</i>, <i>\"exams\"</i>."
   };
 }
 
@@ -1230,6 +1148,17 @@ window.addEventListener('hashchange', handleRoute);
 window.addEventListener('DOMContentLoaded', () => {
   applyLanguage();
   setupQRClick();
+
+  // ⏱️ Автооткрытие чат-бота через 2 секунды (один раз за сессию)
+  if (!sessionStorage.getItem('chat_autoshown')) {
+    setTimeout(() => {
+      if (!chatbotWindow.classList.contains('active')) {
+        chatbotWindow.classList.add('active');
+        setTimeout(() => chatInput.focus(), 300);
+      }
+      sessionStorage.setItem('chat_autoshown', '1');
+    }, 2000);
+  }
 });
 </script>
 </body>
