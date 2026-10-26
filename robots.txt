@@ -1,2 +1,27 @@
+# robots.txt для https://ancf-hue.github.io/
+# Anti-AI Shield — офлайн-проекты и тренажёры
+
 User-agent: *
 Allow: /
+
+# Служебные и временные файлы
+Disallow: /*.json$
+Disallow: /*.txt$
+Disallow: /.git/
+Disallow: /.github/
+
+# Медленным ботам — ограничиваем скорость
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 10
+
+User-agent: DotBot
+Crawl-delay: 10
+
+# Основной sitemap
+Sitemap: https://ancf-hue.github.io/sitemap.xml
