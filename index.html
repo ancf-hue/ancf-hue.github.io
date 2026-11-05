@@ -6,7 +6,7 @@
 
 <title>Anti-AI Shield | Витрина офлайн-проектов, тренажёров и цифровой защиты</title>
 
-<meta name="description" content="Anti-AI Shield — каталог офлайн-проектов: тренажёры ЕГЭ и ГВЭ, детские приложения, игры, инструменты, образование, цифровая безопасность и приватность без облаков.">
+<meta name="description" content="Anti-AI Shield — каталог офлайн-проектов: тренажёры ЕГЭ, ГВЭ, тестирование иностранных граждан по русскому языку (1–11 классы), детские приложения, игры, инструменты, образование, цифровая безопасность и приватность без облаков.">
 
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 
@@ -16,12 +16,12 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Anti-AI Shield">
 <meta property="og:title" content="Anti-AI Shield | Витрина цифровой защиты">
-<meta property="og:description" content="Офлайн-проекты, тренажёры ЕГЭ/ГВЭ, игры, инструменты и цифровая защита.">
+<meta property="og:description" content="Офлайн-проекты, тренажёры ЕГЭ/ГВЭ, тестирование по русскому языку для иностранцев, игры, инструменты и цифровая защита.">
 <meta property="og:url" content="https://ancf-hue.github.io/">
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Anti-AI Shield">
-<meta name="twitter:description" content="Офлайн-проекты, тренажёры ЕГЭ/ГВЭ, игры, инструменты и цифровая защита.">
+<meta name="twitter:description" content="Офлайн-проекты, тренажёры ЕГЭ/ГВЭ, тестирование по русскому языку для иностранцев, игры, инструменты и цифровая защита.">
 
 <meta name="theme-color" content="#0a0c0f">
 
@@ -40,16 +40,9 @@
 body{background:#0a0c0f;font-family:'Inter','Segoe UI',system-ui,sans-serif;color:#eef2ff;line-height:1.5;scroll-behavior:smooth;min-height:100vh}
 :root{--neon:#00f5a0;--neon-glow:rgba(0,245,160,.4);--card-bg:#11161c;--border-dim:#2a2f36;--red-rutube:#ff4c4c}
 
-.skip-link{
-  position:absolute;left:-999px;top:0;z-index:3000;
-  background:var(--neon);color:#03070c;padding:10px 16px;border-radius:0 0 12px 0;font-weight:800
-}
+.skip-link{position:absolute;left:-999px;top:0;z-index:3000;background:var(--neon);color:#03070c;padding:10px 16px;border-radius:0 0 12px 0;font-weight:800}
 .skip-link:focus{left:0}
-
-.sr-only{
-  position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
-  clip:rect(0,0,0,0);white-space:nowrap;border:0
-}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
 .lang-toggle{position:fixed;top:20px;right:20px;z-index:1000}
 .lang-btn{background:rgba(17,22,28,.9);border:1px solid var(--neon);color:var(--neon);padding:8px 16px;border-radius:30px;font-weight:700;font-size:.85rem;cursor:pointer;backdrop-filter:blur(8px);transition:all .2s ease;display:flex;align-items:center;gap:6px;box-shadow:0 0 10px rgba(0,245,160,.1)}
@@ -299,7 +292,7 @@ const sections = [
   {id:"snake_games",icon:"🐍",titleRu:"Игры со змеей",titleEn:"Snake Games",descRu:"3D-аркады со змеёй: охота, гонки, выживание, приключения и бои.",descEn:"3D snake arcades: hunting, racing, survival, adventures and battles.",keywords:["змея","snake","змее","гонки","светляч","лягушк","мёд","огонь","паук","дракон","муравей","мелодия","пузыр","стрекоз","мышка","ябл","доска","камень","океан","ёжик","ежик","шарик","сортировщик","сова","дождь","удар","лабиринт","ручей","компас","арбуз","бочка","тыква","льдина","снежок","яйцо","race","frog","honey","fire","spider","dragon","ant","melody","bubbles","dragonfly","mouse","apples","board","stone","ocean","hedgehog","balloons","sorter","owl","rain","strike","labyrinth","stream","compass","watermelon","barrel","pumpkin","ice","snowball","egg"]},
   {id:"kids",icon:"🧒",titleRu:"Детские",titleEn:"Kids",descRu:"Алфавит, счёт, механика, антибуллинг, сортировщики.",descEn:"Alphabet, counting, mechanics, anti-bullying, sorters.",keywords:["детск","алфавит","счёт","животн","механик","буллинг","коленвал","грм","трансмисс","турбо","азбук","фигур","kids","children","alphabet","counting","animals","mechanic","bullying","crankshaft","timing","transmission","turbo","abc","shapes","golf kids","marble","penalty kids"]},
   {id:"sports",icon:"🏆",titleRu:"Спорт",titleEn:"Sports",descRu:"Теннис, дартс, стрельба, хоккей, футбол, лыжи, биатлон, плавание.",descEn:"Tennis, darts, archery, hockey, soccer, skiing, biathlon, swimming.",keywords:["спорт","теннис","дартс","лук","киборг","атлет","гандбол","баскетбол","биатлон","водное поло","ватерпол","боулинг","рыбалк","велогонк","кроль","плаван","archery","хоккей","футбол","лыж","коньки","скачки","байдар","пенальти","кёрлинг","sports","tennis","darts","archer","cyborg","athlete","handball","basketball","biathlon","waterpolo","bowling","fishing","cycling","backstroke","swimming","curling","soccer","ski","skates","horse racing","kayak","hockey","penalty"]},
-  {id:"exams",icon:"📝",titleRu:"Экзамены",titleEn:"Exams",descRu:"ЕГЭ, ГВЭ-9 и итоговое собеседование: офлайн-тренажёры, билеты, критерии, справочники и планы подготовки.",descEn:"EGE, GVE-9 and final interview: offline trainers, tickets, criteria, handbooks and study plans.",keywords:["экзамен","экзамены","егэ","гвэ","гвэ-9","oge","gve","ege","itogovoe","собеседование","подготовка","тренажёр","тренажер","билеты","критерии","fipi","фи","русский","математика","физика","химия","биология","история","обществознание","география","литература","информатика","китайский","английский","немецкий","испанский","французский","exam","exams","test","tests","preparation","tickets","criteria","study plan","russian","math","physics","chemistry","biology","history","social studies","geography","literature","computer science","chinese","english","german","spanish","french"]},
+  {id:"exams",icon:"📝",titleRu:"Экзамены",titleEn:"Exams",descRu:"ЕГЭ, ГВЭ-9, итоговое собеседование и тестирование иностранных граждан по русскому языку для 1–11 классов: офлайн-тренажёры, билеты, критерии, справочники и планы подготовки.",descEn:"EGE, GVE-9, final interview and Russian placement tests for foreign applicants to grades 1-11: offline trainers, tickets, criteria, handbooks and study plans.",keywords:["экзамен","экзамены","егэ","гвэ","гвэ-9","oge","gve","ege","itogovoe","собеседование","подготовка","тренажёр","тренажер","билеты","критерии","fipi","фи","русский","математика","физика","химия","биология","история","обществознание","география","литература","информатика","китайский","английский","немецкий","испанский","французский","exam","exams","test","tests","preparation","tickets","criteria","study plan","russian","math","physics","chemistry","biology","history","social studies","geography","literature","computer science","chinese","english","german","spanish","french","иностранные","граждане","поступление","placement","foreign","1 класс","2 класс","3 класс","4 класс","5 класс","6 класс","7 класс","8 класс","9 класс","10 класс","11 класс","grade 1","grade 2","grade 3","grade 4","grade 5","grade 6","grade 7","grade 8","grade 9","grade 10","grade 11","русский язык","russian language","uz","en","ru","гвэ-9 химия","гвэ-9 физика","гвэ-9 обществознание","гвэ-9 математика","chemistry gve","physics gve","social gve","math gve"]},
   {id:"education",icon:"🎓",titleRu:"Образование",titleEn:"Education",descRu:"Академия ИИ, БПЛА, безопасность, бизнес, профессии, манифесты.",descEn:"AI Academy, UAV, security, business, professions, manifestos.",keywords:["образован","академ","бпла","дрон","безопасн","щит","бизнес","манифест","юрист","промпт","компаньон","челлендж","education","academy","uav","drone","security","shield","business","manifesto","lawyer","prompt","companion","challenge","cyber hacker"]},
   {id:"tools",icon:"🛠️",titleRu:"Инструменты",titleEn:"Tools",descRu:"Конвертеры, редакторы, сканеры, измерительные приборы, утилиты.",descEn:"Converters, editors, scanners, meters, utilities.",keywords:["инструмент","конвертер","редактор","сканер","уровень","люксметр","навигатор","расстояние","пароль","смс","штрих","аккумулятор","видео","фото","pdf","cosmos","космос","авто","battery","пароли","наложение","наложить","оверлей","watermark","фото на фото","photo on photo","tools","converter","editor","scanner","level","luxmeter","navigator","distance","password","sms","barcode","battery","video","photo","overlay","auto","cosmos","glance","frame","cutter","df"]}
 ];
@@ -310,7 +303,7 @@ const sections = [
 const rawProjects = [
 // === ЗДОРОВЬЕ ===
 ["anti-ai-visometer","👁️","Визометр","Visometer","Острота зрения + дипфейки","Visual acuity + deepfakes","👁️",false,"https://anti-ai-visometer.vercel.app"],
-["anti-ai-visometer-kids","👁️🧒","Визометр (Детский)","Visometer Kids","Проверка зрения для детей","Kids vision test","🧒",false,"https://anti-ai-visometer-kids.vercel.app"],
+["anti-ai-visometer-kids","👁️","Визометр (Детский)","Visometer Kids","Проверка зрения для детей","Kids vision test","🧒",false,"https://anti-ai-visometer-kids.vercel.app"],
 ["anti-ai-vision-check","👁️","Осмотр зрения","Vision Check","13 тестов зрения","13 professional tests","👁️",false,"https://anti-ai-vision-check.vercel.app"],
 ["anti-ai-eyes-gym","👁️️","Зарядка для глаз","Eye Gym","5 уроков восстановления","5 eye exercises","👁️",false,"https://anti-ai-eyes-gym.vercel.app"],
 ["anti-ai-memory","🧠📚","Память","Memory","Simon Says 3D","Memory training","🧠",false,"https://anti-ai-memory.vercel.app"],
@@ -495,7 +488,7 @@ const rawProjects = [
 ["anti-ai-business-integrator","🏛️","Бизнес-интегратор","Business Integrator","Внедрение ИИ","AI integration","💼",false,"https://anti-ai-business-integrator.vercel.app"],
 ["anti-ai-qwen-earn-money","💰🤖","Заработок с Qwen","Earn with Qwen","Live вакансии","Live jobs","💡",false,"https://anti-ai-qwen-earn-money.vercel.app"],
 
-// === ЭКЗАМЕНЫ ===
+// === ЭКЗАМЕНЫ (ЕГЭ) ===
 ["anti-ai-Qwen-academy-full-social-studies-ege-2026-trainer","📚","ЕГЭ Обществознание","EGE Social Studies","Полный тренажёр ЕГЭ-2026","Full EGE Trainer 2026","🎓",false,"https://ancf-hue.github.io/anti-ai-Qwen-academy-full-social-studies-ege-2026-trainer/"],
 ["anti-ai-Qwen-academy-full-history-ege-2026-trainer","🏛️","ЕГЭ История","EGE History","Полный тренажёр ЕГЭ-2026","Full EGE Trainer 2026","🎓",false,"https://ancf-hue.github.io/anti-ai-Qwen-academy-full-history-ege-2026-trainer/"],
 ["anti-ai-Qwen-academy-full-computer-science-ege-2026-trainer","💻🎓","ЕГЭ Информатика","EGE CS","Полный тренажёр ЕГЭ-2026","Full EGE Trainer 2026","🎓",false,"https://ancf-hue.github.io/anti-ai-Qwen-academy-full-computer-science-ege-2026-trainer/"],
@@ -506,23 +499,51 @@ const rawProjects = [
 ["anti-ii-qwen-academy-ege-literature","📖🎓","ЕГЭ Литература","EGE Literature","Тренажёр ЕГЭ-2026","EGE Trainer 2026","🎓",false,"https://anti-ii-qwen-academy-ege-literature.vercel.app/"],
 ["anti-ii-qwen-academy-ege-bio-2026","🧬","ЕГЭ Биология","EGE Biology","Тренажёр ЕГЭ-2026","EGE Trainer 2026","🎓",false,"https://anti-ii-qwen-academy-ege-bio-2026.vercel.app/"],
 ["anti-ii-qwen-academy-ege-math-2026","📐","ЕГЭ Математика","EGE Math","Тренажёр ЕГЭ-2026","EGE Trainer 2026","🎓",false,"https://anti-ii-qwen-academy-ege-math-2026.vercel.app/"],
-["anti-ai-kven-academy-ege-2026-chine","🇨","ЕГЭ Китайский","EGE Chinese","Тренажёр ЕГЭ-2026","EGE Trainer 2026","🎓",false,"https://anti-ai-kven-academy-ege-2026-chine.vercel.app/"],
+["anti-ai-kven-academy-ege-2026-chine","🇨🇳","ЕГЭ Китайский","EGE Chinese","Тренажёр ЕГЭ-2026","EGE Trainer 2026","🎓",false,"https://anti-ai-kven-academy-ege-2026-chine.vercel.app/"],
+
+// === ЭКЗАМЕНЫ (ГВЭ-9 2027 — существующие) ===
 ["anti-ai-qwen-literature-gve-9-2027","📖","ГВЭ-9 Литература 2027","GVE-9 Literature 2027","4 задания с текстами, устная форма 10 билетов, критерии, термины, планы анализа","4 tasks with texts, oral form 10 tickets, criteria, terms, analysis plans","🎓",true,"https://ancf-hue.github.io/anti-ai-qwen-literature-gve-9-2027/"],
 ["anti-ai-qwen-history-gve9-2027","🏛️","ГВЭ-9 История 2027","GVE-9 History 2027","18 заданий ФИПИ, устная форма, билеты, критерии, справочник, чек-лист, план 25 дней","18 FIPI tasks, oral form, tickets, criteria, handbook, checklist, 25-day plan","🎓",true,"https://ancf-hue.github.io/anti-ai-qwen-history-gve9-2027/"],
 ["anti-ai-qwen-academy-informatika-gve-9-2027","💻🧒","ГВЭ-9 Информатика 2027","GVE-9 Computer Science 2027","10 заданий ФИПИ, устная форма 15 билетов, критерии, справочник, чек-лист, план 20 дней","10 FIPI tasks, oral form 15 tickets, criteria, handbook, checklist, 20-day plan","🎓",true,"https://ancf-hue.github.io/anti-ai-qwen-academy-informatika-gve-9-2027/"],
-["anti-ai-qwen-academy-inostrannye-yazyki-gve-9-2027","🌍🧒","ГВЭ-9 Иностранные языки 2027","GVE-9 Foreign Languages 2027","Английский, испанский, немецкий, французский: 20 заданий, устная форма 15 билетов, критерии, справочник, чек-лист, план 20 дней","English, Spanish, German, French: 20 tasks, oral form 15 tickets, criteria, handbook, checklist, 20-day plan","🎓",true,"https://ancf-hue.github.io/anti-ai-qwen-academy-inostrannye-yazyki-gve-9-2027/"],
+["anti-ai-qwen-academy-inostrannye-yazyki-gve-9-2027","🌍","ГВЭ-9 Иностранные языки 2027","GVE-9 Foreign Languages 2027","Английский, испанский, немецкий, французский: 20 заданий, устная форма 15 билетов, критерии, справочник, чек-лист, план 20 дней","English, Spanish, German, French: 20 tasks, oral form 15 tickets, criteria, handbook, checklist, 20-day plan","🎓",true,"https://ancf-hue.github.io/anti-ai-qwen-academy-inostrannye-yazyki-gve-9-2027/"],
 ["anti-ai-qwen-academy-russkiy-gve-9-2027","📝🧒","ГВЭ-9 Русский язык 2027","GVE-9 Russian 2027","Сжатое изложение и сочинение, 4 формата, устная форма, критерии ФИПИ, справочник, чек-лист, план 25 дней","Compressed retelling and essay, 4 formats, oral form, FIPI criteria, handbook, checklist, 25-day plan","🎓",true,"https://ancf-hue.github.io/anti-ai-qwen-academy-russkiy-gve-9-2027/"],
 ["anti-ai-itogovoe-sobesedovanie-2027-russkiy-9-klass","🎤","Итоговое собеседование 2027","Final Interview 2027","Русский язык, 9 класс: 4 варианта, 3 задания, критерии ФИПИ, порог 10/17 баллов","Russian, grade 9: 4 variants, 3 tasks, FIPI criteria, threshold 10/17 points","🎓",true,"https://ancf-hue.github.io/anti-ai-itogovoe-sobesedovanie-2027-russkiy-9-klass/"],
 ["anti-ai-qwen-academy-geography-gve-9-2027","🌍","ГВЭ-9 География 2027","GVE-9 Geography 2027","19 заданий ФИПИ, устная форма 15 билетов, критерии, справочник, чек-лист, план 25 дней","19 FIPI tasks, oral form 15 tickets, criteria, handbook, checklist, 25-day plan","🎓",true,"https://ancf-hue.github.io/anti-ai-qwen-academy-geography-gve-9-2027/"],
 ["anti-ai-qwen-academy-biology-gve9-2027","🧬🧒","ГВЭ-9 Биология 2027","GVE-9 Biology 2027","26 заданий ФИПИ, устная форма 15 билетов, критерии, справочник, чек-лист, план 25 дней","26 FIPI tasks, oral form 15 tickets, criteria, handbook, checklist, 25-day plan","🎓",true,"https://ancf-hue.github.io/anti-ai-qwen-academy-biology-gve9-2027/"],
-["anti-aI-qwen-academy-english-ege-2026-full-trainer","🇬🇧🎓","ЕГЭ Английский 2026","EGE English 2026","Полный офлайн-тренажёр: аудирование, чтение, грамматика, письмо, говорение, таймер, план 25 дней, RU/EN","Full offline trainer: listening, reading, grammar, writing, speaking, timer, 25-day plan, RU/EN","🎓",true,"https://ancf-hue.github.io/anti-aI-qwen-academy-english-ege-2026-full-trainer/"],
-["anti-ai-qwen-academy-full-trainer-ege-2026-german-language","🇩🎓","ЕГЭ Немецкий 2026","EGE German 2026","Полный офлайн-тренажёр: аудирование, чтение, грамматика, письмо, говорение, таймер, план 25 дней, RU/EN","Full offline trainer: listening, reading, grammar, writing, speaking, timer, 25-day plan, RU/EN","🎓",true,"https://ancf-hue.github.io/anti-ai-qwen-academy-full-trainer-ege-2026-german-language/"],
-["anti-ai-Qwen-academy-full-spanish-ege-2026-trainer","🇪🇸🎓","ЕГЭ Испанский 2026","EGE Spanish 2026","Аудирование, чтение, грамматика, лексика, письменная и устная часть, таймер, RU/EN","Listening, reading, grammar, vocabulary, written and speaking parts, timer, RU/EN","🎓",true,"https://ancf-hue.github.io/anti-ai-Qwen-academy-full-spanish-ege-2026-trainer/"],
-["anti-ai-qwen-academy-full-french-ege-2026-trainer","🇫","ЕГЭ Французский 2026","EGE French 2026","Автономный тренажёр ЕГЭ-2026, RU/EN, таймер, задания, критерии, план подготовки","Autonomous EGE-2026 trainer, RU/EN, timer, tasks, criteria, study plan","🎓",true,"https://ancf-hue.github.io/anti-ai-qwen-academy-full-french-ege-2026-trainer/"]
+
+// === ЭКЗАМЕНЫ (ЕГЭ: языки) ===
+["anti-aI-qwen-academy-english-ege-2026-full-trainer","🇬🇧","ЕГЭ Английский 2026","EGE English 2026","Полный офлайн-тренажёр: аудирование, чтение, грамматика, письмо, говорение, таймер, план 25 дней, RU/EN","Full offline trainer: listening, reading, grammar, writing, speaking, timer, 25-day plan, RU/EN","🎓",true,"https://ancf-hue.github.io/anti-aI-qwen-academy-english-ege-2026-full-trainer/"],
+["anti-ai-qwen-academy-full-trainer-ege-2026-german-language","🇩🇪","ЕГЭ Немецкий 2026","EGE German 2026","Полный офлайн-тренажёр: аудирование, чтение, грамматика, письмо, говорение, таймер, план 25 дней, RU/EN","Full offline trainer: listening, reading, grammar, writing, speaking, timer, 25-day plan, RU/EN","🎓",true,"https://ancf-hue.github.io/anti-ai-qwen-academy-full-trainer-ege-2026-german-language/"],
+["anti-ai-Qwen-academy-full-spanish-ege-2026-trainer","🇪🇸","ЕГЭ Испанский 2026","EGE Spanish 2026","Аудирование, чтение, грамматика, лексика, письменная и устная часть, таймер, RU/EN","Listening, reading, grammar, vocabulary, written and speaking parts, timer, RU/EN","🎓",true,"https://ancf-hue.github.io/anti-ai-Qwen-academy-full-spanish-ege-2026-trainer/"],
+["anti-ai-qwen-academy-full-french-ege-2026-trainer","🇫🇷","ЕГЭ Французский 2026","EGE French 2026","Автономный тренажёр ЕГЭ-2026, RU/EN, таймер, задания, критерии, план подготовки","Autonomous EGE-2026 trainer, RU/EN, timer, tasks, criteria, study plan","🎓",true,"https://ancf-hue.github.io/anti-ai-qwen-academy-full-french-ege-2026-trainer/"]
 ];
 
 /* ============================================================
-   ПРИСВОЕНИЕ РАЗДЕЛОВ
+   НОВЫЕ ЭКЗАМЕНАЦИОННЫЕ ПРОЕКТЫ (добавлены из Pasted text.txt)
+   ============================================================ */
+const newExamProjects = [
+// --- Тестирование иностранных граждан по русскому языку: 1–11 классы ---
+["anti-ai-qwen-academy-russian-grade11-2026","🎓","Русский язык: 11 класс","Russian Grade 11","PRO-тренажёр для иностранных граждан. 4 варианта (A–D), 60 заданий: устная часть (диалог 6 вопросов, монолог 10+, чтение, понимание) + письменная (слушание, сжатое изложение 70+ слов, лексика, пунктуация, синтаксис, прямая/косвенная речь). Статистика, режимы, экспорт, печать. RU/UZ/EN","PRO trainer for foreign applicants. 4 variants (A-D), 60 tasks: oral (6-question dialogue, 10+ monologue, reading, comprehension) + written (listening, 70+ word summary, vocabulary, punctuation, syntax, direct/indirect speech). Statistics, modes, export, print. RU/UZ/EN","🎓",true,"https://ancf-hue.github.io/anti-ai-qwen-academy-russian-grade11-2026/"],
+["anti-ai-qwen-academy-russian-grade10-2026","🎓","Русский язык: 10 класс","Russian Grade 10","PRO-тренажёр для иностранных граждан. 4 варианта (A–D), 60 заданий: устная часть (диалог 6 вопросов, монолог 9+, чтение, понимание) + письменная (слушание, сжатое изложение 70+ слов, лексика, пунктуация ССП/СПП/БСП, прямая/косвенная речь). Статистика, режимы, экспорт, печать. RU/UZ/EN","PRO trainer for foreign applicants. 4 variants (A-D), 60 tasks: oral (6-question dialogue, 9+ monologue, reading, comprehension) + written (listening, 70+ word summary, vocabulary, SSP/SPP/BSP punctuation, direct/indirect speech). Statistics, modes, export, print. RU/UZ/EN","🎓",true,"https://ancf-hue.github.io/anti-ai-qwen-academy-russian-grade10-2026/"],
+["anti-ai-qwen-academy-russian-grade9-2026-","🎓","Русский язык: 9 класс","Russian Grade 9","PRO-тренажёр для иностранных граждан. 4 варианта (A–D), 52 задания: устная часть (диалог 6 вопросов, монолог 8+, чтение, пересказ) + письменная (слушание, словосочетания, глаголы, определения, деепричастный оборот, сочинение 90+ слов). Статистика, режимы, экспорт, печать. RU/UZ/EN","PRO trainer for foreign applicants. 4 variants (A-D), 52 tasks: oral (6-question dialogue, 8+ monologue, reading, retelling) + written (listening, phrases, verbs, definitions, adverbial participle, 90+ word essay). Statistics, modes, export, print. RU/UZ/EN","🎓",true,"https://ancf-hue.github.io/anti-ai-qwen-academy-russian-grade9-2026-/"],
+["anti-ai-qwen-academy-russian-grade8-2026","🎓","Русский язык: 8 класс","Russian Grade 8","PRO-тренажёр для иностранных граждан. 4 варианта (A–D), 52 задания: устная часть (диалог 5 вопросов, монолог 7+, чтение, пересказ) + письменная (слушание, причастия, наречия, предлоги, союзы, сочинение 90+ слов). Статистика, режимы, экспорт, печать. RU/UZ/EN","PRO trainer for foreign applicants. 4 variants (A-D), 52 tasks: oral (5-question dialogue, 7+ monologue, reading, retelling) + written (listening, participles, adverbs, prepositions, conjunctions, 90+ word essay). Statistics, modes, export, print. RU/UZ/EN","🎓",true,"https://ancf-hue.github.io/anti-ai-qwen-academy-russian-grade8-2026/"],
+["anti-ai-qwen-academy-russian-grade7-2026","🎓","Русский язык: 7 класс","Russian Grade 7","PRO-тренажёр для иностранных граждан. 4 варианта (A–D), 52 задания: устная часть (диалог, монолог, чтение, пересказ) + письменная (слушание, паронимы, числительные, местоимения, глаголы, сочинение 90+ слов). Статистика, режимы, экспорт, печать. RU/UZ/EN","PRO trainer for foreign applicants. 4 variants (A-D), 52 tasks: oral (dialogue, monologue, reading, retelling) + written (listening, paronyms, numerals, pronouns, verbs, 90+ word essay). Statistics, modes, export, print. RU/UZ/EN","🎓",true,"https://ancf-hue.github.io/anti-ai-qwen-academy-russian-grade7-2026/"],
+["anti-ai-qwen-academy-russian-grade6-2026","🎓","Русский язык: 6 класс","Russian Grade 6","PRO-тренажёр для иностранных граждан. 4 варианта (A–D), 56 заданий: устная часть (диалог, монолог, чтение, пересказ) + письменная (слушание, грамматика, изложение, сочинение). Статистика, режимы, экспорт, печать. RU/UZ/EN","PRO trainer for foreign applicants. 4 variants (A-D), 56 tasks: oral (dialogue, monologue, reading, retelling) + written (listening, grammar, summary, essay). Statistics, modes, export, print. RU/UZ/EN","🎓",true,"https://ancf-hue.github.io/anti-ai-qwen-academy-russian-grade6-2026/"],
+["anti-ai-qwen-academy-russian-grade5-2026","🎓","Русский язык: 5 класс","Russian Grade 5","Бесплатный HTML-тренажёр для иностранных граждан. Устная часть (диалог, монолог, чтение, пересказ) + письменная (слушание, антонимы, падежи, глаголы, обращение, орфография). 22 балла, проходной 20. RU/EN/UZ","Free HTML trainer for foreign applicants. Oral (dialogue, monologue, reading, retelling) + written (listening, antonyms, cases, verbs, address, spelling). 22 points, pass 20. RU/EN/UZ","🎓",true,"https://ancf-hue.github.io/anti-ai-qwen-academy-russian-grade5-2026/"],
+["anti-ai-qwen-academy-russian-grade4-2026","🎓","Русский язык: 4 класс","Russian Grade 4","Бесплатный HTML-тренажёр для иностранных граждан. Устная часть (диалог, монолог, чтение, понимание) + письменная (слушание, падежи, главные члены, однокоренные, правописание). 20 баллов, проходной 18. RU/EN/UZ","Free HTML trainer for foreign applicants. Oral (dialogue, monologue, reading, comprehension) + written (listening, cases, main members, same-root words, spelling). 20 points, pass 18. RU/EN/UZ","🎓",true,"https://ancf-hue.github.io/anti-ai-qwen-academy-russian-grade4-2026/"],
+["anti-ai-qwen-academy-russian-grade3-2026","🎓","Русский язык: 3 класс","Russian Grade 3","Бесплатный HTML-тренажёр для иностранных граждан. Устная часть (диалог, монолог, чтение, понимание) + письменная (слушание, части речи, лексика, письмо). 20 баллов, проходной 18. RU/EN/UZ","Free HTML trainer for foreign applicants. Oral (dialogue, monologue, reading, comprehension) + written (listening, parts of speech, vocabulary, writing). 20 points, pass 18. RU/EN/UZ","🎓",true,"https://ancf-hue.github.io/anti-ai-qwen-academy-russian-grade3-2026/"],
+["anti-ai-qwen-academy-russian-grade2-2026","🎓","Русский язык: 2 класс","Russian Grade 2","Бесплатный HTML-тренажёр для иностранных граждан. Устная часть (диалог, монолог, чтение, понимание) + письменная (слушание, грамматика, письмо). 20 баллов, проходной 18. RU/EN/UZ","Free HTML trainer for foreign applicants. Oral (dialogue, monologue, reading, comprehension) + written (listening, grammar, writing). 20 points, pass 18. RU/EN/UZ","🎓",true,"https://ancf-hue.github.io/anti-ai-qwen-academy-russian-grade2-2026/"],
+["anti-ai-qwen-academy-russian-grade1-2026","🎓","Русский язык: 1 класс","Russian Grade 1","Бесплатный офлайн-тренажёр для иностранцев при поступлении в 1 класс. 4 задания, 10 баллов, проходной 9. RU/EN/UZ. HTML, без рекламы.","Free offline trainer for foreign applicants to grade 1. 4 tasks, 10 points, pass 9. RU/EN/UZ. HTML, no ads.","🎓",true,"https://ancf-hue.github.io/anti-ai-qwen-academy-russian-grade1-2026/"],
+
+// --- ГВЭ-9 2027: химия, физика, обществознание, математика ---
+["anti-ai-qwen-chemistry-gve9-2027","🧪","ГВЭ-9 Химия 2027","GVE-9 Chemistry 2027","Бесплатный офлайн-тренажёр для ГВЭ-9 по химии 2027. 13 заданий ФИПИ, устные билеты, критерии оценивания, справочник, чек-лист и план на 25 дней. Один HTML-файл, работает без интернета.","Free offline GVE-9 Chemistry 2027 trainer. 13 FIPI tasks, oral tickets, grading criteria, handbook, checklist and 25-day plan. Single HTML file, works offline.","🎓",true,"https://ancf-hue.github.io/anti-ai-qwen-chemistry-gve9-2027/"],
+["anti-ai-qwen-physics-gve9-2027","⚛️","ГВЭ-9 Физика 2027","GVE-9 Physics 2027","Бесплатный офлайн-тренажёр для ГВЭ-9 по физике 2027. 100/200 варианты, устные билеты, справочник, чек-лист и план на 25 дней. Один HTML-файл, работает без интернета, прогресс сохраняется в браузере.","Free offline GVE-9 Physics 2027 trainer. 100/200 variants, oral tickets, handbook, checklist and 25-day plan. Single HTML file, works offline, progress saved in browser.","🎓",true,"https://ancf-hue.github.io/anti-ai-qwen-physics-gve9-2027/"],
+["anti-ai-qwen-social-gve9-2027","🏛️","ГВЭ-9 Обществознание 2027","GVE-9 Social Studies 2027","Бесплатный офлайн-тренажёр ГВЭ-9 по обществознанию 2027: 16 заданий, устная форма (15 билетов), критерии, справочник, план. Один HTML-файл.","Free offline GVE-9 Social Studies 2027 trainer: 16 tasks, oral form (15 tickets), criteria, handbook, plan. Single HTML file.","🎓",true,"https://ancf-hue.github.io/anti-ai-qwen-social-gve9-2027/"],
+["anti-ai-qwen-math-gve-9-2027","📐","ГВЭ-9 Математика 2027","GVE-9 Math 2027","Бесплатный офлайн-тренажёр ГВЭ-9 по математике 2027: 100/200/300 варианты, устная форма, встроенные графики, критерии, чек-лист и план. Один HTML-файл.","Free offline GVE-9 Math 2027 trainer: 100/200/300 variants, oral form, built-in graphs, criteria, checklist and plan. Single HTML file.","🎓",true,"https://ancf-hue.github.io/anti-ai-qwen-math-gve-9-2027/"]
+];
+
+/* ============================================================
+   РЕГИСТРАЦИЯ РАЗДЕЛОВ
    ============================================================ */
 const examSlugs = new Set([
 "anti-ai-Qwen-academy-full-social-studies-ege-2026-trainer",
@@ -549,6 +570,9 @@ const examSlugs = new Set([
 "anti-ai-Qwen-academy-full-spanish-ege-2026-trainer",
 "anti-ai-qwen-academy-full-french-ege-2026-trainer"
 ]);
+
+rawProjects.push(...newExamProjects);
+newExamProjects.forEach(p => examSlugs.add(p[0]));
 
 const sectionRanges = [
 ["health",0,13],
@@ -592,9 +616,6 @@ function getSectionTitle(sectionId) {
   return currentLang === 'ru' ? s.titleRu : s.titleEn;
 }
 
-/* ============================================================
-   URL HELPERS
-   ============================================================ */
 function normalizeInternalUrl(url) {
   try {
     const u = new URL(url);
@@ -671,9 +692,6 @@ function projectInlineLink(p, text) {
   return `<a href="${info.href}"${attrs} class="inline-link">${text}</a>`;
 }
 
-/* ============================================================
-   i18n
-   ============================================================ */
 const i18n = {
   ru: {
     hero_title: "ANTI‑AI SHIELD",
@@ -761,9 +779,6 @@ function applyLanguage() {
   handleRoute();
 }
 
-/* ============================================================
-   RENDER
-   ============================================================ */
 function renderSections() {
   const grid = document.getElementById('sectionsGrid');
   if (!grid) return;
@@ -880,9 +895,6 @@ function handleRoute() {
   }
 }
 
-/* ============================================================
-   QR COPY
-   ============================================================ */
 function showMessage(message, isError = true) {
   const toast = document.getElementById('errorToast');
   if (!toast) return;
@@ -919,9 +931,6 @@ function setupQRClick() {
   });
 }
 
-/* ============================================================
-   CHATBOT
-   ============================================================ */
 const chatbotToggle = document.getElementById('chatbotToggle');
 const chatbotWindow = document.getElementById('chatbotWindow');
 const chatbotClose = document.getElementById('chatbotClose');
@@ -998,9 +1007,6 @@ function addMessage(htmlContent, sender, action) {
   chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
-/* ============================================================
-   ЧАТ-БОТ: ПОИСК ПРОЕКТОВ И ИХ РАЗДЕЛОВ
-   ============================================================ */
 function getBotResponse(input) {
   const lang = currentLang;
 
@@ -1031,7 +1037,7 @@ function getBotResponse(input) {
 
   const stopWords = [
     'где','находится','находиться','найди','найти','покажи','показать',
-    'какой','какая','какое','какие','в','каком','какой','это','что','проект','проекты','приложение','приложения',
+    'какой','какая','какое','какие','в','каком','это','что','проект','проекты','приложение','приложения',
     'where','is','are','the','a','an','in','which','what','section','project','app','find','show','locate','located'
   ];
 
@@ -1140,16 +1146,12 @@ function getBotResponse(input) {
   };
 }
 
-/* ============================================================
-   INIT
-   ============================================================ */
 window.addEventListener('hashchange', handleRoute);
 
 window.addEventListener('DOMContentLoaded', () => {
   applyLanguage();
   setupQRClick();
 
-  // ⏱️ Автооткрытие чат-бота через 2 секунды (один раз за сессию)
   if (!sessionStorage.getItem('chat_autoshown')) {
     setTimeout(() => {
       if (!chatbotWindow.classList.contains('active')) {
